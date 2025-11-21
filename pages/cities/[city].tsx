@@ -2,7 +2,7 @@ import type { NextPage, GetStaticProps, GetStaticPaths } from 'next';
 import Link from 'next/link';
 import { useState } from 'react';
 import Head from 'next/head';
-import dynamic from 'next/dynamic';
+import { ThemeToggle } from '../../components/ThemeToggle';
 import { getCityBySlug, getAllCitySlugs, City } from '../../lib/cities';
 import { 
   generateOrganizationSchema, 
@@ -10,11 +10,6 @@ import {
   generateServiceSchema,
   generateAggregateOfferSchema 
 } from '../../lib/seoSchema';
-
-const ThemeToggle = dynamic(() => import('../../components/ThemeToggle').then(mod => ({ default: mod.ThemeToggle })), {
-  ssr: false,
-  loading: () => <div className="w-10 h-10" />
-});
 
 interface CityPageProps {
   city: City;

@@ -1,12 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
-import dynamic from 'next/dynamic';
-
-const ThemeToggle = dynamic(() => import('../components/ThemeToggle').then(mod => ({ default: mod.ThemeToggle })), {
-  ssr: false,
-  loading: () => <div className="w-10 h-10" />
-});
+import { ThemeToggle } from '../components/ThemeToggle';
 
 const Process: NextPage = () => {
   const processSchema = {
