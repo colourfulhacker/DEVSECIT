@@ -46,7 +46,7 @@ const Privacy: NextPage = () => {
         <h1 className="text-4xl md:text-5xl font-display font-bold mb-6 text-dark-900 dark:text-white light:text-dark-900 transition-colors duration-300">
           Privacy <span className="text-gradient">Policy</span>
         </h1>
-        <p className="text-gray-400 dark:text-gray-400 light:text-gray-600 mb-8 transition-colors duration-300">Last updated: November 21, 2024</p>
+        <p className="text-gray-400 dark:text-gray-400 light:text-gray-600 mb-8 transition-colors duration-300">Last updated: November 21, 2025</p>
 
         <div className="space-y-8 text-gray-300 dark:text-gray-300 light:text-gray-700 transition-colors duration-300">
           <section>

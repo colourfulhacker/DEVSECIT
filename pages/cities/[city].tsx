@@ -239,7 +239,7 @@ const CityPage: NextPage<CityPageProps> = ({ city }) => {
       <footer className="dark:bg-dark-800 light:bg-gray-50 py-8 border-t dark:border-dark-700 light:border-gray-200 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="dark:text-gray-400 light:text-gray-600 transition-colors duration-300">
-            DevSecIT © 2024. Serving {city.name} and across India with premium software solutions.
+            DevSecIT © 2025. Serving {city.name} and across India with premium software solutions.
           </p>
           <div className="flex justify-center gap-4 mt-4">
             <Link href="/privacy" className="dark:text-gray-400 light:text-gray-600 hover:text-primary-400 transition-colors">Privacy</Link>

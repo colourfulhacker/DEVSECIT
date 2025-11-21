@@ -964,7 +964,7 @@ const Home: NextPage = () => {
           </div>
           <div className="border-t border-dark-800 pt-8">
             <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-gray-400 text-sm">
-              <p>&copy; 2024 DevSecIT. All rights reserved. Built with excellence and secured by design.</p>
+              <p>&copy; 2025 DevSecIT. All rights reserved. Built with excellence and secured by design.</p>
               <div className="flex gap-6">
                 <Link href="/privacy" className="hover:text-primary-400 transition-colors">Privacy</Link>
                 <Link href="/terms" className="hover:text-primary-400 transition-colors">Terms</Link>

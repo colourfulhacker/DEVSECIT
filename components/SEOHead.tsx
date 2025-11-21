@@ -34,7 +34,7 @@ export const SEOHead = ({
       
       {/* Author & Copyright */}
       <meta name="author" content="DevSecIT" />
-      <meta name="copyright" content="DevSecIT 2024" />
+      <meta name="copyright" content="DevSecIT 2025" />
       
       {/* Robots & Crawling */}
       <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
