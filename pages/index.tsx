@@ -915,7 +915,7 @@ const Home: NextPage = () => {
 
       <footer className="bg-dark-900 border-t border-dark-800 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
+          <div className="grid md:grid-cols-5 gap-8 mb-8">
             <div className="md:col-span-2">
               <h3 className="text-2xl font-display font-bold text-gradient mb-4">DevSecIT</h3>
               <p className="text-gray-400 mb-4">
@@ -942,6 +942,23 @@ const Home: NextPage = () => {
                 <li><a href="#contact" className="hover:text-primary-400 transition-colors">Contact</a></li>
                 <li><Link href="/privacy" className="hover:text-primary-400 transition-colors">Privacy Policy</Link></li>
                 <li><Link href="/terms" className="hover:text-primary-400 transition-colors">Terms of Service</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-bold text-gray-200 mb-4">India Offices</h4>
+              <ul className="space-y-2 text-gray-400 text-sm grid grid-cols-2 gap-2">
+                <li><Link href="/cities/delhi" className="hover:text-primary-400 transition-colors">Delhi</Link></li>
+                <li><Link href="/cities/mumbai" className="hover:text-primary-400 transition-colors">Mumbai</Link></li>
+                <li><Link href="/cities/bangalore" className="hover:text-primary-400 transition-colors">Bangalore</Link></li>
+                <li><Link href="/cities/hyderabad" className="hover:text-primary-400 transition-colors">Hyderabad</Link></li>
+                <li><Link href="/cities/pune" className="hover:text-primary-400 transition-colors">Pune</Link></li>
+                <li><Link href="/cities/kolkata" className="hover:text-primary-400 transition-colors">Kolkata</Link></li>
+                <li><Link href="/cities/chennai" className="hover:text-primary-400 transition-colors">Chennai</Link></li>
+                <li><Link href="/cities/ahmedabad" className="hover:text-primary-400 transition-colors">Ahmedabad</Link></li>
+                <li><Link href="/cities/jaipur" className="hover:text-primary-400 transition-colors">Jaipur</Link></li>
+                <li><Link href="/cities/lucknow" className="hover:text-primary-400 transition-colors">Lucknow</Link></li>
+                <li><Link href="/cities/surat" className="hover:text-primary-400 transition-colors">Surat</Link></li>
+                <li><Link href="/cities/kochi" className="hover:text-primary-400 transition-colors">Kochi</Link></li>
               </ul>
             </div>
           </div>
