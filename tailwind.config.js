@@ -1,4 +1,5 @@
 module.exports = {
+  darkMode: 'class',
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
@@ -29,6 +30,14 @@ module.exports = {
           700: '#334155',
           800: '#1e293b',
           900: '#0f172a',
+        },
+        light: {
+          bg: '#ffffff',
+          'bg-secondary': '#f8fafc',
+          text: '#1e293b',
+          'text-secondary': '#475569',
+          border: '#e2e8f0',
+          'card-bg': '#f1f5f9',
         },
       },
       fontFamily: {
