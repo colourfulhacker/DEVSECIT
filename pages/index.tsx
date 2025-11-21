@@ -113,35 +113,35 @@ const Home: NextPage = () => {
         )}
       </nav>
 
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-900/20 via-dark-900 to-blue-900/20"></div>
-        <div className="absolute top-20 left-10 w-72 h-72 bg-primary-500/10 rounded-full blur-3xl animate-pulse-slow"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '1s' }}></div>
+      <section className="relative pt-32 pb-20 overflow-hidden dark:bg-dark-900 light:bg-white transition-colors duration-300">
+        <div className="absolute inset-0 dark:bg-gradient-to-br dark:from-primary-900/20 dark:via-dark-900 dark:to-blue-900/20 light:bg-gradient-to-br light:from-primary-50 light:via-white light:to-blue-50"></div>
+        <div className="absolute top-20 left-10 w-72 h-72 dark:bg-primary-500/10 light:bg-primary-400/5 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 dark:bg-blue-500/10 light:bg-blue-400/5 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '1s' }}></div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center animate-fade-in">
-            <div className="inline-block mb-4 px-4 py-2 bg-primary-500/10 rounded-full border border-primary-500/30">
-              <span className="text-primary-400 font-semibold text-sm">Elite Development & Cybersecurity</span>
+            <div className="inline-block mb-4 px-4 py-2 dark:bg-primary-500/10 light:bg-primary-50 rounded-full border dark:border-primary-500/30 light:border-primary-200 transition-colors duration-300">
+              <span className="text-primary-400 dark:text-primary-400 light:text-primary-600 font-semibold text-sm transition-colors duration-300">Elite Development & Cybersecurity</span>
             </div>
-            <h1 className="text-5xl md:text-7xl font-display font-bold mb-6 leading-tight">
+            <h1 className="text-5xl md:text-7xl font-display font-bold mb-6 leading-tight dark:text-white light:text-gray-900 transition-colors duration-300">
               Custom Software Development <br />
               <span className="text-gradient">& API Integration in West Bengal</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-400 mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl dark:text-gray-400 light:text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed transition-colors duration-300">
               Full-spectrum software development, cybersecurity integration, and AI-powered solutions. 
               From concept to deployment, we build what others can&apos;t.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a 
                 href="#contact" 
-                className="group px-8 py-4 bg-gradient-to-r from-primary-500 to-blue-600 rounded-lg font-bold text-lg hover:shadow-2xl hover:shadow-primary-500/50 transition-all transform hover:scale-105"
+                className="group px-8 py-4 bg-gradient-to-r from-primary-500 to-blue-600 rounded-xl font-bold text-lg text-white hover:shadow-2xl hover:shadow-primary-500/50 transition-all transform hover:scale-105 dark:hover:shadow-primary-500/50 light:hover:shadow-primary-400/30 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:focus:ring-offset-dark-900 light:focus:ring-offset-white"
               >
                 Start Your Project
                 <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">→</span>
               </a>
               <a 
                 href="#services" 
-                className="px-8 py-4 border-2 border-primary-500/50 rounded-lg font-bold text-lg hover:bg-primary-500/10 transition-all"
+                className="px-8 py-4 border-2 dark:border-primary-500/50 light:border-primary-400 rounded-xl font-bold text-lg dark:text-gray-100 light:text-gray-900 dark:hover:bg-primary-500/10 light:hover:bg-primary-50 transition-all focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:focus:ring-offset-dark-900 light:focus:ring-offset-white"
               >
                 Explore Services
               </a>
@@ -153,9 +153,9 @@ const Home: NextPage = () => {
                 { value: '7 Days', label: 'API MVP Delivery', role: 'doc-subtitle' },
                 { value: '24/7', label: 'Expert Support', role: 'doc-subtitle' }
               ].map((stat, i) => (
-                <div key={i} className="animate-slide-up" style={{ animationDelay: `${i * 0.1}s` }} role="contentinfo">
+                <div key={i} className="animate-slide-up transition-colors duration-300" style={{ animationDelay: `${i * 0.1}s` }} role="contentinfo">
                   <div className="text-3xl md:text-4xl font-bold text-gradient">{stat.value}</div>
-                  <div className="text-gray-400 mt-1">{stat.label}</div>
+                  <div className="dark:text-gray-400 light:text-gray-600 mt-1 transition-colors duration-300">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -163,13 +163,13 @@ const Home: NextPage = () => {
         </div>
       </section>
 
-      <section id="services" className="py-20 bg-dark-800/50">
+      <section id="services" className="py-20 dark:bg-dark-800/50 light:bg-gray-50 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
+            <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 dark:text-white light:text-gray-900 transition-colors duration-300">
               Comprehensive <span className="text-gradient">IT Services</span>
             </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            <p className="text-xl dark:text-gray-400 light:text-gray-600 max-w-3xl mx-auto transition-colors duration-300">
               End-to-end technology solutions tailored to your unique requirements
             </p>
           </div>
@@ -215,15 +215,15 @@ const Home: NextPage = () => {
             ].map((service, i) => (
               <div 
                 key={i} 
-                className="group bg-dark-900 p-8 rounded-2xl border border-dark-700 hover:border-primary-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-primary-500/10 animate-slide-up"
+                className="group dark:bg-dark-900 light:bg-white p-8 rounded-2xl dark:border dark:border-dark-700 light:border light:border-gray-200 dark:hover:border-primary-500/50 light:hover:border-primary-400 transition-all duration-300 dark:hover:shadow-2xl dark:hover:shadow-primary-500/10 light:hover:shadow-lg light:hover:shadow-primary-200/20 animate-slide-up"
                 style={{ animationDelay: `${i * 0.1}s` }}
               >
                 <div className="text-5xl mb-4 group-hover:scale-110 transition-transform">{service.icon}</div>
-                <h3 className="text-2xl font-bold mb-3 text-gray-100">{service.title}</h3>
-                <p className="text-gray-400 mb-4 leading-relaxed">{service.description}</p>
+                <h3 className="text-2xl font-bold mb-3 dark:text-gray-100 light:text-gray-900 transition-colors duration-300">{service.title}</h3>
+                <p className="dark:text-gray-400 light:text-gray-600 mb-4 leading-relaxed transition-colors duration-300">{service.description}</p>
                 <ul className="space-y-2">
                   {service.features.map((feature, j) => (
-                    <li key={j} className="flex items-center text-gray-300">
+                    <li key={j} className="flex items-center dark:text-gray-300 light:text-gray-700 transition-colors duration-300">
                       <span className="text-primary-400 mr-2">✓</span>
                       {feature}
                     </li>
@@ -235,13 +235,13 @@ const Home: NextPage = () => {
         </div>
       </section>
 
-      <section id="techstack" className="py-20 bg-dark-900">
+      <section id="techstack" className="py-20 dark:bg-dark-900 light:bg-white transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
+            <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 dark:text-white light:text-gray-900 transition-colors duration-300">
               Our <span className="text-gradient">Technology Stack</span>
             </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            <p className="text-xl dark:text-gray-400 light:text-gray-600 max-w-3xl mx-auto transition-colors duration-300">
               We work with cutting-edge technologies to deliver exceptional solutions
             </p>
           </div>
