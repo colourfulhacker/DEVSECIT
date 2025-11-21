@@ -5,11 +5,22 @@ import { useEffect, useState } from 'react';
 
 export const ThemeToggle = () => {
   const [isMounted, setIsMounted] = useState(false);
-  const { isDark, toggleTheme } = useTheme();
+  const [isDark, setIsDark] = useState(true);
 
   useEffect(() => {
     setIsMounted(true);
+    const saved = localStorage.getItem('theme');
+    if (saved) {
+      setIsDark(saved === 'dark');
+    }
   }, []);
+
+  const toggleTheme = () => {
+    const newTheme = !isDark;
+    setIsDark(newTheme);
+    localStorage.setItem('theme', newTheme ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', newTheme ? 'dark' : 'light');
+  };
 
   if (!isMounted) return null;
 
