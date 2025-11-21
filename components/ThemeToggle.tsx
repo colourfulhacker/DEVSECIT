@@ -1,9 +1,17 @@
 'use client';
 
 import { useTheme } from '../context/ThemeContext';
+import { useEffect, useState } from 'react';
 
 export const ThemeToggle = () => {
+  const [isMounted, setIsMounted] = useState(false);
   const { isDark, toggleTheme } = useTheme();
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) return null;
 
   return (
     <button
