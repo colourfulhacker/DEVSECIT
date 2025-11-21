@@ -588,19 +588,43 @@ const Home: NextPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
-              Explore 50+ <span className="text-gradient">API Integrations</span>
+              Custom API Development <span className="text-gradient">& Integration</span>
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              Pre-integrated APIs for music, social media, payments, AI, and more. Choose from our curated collection or request a custom API integration.
+              Need a specific API integrated into your application? We design, develop, and integrate APIs tailored to your exact business needs, requirements, and use cases.
             </p>
           </div>
 
-          {/* Top 7 Common APIs */}
-          <div className="mb-16 bg-dark-800 p-8 rounded-2xl border border-primary-500/30">
-            <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-              ⭐ Top 7 Most Popular APIs
-              <span className="text-sm bg-primary-500/20 text-primary-300 px-3 py-1 rounded-full font-normal">Featured</span>
-            </h3>
+          {/* Custom API Development Capabilities */}
+          <div className="mb-16 bg-gradient-to-r from-primary-500/10 via-blue-500/10 to-primary-500/10 p-8 md:p-12 rounded-2xl border border-primary-500/40">
+            <h3 className="text-2xl font-bold text-white mb-6">Our API Integration Expertise</h3>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div>
+                <div className="text-3xl mb-3">🎯</div>
+                <h4 className="font-bold text-white mb-2">Custom Requirements</h4>
+                <p className="text-gray-300 text-sm">We analyze your business logic, integrate any third-party API, and build custom APIs from scratch based on your exact specifications.</p>
+              </div>
+              <div>
+                <div className="text-3xl mb-3">🔗</div>
+                <h4 className="font-bold text-white mb-2">Any API You Need</h4>
+                <p className="text-gray-300 text-sm">Music, payments, AI, social media, databases, IoT—we integrate 100+ popular APIs plus custom proprietary systems and legacy APIs.</p>
+              </div>
+              <div>
+                <div className="text-3xl mb-3">⚡</div>
+                <h4 className="font-bold text-white mb-2">Rapid Development</h4>
+                <p className="text-gray-300 text-sm">From requirement gathering to deployment, we deliver production-ready API integrations in as little as 7 days for simple use cases.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Examples of APIs We Can Integrate */}
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold text-white mb-3">Examples: APIs We Can Integrate for Your Use Case</h3>
+            <p className="text-gray-400 mb-6">Below are popular APIs we regularly integrate. Tell us your need, and we&apos;ll integrate the right solution for you.</p>
+            
+            {/* Top APIs Examples */}
+            <div className="bg-dark-800 p-6 rounded-2xl border border-dark-700 mb-8">
+              <h4 className="text-lg font-bold text-white mb-4">Popular API Examples We Integrate</h4>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {topCommonAPIs.map((api, i) => (
                 <div key={i} className="bg-dark-900 p-4 rounded-xl border border-dark-700 hover:border-primary-500/50 transition-all">
@@ -616,30 +640,43 @@ const Home: NextPage = () => {
                 </div>
               ))}
             </div>
+            </div>
           </div>
 
-          {/* API Sliders by Category */}
-          {allAPICategories.map((category, i) => (
-            <APISlider
-              key={i}
-              title={`${category.icon} ${category.name}`}
-              apis={category.apis}
-              onOrderClick={setSelectedAPIService}
-            />
-          ))}
+          {/* API Sliders by Category - Labeled as Examples */}
+          <div className="mb-16">
+            <h3 className="text-xl font-bold text-white mb-6">Browse API Categories</h3>
+            {allAPICategories.map((category, i) => (
+              <APISlider
+                key={i}
+                title={`${category.icon} ${category.name}`}
+                apis={category.apis}
+                onOrderClick={setSelectedAPIService}
+              />
+            ))}
+          </div>
 
-          {/* Custom API Request */}
-          <div className="mt-16 bg-gradient-to-r from-primary-500/10 via-blue-500/10 to-primary-500/10 p-8 md:p-12 rounded-2xl border border-primary-500/30">
-            <h3 className="text-2xl font-bold text-white mb-4">Don&apos;t see the API you need?</h3>
-            <p className="text-gray-300 mb-6">
-              We support 100+ APIs and can integrate virtually any API into your application. Get in touch to discuss your specific requirements.
-            </p>
-            <a
-              href="#contact"
-              className="inline-block px-8 py-4 bg-gradient-to-r from-primary-500 to-blue-600 rounded-lg font-bold hover:shadow-lg hover:shadow-primary-500/50 transition-all text-white"
-            >
-              Request Custom Integration
-            </a>
+          {/* Main CTA - Custom API Integration */}
+          <div className="mt-16 bg-gradient-to-r from-primary-500/20 via-blue-500/20 to-primary-500/20 p-8 md:p-12 rounded-2xl border-2 border-primary-500/50">
+            <div className="flex flex-col md:flex-row items-center gap-8">
+              <div className="flex-1">
+                <h3 className="text-3xl font-bold text-white mb-4">Have a Unique Use Case?</h3>
+                <p className="text-gray-300 mb-4">
+                  Whether you need to integrate a niche API, build a custom API from scratch, or combine multiple services into one unified solution—we handle it all. Tell us what you need, and we&apos;ll build it.
+                </p>
+                <p className="text-gray-400 text-sm">
+                  <strong>Timeline:</strong> Simple integrations in 7 days • <strong>Scope:</strong> From single APIs to complex multi-service platforms
+                </p>
+              </div>
+              <div className="flex-shrink-0">
+                <a
+                  href="#contact"
+                  className="inline-block px-8 py-4 bg-gradient-to-r from-primary-500 to-blue-600 rounded-lg font-bold hover:shadow-lg hover:shadow-primary-500/50 transition-all text-white text-center text-lg"
+                >
+                  Discuss Your API Needs
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
