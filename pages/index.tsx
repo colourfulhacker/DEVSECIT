@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import Link from 'next/link';
 import { useState } from 'react';
 
 const Home: NextPage = () => {
@@ -9,6 +10,7 @@ const Home: NextPage = () => {
     company: '',
     message: ''
   });
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -23,7 +25,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <nav className="fixed top-0 w-full z-50 bg-dark-900/80 backdrop-blur-lg border-b border-dark-700">
+      <nav className="fixed top-0 w-full z-50 bg-dark-900/95 backdrop-blur-lg border-b border-dark-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
@@ -31,18 +33,52 @@ const Home: NextPage = () => {
             </div>
             <div className="hidden md:flex space-x-8">
               <a href="#services" className="text-gray-300 hover:text-primary-400 transition-colors">Services</a>
+              <a href="#techstack" className="text-gray-300 hover:text-primary-400 transition-colors">Tech Stack</a>
               <a href="#capabilities" className="text-gray-300 hover:text-primary-400 transition-colors">Capabilities</a>
               <a href="#api" className="text-gray-300 hover:text-primary-400 transition-colors">Custom APIs</a>
               <a href="#contact" className="text-gray-300 hover:text-primary-400 transition-colors">Contact</a>
             </div>
-            <a 
-              href="#contact" 
-              className="bg-gradient-to-r from-primary-500 to-blue-600 px-6 py-2 rounded-lg font-semibold hover:shadow-lg hover:shadow-primary-500/50 transition-all"
-            >
-              Get Started
-            </a>
+            <div className="flex items-center gap-4">
+              <a 
+                href="#contact" 
+                className="hidden sm:inline-block bg-gradient-to-r from-primary-500 to-blue-600 px-6 py-2 rounded-lg font-semibold hover:shadow-lg hover:shadow-primary-500/50 transition-all text-white"
+              >
+                Get Started
+              </a>
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="md:hidden text-gray-300 hover:text-primary-400 p-2"
+                aria-label="Toggle menu"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  {mobileMenuOpen ? (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  ) : (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  )}
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-dark-800 border-t border-dark-700">
+            <div className="px-4 py-4 space-y-3">
+              <a href="#services" onClick={() => setMobileMenuOpen(false)} className="block text-gray-300 hover:text-primary-400 transition-colors py-2">Services</a>
+              <a href="#techstack" onClick={() => setMobileMenuOpen(false)} className="block text-gray-300 hover:text-primary-400 transition-colors py-2">Tech Stack</a>
+              <a href="#capabilities" onClick={() => setMobileMenuOpen(false)} className="block text-gray-300 hover:text-primary-400 transition-colors py-2">Capabilities</a>
+              <a href="#api" onClick={() => setMobileMenuOpen(false)} className="block text-gray-300 hover:text-primary-400 transition-colors py-2">Custom APIs</a>
+              <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="block text-gray-300 hover:text-primary-400 transition-colors py-2">Contact</a>
+              <a 
+                href="#contact" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="block w-full text-center bg-gradient-to-r from-primary-500 to-blue-600 px-6 py-3 rounded-lg font-semibold text-white mt-4"
+              >
+                Get Started
+              </a>
+            </div>
+          </div>
+        )}
       </nav>
 
       <section className="relative pt-32 pb-20 overflow-hidden">
@@ -164,6 +200,135 @@ const Home: NextPage = () => {
                 </ul>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="techstack" className="py-20 bg-dark-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
+              Our <span className="text-gradient">Technology Stack</span>
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              We work with cutting-edge technologies to deliver exceptional solutions
+            </p>
+          </div>
+
+          <div className="grid gap-8">
+            <div className="bg-dark-800 p-8 rounded-2xl border border-dark-700">
+              <h3 className="text-2xl font-bold mb-6 text-primary-400">Frontend Development</h3>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                {[
+                  { name: 'React', icon: '⚛️' },
+                  { name: 'Next.js', icon: '▲' },
+                  { name: 'Vue.js', icon: '💚' },
+                  { name: 'Angular', icon: '🅰️' },
+                  { name: 'TypeScript', icon: '📘' },
+                  { name: 'Tailwind CSS', icon: '🎨' }
+                ].map((tech, i) => (
+                  <div key={i} className="bg-dark-900 p-4 rounded-lg text-center hover:border-primary-500/50 border border-dark-700 transition-all">
+                    <div className="text-3xl mb-2">{tech.icon}</div>
+                    <div className="text-sm text-gray-300">{tech.name}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-dark-800 p-8 rounded-2xl border border-dark-700">
+              <h3 className="text-2xl font-bold mb-6 text-primary-400">Backend Development</h3>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                {[
+                  { name: 'Node.js', icon: '🟢' },
+                  { name: 'Python', icon: '🐍' },
+                  { name: 'Go', icon: '🔷' },
+                  { name: 'Rust', icon: '⚙️' },
+                  { name: 'Java', icon: '☕' },
+                  { name: 'PHP', icon: '🐘' }
+                ].map((tech, i) => (
+                  <div key={i} className="bg-dark-900 p-4 rounded-lg text-center hover:border-primary-500/50 border border-dark-700 transition-all">
+                    <div className="text-3xl mb-2">{tech.icon}</div>
+                    <div className="text-sm text-gray-300">{tech.name}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-dark-800 p-8 rounded-2xl border border-dark-700">
+              <h3 className="text-2xl font-bold mb-6 text-primary-400">Database & Storage</h3>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                {[
+                  { name: 'PostgreSQL', icon: '🐘' },
+                  { name: 'MongoDB', icon: '🍃' },
+                  { name: 'Redis', icon: '🔴' },
+                  { name: 'MySQL', icon: '🐬' },
+                  { name: 'Firebase', icon: '🔥' },
+                  { name: 'DynamoDB', icon: '⚡' }
+                ].map((tech, i) => (
+                  <div key={i} className="bg-dark-900 p-4 rounded-lg text-center hover:border-primary-500/50 border border-dark-700 transition-all">
+                    <div className="text-3xl mb-2">{tech.icon}</div>
+                    <div className="text-sm text-gray-300">{tech.name}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-dark-800 p-8 rounded-2xl border border-dark-700">
+              <h3 className="text-2xl font-bold mb-6 text-primary-400">Cloud & DevOps</h3>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                {[
+                  { name: 'AWS', icon: '☁️' },
+                  { name: 'Azure', icon: '🌐' },
+                  { name: 'GCP', icon: '🔵' },
+                  { name: 'Docker', icon: '🐳' },
+                  { name: 'Kubernetes', icon: '⚓' },
+                  { name: 'CI/CD', icon: '🔄' }
+                ].map((tech, i) => (
+                  <div key={i} className="bg-dark-900 p-4 rounded-lg text-center hover:border-primary-500/50 border border-dark-700 transition-all">
+                    <div className="text-3xl mb-2">{tech.icon}</div>
+                    <div className="text-sm text-gray-300">{tech.name}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-dark-800 p-8 rounded-2xl border border-dark-700">
+              <h3 className="text-2xl font-bold mb-6 text-primary-400">Mobile Development</h3>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                {[
+                  { name: 'React Native', icon: '📱' },
+                  { name: 'Flutter', icon: '🦋' },
+                  { name: 'Swift', icon: '🍎' },
+                  { name: 'Kotlin', icon: '🤖' },
+                  { name: 'Ionic', icon: '⚡' },
+                  { name: 'Xamarin', icon: '🔷' }
+                ].map((tech, i) => (
+                  <div key={i} className="bg-dark-900 p-4 rounded-lg text-center hover:border-primary-500/50 border border-dark-700 transition-all">
+                    <div className="text-3xl mb-2">{tech.icon}</div>
+                    <div className="text-sm text-gray-300">{tech.name}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-dark-800 p-8 rounded-2xl border border-dark-700">
+              <h3 className="text-2xl font-bold mb-6 text-primary-400">AI & Machine Learning</h3>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                {[
+                  { name: 'TensorFlow', icon: '🧠' },
+                  { name: 'PyTorch', icon: '🔥' },
+                  { name: 'OpenAI', icon: '🤖' },
+                  { name: 'Scikit-learn', icon: '📊' },
+                  { name: 'Hugging Face', icon: '🤗' },
+                  { name: 'LangChain', icon: '🔗' }
+                ].map((tech, i) => (
+                  <div key={i} className="bg-dark-900 p-4 rounded-lg text-center hover:border-primary-500/50 border border-dark-700 transition-all">
+                    <div className="text-3xl mb-2">{tech.icon}</div>
+                    <div className="text-sm text-gray-300">{tech.name}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -496,12 +661,21 @@ const Home: NextPage = () => {
               <h4 className="font-bold text-gray-200 mb-4">Company</h4>
               <ul className="space-y-2 text-gray-400">
                 <li><a href="#capabilities" className="hover:text-primary-400 transition-colors">Capabilities</a></li>
+                <li><a href="#techstack" className="hover:text-primary-400 transition-colors">Tech Stack</a></li>
                 <li><a href="#contact" className="hover:text-primary-400 transition-colors">Contact</a></li>
+                <li><Link href="/privacy" className="hover:text-primary-400 transition-colors">Privacy Policy</Link></li>
+                <li><Link href="/terms" className="hover:text-primary-400 transition-colors">Terms of Service</Link></li>
               </ul>
             </div>
           </div>
-          <div className="border-t border-dark-800 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 DevSecIT. All rights reserved. Built with excellence and secured by design.</p>
+          <div className="border-t border-dark-800 pt-8">
+            <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-gray-400 text-sm">
+              <p>&copy; 2024 DevSecIT. All rights reserved. Built with excellence and secured by design.</p>
+              <div className="flex gap-6">
+                <Link href="/privacy" className="hover:text-primary-400 transition-colors">Privacy</Link>
+                <Link href="/terms" className="hover:text-primary-400 transition-colors">Terms</Link>
+              </div>
+            </div>
           </div>
         </div>
       </footer>
