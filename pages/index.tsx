@@ -630,7 +630,7 @@ const Home: NextPage = () => {
 
           {/* Custom API Request */}
           <div className="mt-16 bg-gradient-to-r from-primary-500/10 via-blue-500/10 to-primary-500/10 p-8 md:p-12 rounded-2xl border border-primary-500/30">
-            <h3 className="text-2xl font-bold text-white mb-4">Don't see the API you need?</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">Don&apos;t see the API you need?</h3>
             <p className="text-gray-300 mb-6">
               We support 100+ APIs and can integrate virtually any API into your application. Get in touch to discuss your specific requirements.
             </p>
