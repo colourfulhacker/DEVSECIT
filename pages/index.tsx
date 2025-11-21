@@ -75,6 +75,7 @@ const Home: NextPage = () => {
               <a href="#techstack" className="text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors">Tech Stack</a>
               <a href="#capabilities" className="text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors">Capabilities</a>
               <a href="#api" className="text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors">Custom APIs</a>
+              <Link href="/process" className="text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors">Process</Link>
               <a href="#contact" className="text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors">Contact</a>
             </div>
             <div className="flex items-center gap-4">
@@ -108,6 +109,7 @@ const Home: NextPage = () => {
               <a href="#techstack" onClick={() => setMobileMenuOpen(false)} className="block text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors py-2">Tech Stack</a>
               <a href="#capabilities" onClick={() => setMobileMenuOpen(false)} className="block text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors py-2">Capabilities</a>
               <a href="#api" onClick={() => setMobileMenuOpen(false)} className="block text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors py-2">Custom APIs</a>
+              <Link href="/process" onClick={() => setMobileMenuOpen(false)} className="block text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors py-2">Process</Link>
               <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="block text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors py-2">Contact</a>
               <a 
                 href="#contact" 
@@ -907,6 +909,10 @@ const Home: NextPage = () => {
         </div>
       </section>
 
+      <Testimonials />
+
+      <FAQ />
+
       <footer className="bg-dark-900 border-t border-dark-800 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
@@ -931,6 +937,7 @@ const Home: NextPage = () => {
               <ul className="space-y-2 text-gray-400">
                 <li><a href="#capabilities" className="hover:text-primary-400 transition-colors">Capabilities</a></li>
                 <li><a href="#techstack" className="hover:text-primary-400 transition-colors">Tech Stack</a></li>
+                <li><Link href="/process" className="hover:text-primary-400 transition-colors">Our Process</Link></li>
                 <li><a href="#contact" className="hover:text-primary-400 transition-colors">Contact</a></li>
                 <li><Link href="/privacy" className="hover:text-primary-400 transition-colors">Privacy Policy</Link></li>
                 <li><Link href="/terms" className="hover:text-primary-400 transition-colors">Terms of Service</Link></li>

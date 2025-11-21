@@ -181,9 +181,9 @@ const Process: NextPage = () => {
           <p className="text-xl dark:text-gray-400 light:text-gray-600 mb-8 transition-colors duration-300">
             Let&apos;s discuss your project and how we can help you build something exceptional.
           </p>
-          <a href="/#contact" className="inline-block px-8 py-4 bg-gradient-to-r from-primary-500 to-blue-600 rounded-lg font-bold text-white hover:shadow-2xl hover:shadow-primary-500/50 transition-all transform hover:scale-105">
+          <Link href="/#contact" className="inline-block px-8 py-4 bg-gradient-to-r from-primary-500 to-blue-600 rounded-lg font-bold text-white hover:shadow-2xl hover:shadow-primary-500/50 transition-all transform hover:scale-105">
             Get Started Today
-          </a>
+          </Link>
         </div>
       </section>
     </div>
