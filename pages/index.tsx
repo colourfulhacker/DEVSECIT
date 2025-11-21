@@ -71,11 +71,11 @@ const Home: NextPage = () => {
               <h1 className="text-2xl font-display font-bold text-gradient">DevSecIT</h1>
             </div>
             <div className="hidden md:flex space-x-8">
+              <Link href="/about" className="text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors">About</Link>
               <a href="#services" className="text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors">Services</a>
-              <a href="#techstack" className="text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors">Tech Stack</a>
-              <a href="#capabilities" className="text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors">Capabilities</a>
-              <a href="#api" className="text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors">Custom APIs</a>
-              <Link href="/process" className="text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors">Process</Link>
+              <Link href="/pricing" className="text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors">Pricing</Link>
+              <Link href="/portfolio" className="text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors">Portfolio</Link>
+              <Link href="/virtual-cto" className="text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors">Virtual CTO</Link>
               <a href="#contact" className="text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors">Contact</a>
             </div>
             <div className="flex items-center gap-4">
@@ -105,11 +105,11 @@ const Home: NextPage = () => {
         {mobileMenuOpen && (
           <div className="md:hidden bg-dark-800 dark:bg-dark-800 light:bg-gray-50 border-t border-dark-700 dark:border-dark-700 light:border-gray-200 transition-colors duration-300">
             <div className="px-4 py-4 space-y-3">
+              <Link href="/about" onClick={() => setMobileMenuOpen(false)} className="block text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors py-2">About</Link>
               <a href="#services" onClick={() => setMobileMenuOpen(false)} className="block text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors py-2">Services</a>
-              <a href="#techstack" onClick={() => setMobileMenuOpen(false)} className="block text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors py-2">Tech Stack</a>
-              <a href="#capabilities" onClick={() => setMobileMenuOpen(false)} className="block text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors py-2">Capabilities</a>
-              <a href="#api" onClick={() => setMobileMenuOpen(false)} className="block text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors py-2">Custom APIs</a>
-              <Link href="/process" onClick={() => setMobileMenuOpen(false)} className="block text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors py-2">Process</Link>
+              <Link href="/pricing" onClick={() => setMobileMenuOpen(false)} className="block text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors py-2">Pricing</Link>
+              <Link href="/portfolio" onClick={() => setMobileMenuOpen(false)} className="block text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors py-2">Portfolio</Link>
+              <Link href="/virtual-cto" onClick={() => setMobileMenuOpen(false)} className="block text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors py-2">Virtual CTO</Link>
               <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="block text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors py-2">Contact</a>
               <a 
                 href="#contact" 
@@ -935,9 +935,10 @@ const Home: NextPage = () => {
             <div>
               <h4 className="font-bold text-gray-200 mb-4">Company</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="#capabilities" className="hover:text-primary-400 transition-colors">Capabilities</a></li>
-                <li><a href="#techstack" className="hover:text-primary-400 transition-colors">Tech Stack</a></li>
-                <li><Link href="/process" className="hover:text-primary-400 transition-colors">Our Process</Link></li>
+                <li><Link href="/about" className="hover:text-primary-400 transition-colors">About</Link></li>
+                <li><Link href="/pricing" className="hover:text-primary-400 transition-colors">Pricing</Link></li>
+                <li><Link href="/portfolio" className="hover:text-primary-400 transition-colors">Portfolio</Link></li>
+                <li><Link href="/virtual-cto" className="hover:text-primary-400 transition-colors">Virtual CTO</Link></li>
                 <li><a href="#contact" className="hover:text-primary-400 transition-colors">Contact</a></li>
                 <li><Link href="/privacy" className="hover:text-primary-400 transition-colors">Privacy Policy</Link></li>
                 <li><Link href="/terms" className="hover:text-primary-400 transition-colors">Terms of Service</Link></li>
