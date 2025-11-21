@@ -2,6 +2,9 @@ import type { NextPage } from 'next';
 import Link from 'next/link';
 import { useState } from 'react';
 import SEOHead from '../components/SEOHead';
+import { APISlider } from '../components/APISlider';
+import { APIOrderModal } from '../components/APIOrderModal';
+import { APIService, allAPICategories, topCommonAPIs } from '../lib/apiServices';
 import { 
   generateOrganizationSchema, 
   generateLocalBusinessSchema,
@@ -17,6 +20,7 @@ const Home: NextPage = () => {
     message: ''
   });
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [selectedAPIService, setSelectedAPIService] = useState<APIService | null>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -579,6 +583,67 @@ const Home: NextPage = () => {
         </div>
       </section>
 
+      {/* API Services Section */}
+      <section id="apis" className="py-20 bg-dark-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
+              Explore 50+ <span className="text-gradient">API Integrations</span>
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              Pre-integrated APIs for music, social media, payments, AI, and more. Choose from our curated collection or request a custom API integration.
+            </p>
+          </div>
+
+          {/* Top 7 Common APIs */}
+          <div className="mb-16 bg-dark-800 p-8 rounded-2xl border border-primary-500/30">
+            <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+              ⭐ Top 7 Most Popular APIs
+              <span className="text-sm bg-primary-500/20 text-primary-300 px-3 py-1 rounded-full font-normal">Featured</span>
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {topCommonAPIs.map((api, i) => (
+                <div key={i} className="bg-dark-900 p-4 rounded-xl border border-dark-700 hover:border-primary-500/50 transition-all">
+                  <div className="text-4xl mb-2">{api.icon}</div>
+                  <h4 className="font-bold text-white mb-1">{api.name}</h4>
+                  <p className="text-xs text-gray-400 mb-3">{api.category}</p>
+                  <button
+                    onClick={() => setSelectedAPIService(api)}
+                    className="w-full px-3 py-2 bg-primary-500/20 hover:bg-primary-500/40 text-primary-300 rounded text-sm font-semibold transition-all"
+                  >
+                    Custom Order
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* API Sliders by Category */}
+          {allAPICategories.map((category, i) => (
+            <APISlider
+              key={i}
+              title={`${category.icon} ${category.name}`}
+              apis={category.apis}
+              onOrderClick={setSelectedAPIService}
+            />
+          ))}
+
+          {/* Custom API Request */}
+          <div className="mt-16 bg-gradient-to-r from-primary-500/10 via-blue-500/10 to-primary-500/10 p-8 md:p-12 rounded-2xl border border-primary-500/30">
+            <h3 className="text-2xl font-bold text-white mb-4">Don't see the API you need?</h3>
+            <p className="text-gray-300 mb-6">
+              We support 100+ APIs and can integrate virtually any API into your application. Get in touch to discuss your specific requirements.
+            </p>
+            <a
+              href="#contact"
+              className="inline-block px-8 py-4 bg-gradient-to-r from-primary-500 to-blue-600 rounded-lg font-bold hover:shadow-lg hover:shadow-primary-500/50 transition-all text-white"
+            >
+              Request Custom Integration
+            </a>
+          </div>
+        </div>
+      </section>
+
       <section id="contact" className="py-20 bg-dark-800/50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -719,6 +784,12 @@ const Home: NextPage = () => {
           </div>
         </div>
       </footer>
+
+      {/* API Order Modal */}
+      <APIOrderModal
+        service={selectedAPIService}
+        onClose={() => setSelectedAPIService(null)}
+      />
     </div>
   );
 };
