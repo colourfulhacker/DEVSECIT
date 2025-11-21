@@ -4,7 +4,12 @@ import { useState } from 'react';
 import SEOHead from '../components/SEOHead';
 import { APISlider } from '../components/APISlider';
 import { APIOrderModal } from '../components/APIOrderModal';
-import { ThemeToggle } from '../components/ThemeToggleClient';
+import dynamic from 'next/dynamic';
+
+const ThemeToggle = dynamic(() => import('../components/ThemeToggle').then(mod => ({ default: mod.ThemeToggle })), {
+  ssr: false,
+  loading: () => <div className="w-10 h-10" />
+});
 import { APIService, allAPICategories, topCommonAPIs } from '../lib/apiServices';
 import { 
   generateOrganizationSchema, 
