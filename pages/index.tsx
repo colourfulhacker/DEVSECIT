@@ -11,6 +11,9 @@ const ThemeToggle = dynamic(() => import('../components/ThemeToggle').then(mod =
   loading: () => <div className="w-10 h-10" />
 });
 import { APIService, allAPICategories, topCommonAPIs } from '../lib/apiServices';
+import { FAQ } from '../components/FAQ';
+import { Testimonials } from '../components/Testimonials';
+import { FloatingCTA } from '../components/FloatingCTA';
 import { 
   generateOrganizationSchema, 
   generateLocalBusinessSchema,
