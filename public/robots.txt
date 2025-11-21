@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Allow: /cities/
+Disallow: /api/
+
+Sitemap: https://devsecit.com/sitemap.xml
