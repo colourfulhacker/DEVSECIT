@@ -539,6 +539,113 @@ const Home: NextPage = () => {
         </div>
       </section>
 
+      {/* Virtual CEO Service Section */}
+      <section className="py-20 bg-gradient-to-b from-dark-900 to-dark-800/50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="inline-block mb-6 px-4 py-2 bg-primary-500/10 rounded-full border border-primary-500/30">
+                <span className="text-primary-400 font-semibold text-sm">Premium Service</span>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 leading-tight">
+                Hire a <span className="text-gradient">Virtual CEO</span> for Your Startup
+              </h2>
+              <p className="text-xl text-gray-300 mb-8">
+                Get your tech product MVP ready to launch within a quarter with a seasoned founder and technical leader. Equity-based partnership with 100% legal agreements.
+              </p>
+
+              <div className="space-y-4 mb-8">
+                <div className="flex items-start gap-4">
+                  <div className="text-2xl">🚀</div>
+                  <div>
+                    <h4 className="font-bold text-white mb-1">MVP Ready in 90 Days</h4>
+                    <p className="text-gray-400 text-sm">Complete product development from concept to launch-ready MVP</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="text-2xl">📊</div>
+                  <div>
+                    <h4 className="font-bold text-white mb-1">Up to 10% Equity Stake</h4>
+                    <p className="text-gray-400 text-sm">Performance-based equity partnership aligned with your success</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="text-2xl">⚖️</div>
+                  <div>
+                    <h4 className="font-bold text-white mb-1">100% Legal Agreements</h4>
+                    <p className="text-gray-400 text-sm">Full documentation and compliance from day one</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="text-2xl">🤝</div>
+                  <div>
+                    <h4 className="font-bold text-white mb-1">Long-term Support</h4>
+                    <p className="text-gray-400 text-sm">Ongoing strategic guidance and scaling support beyond launch</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a 
+                  href={`https://wa.me/918101979855?text=Hi DevSecIT! I'm interested in the Virtual CEO service for my startup. Let's discuss how we can collaborate.`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-8 py-4 bg-gradient-to-r from-primary-500 to-blue-600 rounded-lg font-bold hover:shadow-2xl hover:shadow-primary-500/50 transition-all text-white text-center"
+                >
+                  💬 Schedule Discussion
+                </a>
+                <a 
+                  href="#contact" 
+                  className="px-8 py-4 border-2 border-primary-500/50 rounded-lg font-bold hover:bg-primary-500/10 transition-all text-white text-center"
+                >
+                  Learn More
+                </a>
+              </div>
+            </div>
+
+            <div className="bg-dark-800 p-8 rounded-2xl border border-dark-700">
+              <div className="space-y-6">
+                <div className="bg-dark-900 p-6 rounded-xl border border-dark-700">
+                  <h4 className="text-sm font-bold text-primary-400 mb-4">What&apos;s Included:</h4>
+                  <ul className="space-y-3 text-gray-300 text-sm">
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary-400 font-bold">✓</span>
+                      <span>Founder as Virtual CEO (part-time/full-time flexibility)</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary-400 font-bold">✓</span>
+                      <span>Complete MVP development &amp; deployment</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary-400 font-bold">✓</span>
+                      <span>Product strategy &amp; market positioning</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary-400 font-bold">✓</span>
+                      <span>Technology stack optimization</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary-400 font-bold">✓</span>
+                      <span>90-day delivery guarantee</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary-400 font-bold">✓</span>
+                      <span>Post-launch scaling support</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="bg-gradient-to-br from-primary-500/10 to-blue-500/10 p-4 rounded-xl border border-primary-500/30">
+                  <p className="text-xs text-gray-400">
+                    <strong>Best for:</strong> Ambitious startups with great ideas but need technical execution &amp; strategic leadership to succeed.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
