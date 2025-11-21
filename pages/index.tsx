@@ -38,7 +38,7 @@ const Home: NextPage = () => {
     setFormData({ name: '', email: '', company: '', message: '' });
   };
 
-  const whatsappLink = `https://wa.me/918101979855?text=Hi DevSecIT, I'm interested in discussing a project. Let's connect!`;
+  const whatsappLink = `https://wa.me/918101979855?text=Hi DevSecIT, I&apos;m interested in discussing a project. Let&apos;s connect!`;
 
   // SEO Keywords - West Bengal & India focused - Comprehensive keyword strategy
   const seoKeywords = "software development West Bengal, custom API development Kolkata, cybersecurity solutions India, AI integration services, startup MVP development, full-stack development India, web development services West Bengal, mobile app development, enterprise software solutions, digital transformation, API integration, tech company Kolkata, technology outsourcing India, software house West Bengal, IT services India, cloud development, web application development, e-commerce solutions";
@@ -644,7 +644,7 @@ const Home: NextPage = () => {
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <a 
-                  href={`https://wa.me/918101979855?text=Hi DevSecIT! I'm interested in the Virtual CTO service for my startup. Let's discuss how we can build the MVP together.`}
+                  href={`https://wa.me/918101979855?text=Hi DevSecIT! I&apos;m interested in the Virtual CTO service for my startup. Let&apos;s discuss how we can build the MVP together.`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-8 py-4 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg font-bold hover:shadow-2xl hover:shadow-blue-500/50 transition-all text-white text-center"
