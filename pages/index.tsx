@@ -34,22 +34,22 @@ const Home: NextPage = () => {
 
   const whatsappLink = `https://wa.me/918101979855?text=Hi DevSecIT, I'm interested in discussing a project. Let's connect!`;
 
-  // SEO Keywords - West Bengal & India focused
-  const seoKeywords = "software development West Bengal, cybersecurity solutions India, custom API development, AI integration Kolkata, full stack development, digital transformation, web development services, mobile app development, enterprise solutions, startup technology";
+  // SEO Keywords - West Bengal & India focused - Comprehensive keyword strategy
+  const seoKeywords = "software development West Bengal, custom API development Kolkata, cybersecurity solutions India, AI integration services, startup MVP development, full-stack development India, web development services West Bengal, mobile app development, enterprise software solutions, digital transformation, API integration, tech company Kolkata, technology outsourcing India, software house West Bengal, IT services India, cloud development, web application development, e-commerce solutions";
 
   // Schema.org structured data
   const schemas = [
     generateOrganizationSchema(),
     generateLocalBusinessSchema(),
-    generateServiceSchema("Custom Software Development", "Professional software development services in West Bengal, India with expertise in full-stack development, mobile applications, and enterprise solutions"),
+    generateServiceSchema("Custom Software Development", "Professional custom software development and cybersecurity solutions in West Bengal, India with expertise in full-stack development, API integration, mobile applications, AI/ML, and enterprise-grade solutions"),
     generateAggregateOfferSchema()
   ];
 
   return (
     <div className="min-h-screen bg-dark-900">
       <SEOHead
-        title="DevSecIT - Premium Software Development & Cybersecurity Solutions | West Bengal"
-        description="Elite software development and cybersecurity solutions in West Bengal, India. Custom development, AI integration, rapid 7-day API creation. Serving startups to enterprises across India and globally."
+        title="DevSecIT - Custom Software Development & API Integration | West Bengal, India"
+        description="Leading custom software development and cybersecurity solutions company in West Bengal, India. Specializing in API integration, MVP development, AI automation, and startup tech products. 500+ projects delivered. Get lifetime free hosting."
         keywords={seoKeywords}
         canonicalUrl="https://devsecit.com"
         schemas={schemas}
