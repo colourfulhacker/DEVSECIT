@@ -122,9 +122,8 @@ const Home: NextPage = () => {
               <span className="text-primary-400 font-semibold text-sm">Elite Development & Cybersecurity</span>
             </div>
             <h1 className="text-5xl md:text-7xl font-display font-bold mb-6 leading-tight">
-              Transform Your Vision
-              <br />
-              <span className="text-gradient">Into Secure Reality</span>
+              Custom Software Development <br />
+              <span className="text-gradient">& API Integration in West Bengal</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-400 mb-8 max-w-3xl mx-auto leading-relaxed">
               Full-spectrum software development, cybersecurity integration, and AI-powered solutions. 
@@ -147,12 +146,12 @@ const Home: NextPage = () => {
             </div>
             <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
               {[
-                { value: '500+', label: 'Projects Delivered' },
-                { value: '99.9%', label: 'Uptime SLA' },
-                { value: '7 Days', label: 'API MVP' },
-                { value: '24/7', label: 'Support' }
+                { value: '500+', label: 'Projects Delivered', role: 'doc-subtitle' },
+                { value: '99.9%', label: 'Uptime SLA', role: 'doc-subtitle' },
+                { value: '7 Days', label: 'API MVP Delivery', role: 'doc-subtitle' },
+                { value: '24/7', label: 'Expert Support', role: 'doc-subtitle' }
               ].map((stat, i) => (
-                <div key={i} className="animate-slide-up" style={{ animationDelay: `${i * 0.1}s` }}>
+                <div key={i} className="animate-slide-up" style={{ animationDelay: `${i * 0.1}s` }} role="contentinfo">
                   <div className="text-3xl md:text-4xl font-bold text-gradient">{stat.value}</div>
                   <div className="text-gray-400 mt-1">{stat.label}</div>
                 </div>

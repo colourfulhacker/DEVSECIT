@@ -3,12 +3,34 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 const Privacy: NextPage = () => {
+  const privacySchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Privacy Policy - DevSecIT",
+    "description": "Privacy policy for DevSecIT software development company in West Bengal, India",
+    "url": "https://devsecit.com/privacy",
+    "isPartOf": {
+      "@type": "Website",
+      "name": "DevSecIT",
+      "url": "https://devsecit.com"
+    }
+  };
+
   return (
     <div className="min-h-screen bg-dark-900">
       <Head>
-        <title>Privacy Policy - DevSecIT</title>
-        <meta name="description" content="DevSecIT Privacy Policy - How we collect, use, and protect your information." />
+        <title>Privacy Policy - DevSecIT | Software Development West Bengal</title>
+        <meta name="description" content="DevSecIT Privacy Policy - Data protection and privacy practices for software development services in West Bengal, India. Secure and compliant." />
+        <meta name="keywords" content="privacy policy, data protection, software company India, cybersecurity, GDPR, data privacy" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="canonical" href="https://devsecit.com/privacy" />
+        <meta property="og:title" content="Privacy Policy - DevSecIT" />
+        <meta property="og:description" content="How DevSecIT protects your data and privacy" />
+        <meta property="og:url" content="https://devsecit.com/privacy" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(privacySchema) }}
+        />
       </Head>
 
       <nav className="fixed top-0 w-full z-50 bg-dark-900/95 backdrop-blur-lg border-b border-dark-700">

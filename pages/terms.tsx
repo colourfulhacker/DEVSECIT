@@ -3,12 +3,34 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 const Terms: NextPage = () => {
+  const termsSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Terms of Service - DevSecIT",
+    "description": "Terms of service for DevSecIT software development and API integration services",
+    "url": "https://devsecit.com/terms",
+    "isPartOf": {
+      "@type": "Website",
+      "name": "DevSecIT",
+      "url": "https://devsecit.com"
+    }
+  };
+
   return (
     <div className="min-h-screen bg-dark-900">
       <Head>
-        <title>Terms of Service - DevSecIT</title>
-        <meta name="description" content="DevSecIT Terms of Service - Terms and conditions for using our services." />
+        <title>Terms of Service - DevSecIT | Custom Software Development</title>
+        <meta name="description" content="DevSecIT Terms of Service - Legal terms and conditions for custom software development, API integration, and cybersecurity services in West Bengal, India." />
+        <meta name="keywords" content="terms of service, service agreement, software development terms, API integration terms, contract terms" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="canonical" href="https://devsecit.com/terms" />
+        <meta property="og:title" content="Terms of Service - DevSecIT" />
+        <meta property="og:description" content="Terms and conditions for DevSecIT services" />
+        <meta property="og:url" content="https://devsecit.com/terms" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(termsSchema) }}
+        />
       </Head>
 
       <nav className="fixed top-0 w-full z-50 bg-dark-900/95 backdrop-blur-lg border-b border-dark-700">
