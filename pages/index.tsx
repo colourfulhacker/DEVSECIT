@@ -4,7 +4,7 @@ import { useState } from 'react';
 import SEOHead from '../components/SEOHead';
 import { APISlider } from '../components/APISlider';
 import { APIOrderModal } from '../components/APIOrderModal';
-import { ThemeToggle } from '../components/ThemeToggle';
+import { ThemeToggle } from '../components/ThemeToggleClient';
 import { APIService, allAPICategories, topCommonAPIs } from '../lib/apiServices';
 import { 
   generateOrganizationSchema, 

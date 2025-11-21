@@ -1,8 +1,10 @@
 'use client';
 
-import { useTheme } from '../context/ThemeContext';
+import dynamic from 'next/dynamic';
+import { Suspense } from 'react';
 
-export const ThemeToggle = () => {
+const ThemeToggleInner = () => {
+  const { useTheme } = require('../context/ThemeContext');
   const { isDark, toggleTheme } = useTheme();
 
   return (
@@ -32,3 +34,8 @@ export const ThemeToggle = () => {
     </button>
   );
 };
+
+export const ThemeToggle = dynamic(() => Promise.resolve(ThemeToggleInner), {
+  ssr: false,
+  loading: () => <div className="w-10 h-10" />
+});
