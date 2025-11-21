@@ -1,7 +1,13 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
+import SEOHead from '../components/SEOHead';
+import { 
+  generateOrganizationSchema, 
+  generateLocalBusinessSchema,
+  generateServiceSchema,
+  generateAggregateOfferSchema 
+} from '../lib/seoSchema';
 
 const Home: NextPage = () => {
   const [formData, setFormData] = useState({
@@ -14,16 +20,36 @@ const Home: NextPage = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    // Send form data to sales email via mailto
+    const mailtoLink = `mailto:sales@devsecit.com?subject=New Project Inquiry from ${formData.name}&body=${encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.company}\n\nProject Details:\n${formData.message}`
+    )}`;
+    window.location.href = mailtoLink;
+    setFormData({ name: '', email: '', company: '', message: '' });
   };
+
+  const whatsappLink = `https://wa.me/918101979855?text=Hi DevSecIT, I'm interested in discussing a project. Let's connect!`;
+
+  // SEO Keywords - West Bengal & India focused
+  const seoKeywords = "software development West Bengal, cybersecurity solutions India, custom API development, AI integration Kolkata, full stack development, digital transformation, web development services, mobile app development, enterprise solutions, startup technology";
+
+  // Schema.org structured data
+  const schemas = [
+    generateOrganizationSchema(),
+    generateLocalBusinessSchema(),
+    generateServiceSchema("Custom Software Development", "Professional software development services in West Bengal, India with expertise in full-stack development, mobile applications, and enterprise solutions"),
+    generateAggregateOfferSchema()
+  ];
 
   return (
     <div className="min-h-screen bg-dark-900">
-      <Head>
-        <title>DevSecIT - Elite Software Development & Cybersecurity Solutions</title>
-        <meta name="description" content="Full-spectrum software development and cybersecurity solutions. Custom development, AI integration, and rapid API creation in 7 days." />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <SEOHead
+        title="DevSecIT - Premium Software Development & Cybersecurity Solutions | West Bengal"
+        description="Elite software development and cybersecurity solutions in West Bengal, India. Custom development, AI integration, rapid 7-day API creation. Serving startups to enterprises across India and globally."
+        keywords={seoKeywords}
+        canonicalUrl="https://devsecit.com"
+        schemas={schemas}
+      />
 
       <nav className="fixed top-0 w-full z-50 bg-dark-900/95 backdrop-blur-lg border-b border-dark-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -567,7 +593,7 @@ const Home: NextPage = () => {
           <form onSubmit={handleSubmit} className="bg-dark-900 p-8 md:p-12 rounded-2xl border border-dark-700">
             <div className="grid md:grid-cols-2 gap-6 mb-6">
               <div>
-                <label className="block text-gray-300 mb-2 font-semibold">Name</label>
+                <label className="block text-gray-300 mb-2 font-semibold">Name *</label>
                 <input
                   type="text"
                   required
@@ -575,10 +601,11 @@ const Home: NextPage = () => {
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   className="w-full px-4 py-3 bg-dark-800 border border-dark-700 rounded-lg focus:border-primary-500 focus:outline-none text-gray-100 transition-colors"
                   placeholder="John Doe"
+                  aria-label="Your Name"
                 />
               </div>
               <div>
-                <label className="block text-gray-300 mb-2 font-semibold">Email</label>
+                <label className="block text-gray-300 mb-2 font-semibold">Email *</label>
                 <input
                   type="email"
                   required
@@ -586,6 +613,7 @@ const Home: NextPage = () => {
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   className="w-full px-4 py-3 bg-dark-800 border border-dark-700 rounded-lg focus:border-primary-500 focus:outline-none text-gray-100 transition-colors"
                   placeholder="john@company.com"
+                  aria-label="Your Email"
                 />
               </div>
             </div>
@@ -597,10 +625,11 @@ const Home: NextPage = () => {
                 onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                 className="w-full px-4 py-3 bg-dark-800 border border-dark-700 rounded-lg focus:border-primary-500 focus:outline-none text-gray-100 transition-colors"
                 placeholder="Your Company"
+                aria-label="Company Name"
               />
             </div>
             <div className="mb-6">
-              <label className="block text-gray-300 mb-2 font-semibold">Project Details</label>
+              <label className="block text-gray-300 mb-2 font-semibold">Project Details *</label>
               <textarea
                 required
                 value={formData.message}
@@ -608,27 +637,38 @@ const Home: NextPage = () => {
                 rows={5}
                 className="w-full px-4 py-3 bg-dark-800 border border-dark-700 rounded-lg focus:border-primary-500 focus:outline-none text-gray-100 transition-colors resize-none"
                 placeholder="Tell us about your project, timeline, and requirements..."
+                aria-label="Project Details"
               />
             </div>
-            <button
-              type="submit"
-              className="w-full px-8 py-4 bg-gradient-to-r from-primary-500 to-blue-600 rounded-lg font-bold text-lg hover:shadow-2xl hover:shadow-primary-500/50 transition-all transform hover:scale-105"
-            >
-              Send Message
-            </button>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <button
+                type="submit"
+                className="flex-1 px-8 py-4 bg-gradient-to-r from-primary-500 to-blue-600 rounded-lg font-bold text-lg hover:shadow-2xl hover:shadow-primary-500/50 transition-all transform hover:scale-105"
+              >
+                📧 Send via Email
+              </button>
+              <a
+                href={whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 rounded-lg font-bold text-lg hover:shadow-2xl hover:shadow-green-500/50 transition-all transform hover:scale-105 text-center"
+              >
+                💬 WhatsApp Chat
+              </a>
+            </div>
           </form>
 
           <div className="mt-12 grid md:grid-cols-3 gap-6 text-center">
-            <div className="bg-dark-900 p-6 rounded-xl border border-dark-700">
+            <a href="mailto:sales@devsecit.com" className="bg-dark-900 p-6 rounded-xl border border-dark-700 hover:border-primary-500/50 transition-all">
               <div className="text-3xl mb-2">📧</div>
-              <div className="font-semibold text-gray-300">Email</div>
-              <div className="text-primary-400">contact@devsecit.com</div>
-            </div>
-            <div className="bg-dark-900 p-6 rounded-xl border border-dark-700">
+              <div className="font-semibold text-gray-300">Email Sales</div>
+              <div className="text-primary-400 hover:text-primary-300">sales@devsecit.com</div>
+            </a>
+            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="bg-dark-900 p-6 rounded-xl border border-dark-700 hover:border-green-500/50 transition-all">
               <div className="text-3xl mb-2">💬</div>
-              <div className="font-semibold text-gray-300">Live Chat</div>
-              <div className="text-primary-400">Available 24/7</div>
-            </div>
+              <div className="font-semibold text-gray-300">WhatsApp</div>
+              <div className="text-green-400 hover:text-green-300">+91-8101979855</div>
+            </a>
             <div className="bg-dark-900 p-6 rounded-xl border border-dark-700">
               <div className="text-3xl mb-2">⚡</div>
               <div className="font-semibold text-gray-300">Response Time</div>
