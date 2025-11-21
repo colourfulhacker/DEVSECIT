@@ -9,6 +9,28 @@ The project is configured for deployment on Replit with custom port settings (50
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
+Lifetime free hosting offer with daily popup after 40 seconds.
+
+## Recent Features (Latest Session)
+
+### Promotional Features
+- **Lifetime Hosting Popup**: Modal that appears 40 seconds after page load
+  - Displays once per day per user (localStorage tracking)
+  - Promotes "Lifetime Free Hosting" offer for website development
+  - WhatsApp integration for lead capture
+  - Auto-closes after selection
+
+### API Services Marketplace
+- Refocused on **Custom API Development & Integration** as primary offering
+- 50+ pre-integrated APIs across 7 categories (Music, Social Media, Payments, AI/ML, Video, Weather, Maps)
+- Interactive sliders for API browsing
+- Custom order forms with WhatsApp direct messaging
+- West Bengal/India SEO optimization with Schema.org structured data
+
+### Contact & Lead Generation
+- Dual contact methods: Email (mailto:sales@devsecit.com) + WhatsApp (wa.me/918101979855)
+- Form pre-fills with project details for WhatsApp messaging
+- API integration modal with project details capture
 
 ## System Architecture
 
