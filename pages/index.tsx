@@ -1022,12 +1022,17 @@ const Home: NextPage = () => {
             </div>
           </div>
           <div className="border-t border-dark-800 pt-8">
-            <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-gray-400 text-sm">
-              <p>&copy; 2025 DevSecIT. All rights reserved. Built with excellence and secured by design.</p>
+            <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-gray-400 text-sm mb-4">
+              <p>&copy; 2025 DevSecIT. All rights reserved. Built with excellence and secured by design. <span className="text-primary-400">Maintained and powered by <span className="font-semibold">DEVSECIT</span></span></p>
               <div className="flex gap-6">
                 <Link href="/privacy" className="hover:text-primary-400 transition-colors">Privacy</Link>
                 <Link href="/terms" className="hover:text-primary-400 transition-colors">Terms</Link>
               </div>
+            </div>
+            <div className="flex justify-center pt-4 border-t border-dark-800">
+              <p className="text-gray-500 text-xs">
+                Developed by <a href="https://www.linkedin.com/in/colourfulhacker/" target="_blank" rel="noopener noreferrer" className="text-primary-400 hover:text-primary-300 font-semibold transition-colors">Jit Banerjee</a>
+              </p>
             </div>
           </div>
         </div>
