@@ -15,27 +15,25 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) =
 
   useEffect(() => {
     // Only access localStorage after component is mounted on client
-    const saved = localStorage.getItem('theme');
-    setIsDark(saved === 'dark' || !saved); // Default to dark if not saved
-    document.documentElement.setAttribute('data-theme', saved === 'light' ? 'light' : 'dark');
     setIsMounted(true);
+    const saved = localStorage.getItem('theme');
+    const theme = saved === 'light' ? 'light' : 'dark';
+    setIsDark(theme === 'dark');
+    document.documentElement.setAttribute('data-theme', theme);
   }, []);
 
   const toggleTheme = () => {
     const newTheme = !isDark;
     setIsDark(newTheme);
-    localStorage.setItem('theme', newTheme ? 'dark' : 'light');
-    document.documentElement.setAttribute('data-theme', newTheme ? 'dark' : 'light');
+    const themeValue = newTheme ? 'dark' : 'light';
+    localStorage.setItem('theme', themeValue);
+    document.documentElement.setAttribute('data-theme', themeValue);
   };
 
-  // Return context immediately with default dark theme for SSR
-  // The effect above will update it on client-side after mount
   return (
-    <div suppressHydrationWarning>
-      <ThemeContext.Provider value={{ isDark, toggleTheme }}>
-        {children}
-      </ThemeContext.Provider>
-    </div>
+    <ThemeContext.Provider value={{ isDark, toggleTheme }}>
+      {children}
+    </ThemeContext.Provider>
   );
 };
 

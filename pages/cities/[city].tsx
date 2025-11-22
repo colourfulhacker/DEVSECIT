@@ -1,5 +1,3 @@
-'use client';
-
 import type { NextPage, GetStaticProps, GetStaticPaths } from 'next';
 import Link from 'next/link';
 import { useState } from 'react';
