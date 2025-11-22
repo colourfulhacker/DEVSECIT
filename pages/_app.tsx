@@ -2,6 +2,7 @@ import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import dynamic from 'next/dynamic'
 import { ThemeProvider } from '../context/ThemeContext'
+import { MountedOnly } from '../components/MountedOnly'
 
 const FloatingCTA = dynamic(() => import('../components/FloatingCTA').then(mod => ({ default: mod.FloatingCTA })), {
   ssr: false,
@@ -16,7 +17,9 @@ const HostingPromoPopup = dynamic(() => import('../components/HostingPromoPopup'
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider>
-      <Component {...pageProps} />
+      <MountedOnly>
+        <Component {...pageProps} />
+      </MountedOnly>
       <HostingPromoPopup />
       <FloatingCTA />
     </ThemeProvider>

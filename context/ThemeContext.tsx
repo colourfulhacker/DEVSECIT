@@ -11,10 +11,12 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [isDark, setIsDark] = useState(true);
-  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    setIsMounted(true);
+    const saved = localStorage.getItem('theme');
+    const theme = saved === 'light' ? 'light' : 'dark';
+    setIsDark(theme === 'dark');
+    document.documentElement.setAttribute('data-theme', theme);
   }, []);
 
   const toggleTheme = () => {
@@ -27,7 +29,7 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) =
 
   return (
     <ThemeContext.Provider value={{ isDark, toggleTheme }}>
-      {isMounted ? children : null}
+      {children}
     </ThemeContext.Provider>
   );
 };
