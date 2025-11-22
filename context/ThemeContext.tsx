@@ -11,8 +11,10 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [isDark, setIsDark] = useState(true);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    setIsMounted(true);
     const saved = localStorage.getItem('theme');
     const theme = saved === 'light' ? 'light' : 'dark';
     setIsDark(theme === 'dark');
@@ -29,7 +31,7 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) =
 
   return (
     <ThemeContext.Provider value={{ isDark, toggleTheme }}>
-      {children}
+      {isMounted ? children : <div suppressHydrationWarning>{children}</div>}
     </ThemeContext.Provider>
   );
 };

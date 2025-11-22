@@ -8,7 +8,6 @@ export const ThemeToggle = () => {
   return (
     <button
       onClick={toggleTheme}
-      suppressHydrationWarning
       className={`relative inline-flex items-center justify-center w-10 h-10 rounded-lg transition-colors ${
         isDark
           ? 'bg-dark-800 hover:bg-dark-700 text-yellow-400'
