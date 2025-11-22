@@ -194,6 +194,11 @@ html[data-theme='light'] {
     @apply transition-all duration-300 hover:scale-105 hover:shadow-2xl;
   }
 
+  /* Light mode gradient override */
+  html[data-theme='light'] .bg-gradient-to-br {
+    background-image: linear-gradient(to bottom right, #f3f4f6, #f9fafb);
+  }
+
   /* Ensure smooth color transitions */
   html[data-theme='light'] {
     @apply transition-colors duration-300;
