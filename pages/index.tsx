@@ -787,14 +787,14 @@ const Home: NextPage = () => {
           </div>
 
           {/* Main CTA - Custom API Integration */}
-          <div className="mt-16 bg-gradient-to-r from-primary-500/20 via-blue-500/20 to-primary-500/20 p-8 md:p-12 rounded-2xl border-2 border-primary-500/50">
+          <div className="mt-16 dark:bg-gradient-to-r dark:from-primary-500/20 dark:via-blue-500/20 dark:to-primary-500/20 light:bg-gradient-to-r light:from-primary-100 light:via-blue-100 light:to-primary-100 p-8 md:p-12 rounded-2xl dark:border-2 dark:border-primary-500/50 light:border-2 light:border-primary-300/50 transition-colors duration-300">
             <div className="flex flex-col md:flex-row items-center gap-8">
               <div className="flex-1">
-                <h3 className="text-3xl font-bold text-white mb-4">Have a Unique Use Case?</h3>
-                <p className="text-gray-300 mb-4">
+                <h3 className="text-3xl font-bold dark:text-white light:text-gray-900 mb-4 transition-colors duration-300">Have a Unique Use Case?</h3>
+                <p className="dark:text-gray-300 light:text-gray-700 mb-4 transition-colors duration-300">
                   Whether you need to integrate a niche API, build a custom API from scratch, or combine multiple services into one unified solution—we handle it all. Tell us what you need, and we&apos;ll build it.
                 </p>
-                <p className="text-gray-400 text-sm">
+                <p className="dark:text-gray-400 light:text-gray-600 text-sm transition-colors duration-300">
                   <strong>Timeline:</strong> Simple integrations in 7 days • <strong>Scope:</strong> From single APIs to complex multi-service platforms
                 </p>
               </div>
