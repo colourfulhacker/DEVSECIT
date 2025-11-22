@@ -2,7 +2,7 @@ import { Html, Head, Main, NextScript } from 'next/document'
 
 export default function Document() {
   return (
-    <Html>
+    <Html suppressHydrationWarning lang="en">
       <Head />
       <body>
         <script
@@ -12,7 +12,9 @@ export default function Document() {
                 try {
                   const theme = localStorage.getItem('theme') || 'dark';
                   document.documentElement.setAttribute('data-theme', theme);
-                } catch (e) {}
+                } catch (e) {
+                  document.documentElement.setAttribute('data-theme', 'dark');
+                }
               })()
             `,
           }}
