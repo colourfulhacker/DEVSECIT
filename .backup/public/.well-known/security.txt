@@ -1,0 +1,3 @@
+Contact: security@devsecit.com
+Expires: 2025-12-21T00:00:00.000Z
+Preferred-Languages: en
