@@ -26,7 +26,6 @@ html[data-theme='light'] {
     @apply bg-white text-gray-900 transition-colors duration-300;
   }
 
-  /* Headings in light mode */
   html[data-theme='light'] h1,
   html[data-theme='light'] h2,
   html[data-theme='light'] h3,
@@ -36,12 +35,10 @@ html[data-theme='light'] {
     @apply text-gray-900 transition-colors duration-300;
   }
 
-  /* Paragraphs in light mode */
   html[data-theme='light'] p {
     @apply text-gray-800 transition-colors duration-300;
   }
 
-  /* Links in light mode */
   html[data-theme='light'] a {
     @apply text-primary-600 transition-colors duration-300;
   }
@@ -52,165 +49,79 @@ html[data-theme='light'] {
 }
 
 @layer components {
-  /* Navigation bar light mode */
+  /* Override ALL dark: prefixed classes for light mode */
+  html[data-theme='light'] .dark\:bg-dark-900 { @apply bg-white !important; }
+  html[data-theme='light'] .dark\:bg-dark-800 { @apply bg-gray-50 !important; }
+  html[data-theme='light'] .dark\:bg-dark-700 { @apply bg-gray-100 !important; }
+  html[data-theme='light'] .dark\:bg-dark-600 { @apply bg-gray-200 !important; }
+  html[data-theme='light'] .dark\:bg-dark-900\/50 { @apply bg-gray-100/50 !important; }
+  html[data-theme='light'] .dark\:bg-dark-900\/20 { @apply bg-gray-100/20 !important; }
+  html[data-theme='light'] .dark\:bg-dark-800\/50 { @apply bg-gray-50/50 !important; }
+  
+  html[data-theme='light'] .dark\:text-white { @apply text-gray-900 !important; }
+  html[data-theme='light'] .dark\:text-gray-100 { @apply text-gray-900 !important; }
+  html[data-theme='light'] .dark\:text-gray-200 { @apply text-gray-800 !important; }
+  html[data-theme='light'] .dark\:text-gray-300 { @apply text-gray-700 !important; }
+  html[data-theme='light'] .dark\:text-gray-400 { @apply text-gray-600 !important; }
+  html[data-theme='light'] .dark\:text-gray-500 { @apply text-gray-600 !important; }
+  
+  html[data-theme='light'] .dark\:border-dark-700 { @apply border-gray-200 !important; }
+  html[data-theme='light'] .dark\:border-dark-600 { @apply border-gray-300 !important; }
+  html[data-theme='light'] .dark\:border-dark-800 { @apply border-gray-200 !important; }
+  html[data-theme='light'] .dark\:border-primary-500\/30 { @apply border-primary-300 !important; }
+  
+  html[data-theme='light'] .dark\:hover\:bg-dark-700:hover { @apply bg-gray-200 !important; }
+  html[data-theme='light'] .dark\:hover\:bg-dark-600:hover { @apply bg-gray-300 !important; }
+  html[data-theme='light'] .dark\:hover\:border-primary-500\/50:hover { @apply border-primary-400 !important; }
+  
+  html[data-theme='light'] .dark\:focus\:border-primary-500:focus { @apply border-primary-400 !important; }
+  
+  html[data-theme='light'] input.dark\:bg-dark-800,
+  html[data-theme='light'] textarea.dark\:bg-dark-800 { @apply bg-white !important; }
+  
+  html[data-theme='light'] input.dark\:bg-dark-700,
+  html[data-theme='light'] textarea.dark\:bg-dark-700 { @apply bg-white !important; }
+  
+  html[data-theme='light'] input.dark\:border-dark-600,
+  html[data-theme='light'] textarea.dark\:border-dark-600 { @apply border-gray-300 !important; }
+  
+  html[data-theme='light'] input.dark\:text-white,
+  html[data-theme='light'] textarea.dark\:text-white { @apply text-gray-900 !important; }
+  
+  html[data-theme='light'] input.dark\:placeholder-gray-500::placeholder,
+  html[data-theme='light'] textarea.dark\:placeholder-gray-500::placeholder { @apply text-gray-400 !important; }
+
+  html[data-theme='light'] .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-600 via-primary-500 to-primary-700;
+  }
+
   html[data-theme='light'] nav {
     @apply bg-white/95 border-gray-200 transition-colors duration-300 !important;
   }
 
-  html[data-theme='light'] nav .text-gray-300 {
+  html[data-theme='light'] nav .text-gray-300,
+  html[data-theme='light'] nav .dark\:text-gray-300 {
     @apply text-gray-700 transition-colors duration-300;
   }
 
-  /* Mobile menu light mode */
-  html[data-theme='light'] .mobile-menu {
-    @apply bg-gray-50 border-gray-200 transition-colors duration-300;
+  html[data-theme='light'] .bg-gradient-to-r {
+    @apply text-white;
   }
 
-  html[data-theme='light'] .mobile-menu .text-gray-300 {
-    @apply text-gray-700 transition-colors duration-300;
+  html[data-theme='light'] button {
+    @apply transition-colors duration-300;
   }
 
-  /* Cards in light mode */
-  html[data-theme='light'] .card,
-  html[data-theme='light'] [class*='card-'] {
-    @apply bg-gray-50 border-gray-200 text-gray-900 transition-colors duration-300;
-  }
-
-  /* Sections in light mode */
   html[data-theme='light'] section {
     @apply bg-white text-gray-900 transition-colors duration-300;
   }
 
-  /* Buttons in light mode - comprehensive fix */
-  html[data-theme='light'] button,
-  html[data-theme='light'] a[class*='px-'][class*='py-'] {
-    @apply transition-colors duration-300;
+  html[data-theme='light'] section.light\:bg-white {
+    @apply bg-white;
   }
 
-  /* Gradient buttons - ensure text is always white */
-  html[data-theme='light'] button:has(.bg-gradient-to-r),
-  html[data-theme='light'] .bg-gradient-to-r:not([class*='light:bg']) {
-    @apply text-white transition-colors duration-300;
-  }
-
-  /* Border buttons in light mode - enhance visibility */
-  html[data-theme='light'] .border-2,
-  html[data-theme='light'] [class*='border-primary'],
-  html[data-theme='light'] [class*='border-blue'] {
-    @apply border-gray-400 transition-colors duration-300 !important;
-  }
-
-  /* Light mode button text must be dark for contrast */
-  html[data-theme='light'] .light\:text-blue-700,
-  html[data-theme='light'] .light\:text-gray-700,
-  html[data-theme='light'] .light\:text-primary-600 {
-    @apply text-gray-900 font-semibold transition-colors duration-300;
-  }
-
-  /* Ensure button borders are visible */
-  html[data-theme='light'] .border-primary-400,
-  html[data-theme='light'] .border-blue-400 {
-    @apply border-primary-500 transition-colors duration-300 !important;
-  }
-
-  /* Light mode button hover states */
-  html[data-theme='light'] .light\:hover\:bg-blue-100:hover,
-  html[data-theme='light'] .light\:hover\:bg-primary-50:hover {
-    @apply bg-gray-200 transition-colors duration-300 !important;
-  }
-
-  /* Form elements in light mode */
-  html[data-theme='light'] input,
-  html[data-theme='light'] textarea,
-  html[data-theme='light'] select {
-    @apply bg-white border-gray-300 text-gray-900 transition-colors duration-300;
-  }
-
-  html[data-theme='light'] input::placeholder,
-  html[data-theme='light'] textarea::placeholder {
-    @apply text-gray-500;
-  }
-
-  /* Lists in light mode */
-  html[data-theme='light'] li {
-    @apply text-gray-800 transition-colors duration-300;
-  }
-
-  /* Labels in light mode */
-  html[data-theme='light'] label {
-    @apply text-gray-700 transition-colors duration-300;
-  }
-
-  /* Table text in light mode */
-  html[data-theme='light'] td,
-  html[data-theme='light'] th {
-    @apply text-gray-900 transition-colors duration-300;
-  }
-
-  /* Strong/Bold text in light mode */
-  html[data-theme='light'] strong,
-  html[data-theme='light'] b {
-    @apply text-gray-900 transition-colors duration-300;
-  }
-
-  /* Small text in light mode */
-  html[data-theme='light'] small {
-    @apply text-gray-700 transition-colors duration-300;
-  }
-
-  /* Span text in light mode */
-  html[data-theme='light'] span {
-    @apply text-gray-900 transition-colors duration-300;
-  }
-
-  /* Text with specific color classes - override in light mode */
-  html[data-theme='light'] .text-gray-300,
-  html[data-theme='light'] .text-gray-400,
-  html[data-theme='light'] .text-gray-100 {
-    @apply text-gray-700 transition-colors duration-300;
-  }
-
-  html[data-theme='light'] .text-gray-500 {
-    @apply text-gray-600 transition-colors duration-300;
-  }
-
-  /* Primary text colors in light mode */
-  html[data-theme='light'] .text-primary-400 {
-    @apply text-primary-600 transition-colors duration-300;
-  }
-
-  html[data-theme='light'] .text-primary-300 {
-    @apply text-primary-700 transition-colors duration-300;
-  }
-
-  html[data-theme='light'] .text-primary-500 {
-    @apply text-primary-600 transition-colors duration-300;
-  }
-
-  /* Borders in light mode */
-  html[data-theme='light'] [class*='border'] {
-    @apply border-gray-200 transition-colors duration-300;
-  }
-
-  html[data-theme='light'] [class*='border-dark'] {
-    @apply border-gray-200 transition-colors duration-300;
-  }
-
-  /* Backgrounds in light mode */
-  html[data-theme='light'] [class*='bg-dark-'] {
-    @apply bg-gray-50 transition-colors duration-300;
-  }
-
-  html[data-theme='light'] .bg-dark-900 {
-    @apply bg-white transition-colors duration-300;
-  }
-
-  html[data-theme='light'] .bg-dark-800 {
-    @apply bg-gray-50 transition-colors duration-300;
-  }
-
-  html[data-theme='light'] .bg-dark-700 {
-    @apply bg-gray-100 transition-colors duration-300;
+  html[data-theme='light'] section.light\:bg-gray-50 {
+    @apply bg-gray-50;
   }
 }
 
@@ -227,28 +138,23 @@ html[data-theme='light'] {
     @apply transition-all duration-300 hover:scale-105 hover:shadow-2xl;
   }
 
-  /* Light mode gradient override */
   html[data-theme='light'] .bg-gradient-to-br {
-    background-image: linear-gradient(to bottom right, #f3f4f6, #f9fafb);
+    background-image: linear-gradient(to bottom right, #f3f4f6, #f9fafb) !important;
   }
 
-  /* Ensure smooth color transitions */
   html[data-theme='light'] {
     @apply transition-colors duration-300;
   }
 }
 
-/* Global smooth transitions */
 * {
   @apply transition-colors duration-300;
 }
 
-/* Fast transitions for interactive elements */
 button, a, input, textarea {
   @apply transition-all duration-200;
 }
 
-/* Ensure all text is visible in light mode */
 html[data-theme='light'] * {
   color: inherit;
 }
