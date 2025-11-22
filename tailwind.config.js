@@ -4,6 +4,12 @@ module.exports = {
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
   ],
+  plugins: [
+    // Add support for light: variant using data-theme attribute
+    function({ addVariant }) {
+      addVariant('light', 'html[data-theme="light"] &');
+    },
+  ],
   theme: {
     extend: {
       colors: {
@@ -71,5 +77,4 @@ module.exports = {
       },
     },
   },
-  plugins: [],
 };
