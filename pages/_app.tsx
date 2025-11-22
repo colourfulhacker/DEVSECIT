@@ -1,10 +1,13 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import dynamic from 'next/dynamic'
-import HostingPromoPopup from '../components/HostingPromoPopup'
 import { ThemeProvider } from '../context/ThemeContext'
 
 const FloatingCTA = dynamic(() => import('../components/FloatingCTA').then(mod => ({ default: mod.FloatingCTA })), {
+  ssr: false
+})
+
+const HostingPromoPopup = dynamic(() => import('../components/HostingPromoPopup').then(mod => ({ default: mod.HostingPromoPopup })), {
   ssr: false
 })
 
