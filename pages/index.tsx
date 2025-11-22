@@ -465,22 +465,22 @@ const Home: NextPage = () => {
         </div>
       </section>
 
-      <section id="api" className="py-20 bg-dark-800/50">
+      <section id="api" className="py-20 dark:bg-dark-800/50 light:bg-gray-100/50 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-br from-primary-900/30 to-blue-900/30 rounded-3xl p-12 md:p-16 border border-primary-500/30 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-primary-500/20 rounded-full blur-3xl"></div>
+          <div className="dark:bg-gradient-to-br dark:from-primary-900/30 dark:to-blue-900/30 light:bg-gradient-to-br light:from-primary-100 light:to-blue-100 rounded-3xl p-12 md:p-16 dark:border dark:border-primary-500/30 light:border light:border-primary-300/50 relative overflow-hidden transition-colors duration-300">
+            <div className="absolute top-0 right-0 w-64 h-64 dark:bg-primary-500/20 light:bg-primary-400/10 rounded-full blur-3xl"></div>
             <div className="relative z-10">
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div>
-                  <div className="inline-block px-4 py-2 bg-primary-500/20 rounded-full border border-primary-500/50 mb-6">
-                    <span className="text-primary-300 font-semibold">⚡ Rapid API Development</span>
+                  <div className="inline-block px-4 py-2 dark:bg-primary-500/20 light:bg-primary-100 rounded-full dark:border dark:border-primary-500/50 light:border light:border-primary-300 mb-6 transition-colors duration-300">
+                    <span className="dark:text-primary-300 light:text-primary-700 font-semibold transition-colors duration-300">⚡ Rapid API Development</span>
                   </div>
-                  <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">
+                  <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 dark:text-white light:text-gray-900 transition-colors duration-300">
                     Need a Custom API?
                     <br />
                     <span className="text-gradient">We&apos;ll Build It in 7 Days</span>
                   </h2>
-                  <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+                  <p className="text-xl dark:text-gray-300 light:text-gray-700 mb-8 leading-relaxed transition-colors duration-300">
                     Can&apos;t find the API you need? Whether it&apos;s a specialized music API, rare data integration, 
                     or unique business logic—we create custom APIs tailored to your exact requirements.
                   </p>
@@ -496,25 +496,25 @@ const Home: NextPage = () => {
                         <div className="w-6 h-6 bg-primary-500 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
                           <span className="text-white text-sm">✓</span>
                         </div>
-                        <span className="text-gray-200 text-lg">{point}</span>
+                        <span className="dark:text-gray-200 light:text-gray-800 text-lg transition-colors duration-300">{point}</span>
                       </div>
                     ))}
                   </div>
                   <a 
                     href="#contact" 
-                    className="inline-block px-8 py-4 bg-gradient-to-r from-primary-500 to-blue-600 rounded-lg font-bold text-lg hover:shadow-2xl hover:shadow-primary-500/50 transition-all transform hover:scale-105"
+                    className="inline-block px-8 py-4 bg-gradient-to-r from-primary-500 to-blue-600 rounded-lg font-bold text-lg hover:shadow-2xl hover:shadow-primary-500/50 transition-all transform hover:scale-105 text-white"
                   >
                     Request Custom API
                   </a>
                 </div>
-                <div className="bg-dark-900/50 p-8 rounded-2xl border border-dark-700">
+                <div className="dark:bg-dark-900/50 light:bg-white/50 p-8 rounded-2xl dark:border dark:border-dark-700 light:border light:border-gray-300 transition-colors duration-300">
                   <div className="font-mono text-sm">
-                    <div className="text-primary-400 mb-4">{`// Example: Custom Music API`}</div>
-                    <div className="text-gray-400">
-                      <span className="text-blue-400">GET</span> /api/v1/music/search
+                    <div className="dark:text-primary-400 light:text-primary-600 mb-4 transition-colors duration-300">{`// Example: Custom Music API`}</div>
+                    <div className="dark:text-gray-400 light:text-gray-700 transition-colors duration-300">
+                      <span className="dark:text-blue-400 light:text-blue-600 transition-colors duration-300">GET</span> /api/v1/music/search
                     </div>
-                    <div className="bg-dark-800 p-4 rounded-lg mt-4 text-xs overflow-x-auto">
-                      <pre className="text-gray-300">
+                    <div className="dark:bg-dark-800 light:bg-gray-100 p-4 rounded-lg mt-4 text-xs overflow-x-auto transition-colors duration-300">
+                      <pre className="dark:text-gray-300 light:text-gray-800 transition-colors duration-300">
 {`{
   "query": "jazz classics",
   "filters": {
@@ -533,14 +533,14 @@ const Home: NextPage = () => {
 }`}
                       </pre>
                     </div>
-                    <div className="mt-6 text-gray-400">
+                    <div className="mt-6 dark:text-gray-400 light:text-gray-700 transition-colors duration-300">
                       <div className="flex items-center justify-between mb-2">
                         <span>Response Time</span>
-                        <span className="text-primary-400 font-bold">47ms</span>
+                        <span className="dark:text-primary-400 light:text-primary-600 font-bold transition-colors duration-300">47ms</span>
                       </div>
                       <div className="flex items-center justify-between">
                         <span>Uptime</span>
-                        <span className="text-primary-400 font-bold">99.99%</span>
+                        <span className="dark:text-primary-400 light:text-primary-600 font-bold transition-colors duration-300">99.99%</span>
                       </div>
                     </div>
                   </div>
