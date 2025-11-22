@@ -1,20 +1,29 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { getCityBySlug } from '../lib/cities';
+import { getCityBySlug, City } from '../lib/cities';
 
 export const FloatingCTA = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [city, setCity] = useState<City | null>(null);
   const router = useRouter();
   
-  const isCityPage = router.pathname.startsWith('/cities/');
-  const citySlug = isCityPage ? (router.query.city as string) : null;
-  const city = citySlug ? getCityBySlug(citySlug) : null;
+  useEffect(() => {
+    if (!router.isReady) return;
+    
+    const isCityPage = router.pathname.startsWith('/cities/');
+    if (isCityPage && router.query.city) {
+      const cityData = getCityBySlug(router.query.city as string);
+      setCity(cityData || null);
+    }
+  }, [router.isReady, router.pathname, router.query.city]);
   
   const waMessage = city 
     ? `Hi DevSecIT, I'm from ${city.name} and interested in software development services!`
     : `Hi DevSecIT, I'm interested in discussing a project!`;
+  
+  const email = city ? city.managerEmail : 'sales@devsecit.com';
 
   return (
     <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3">
@@ -30,7 +39,7 @@ export const FloatingCTA = () => {
             <span className="font-semibold">WhatsApp</span>
           </a>
           <a
-            href={`mailto:${city ? city.managerEmail : 'sales@devsecit.com'}`}
+            href={`mailto:${email}`}
             className="flex items-center gap-2 px-4 py-3 dark:bg-dark-800 light:bg-white dark:border dark:border-dark-600 light:border light:border-gray-300 rounded-lg dark:text-white light:text-gray-900 hover:dark:border-blue-500 hover:light:border-blue-400 transition-all shadow-lg"
           >
             <span className="text-2xl">📧</span>
