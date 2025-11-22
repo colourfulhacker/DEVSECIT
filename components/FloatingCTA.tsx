@@ -40,13 +40,10 @@ export const FloatingCTA = () => {
           </a>
           <a
             href={`mailto:${email}`}
-            className="flex flex-col items-start px-4 py-3 dark:bg-dark-800 light:bg-white dark:border dark:border-dark-600 light:border light:border-gray-300 rounded-lg dark:text-white light:text-gray-900 hover:dark:border-blue-500 hover:light:border-blue-400 transition-all shadow-lg"
+            className="flex items-center gap-2 px-4 py-3 dark:bg-dark-800 light:bg-white dark:border dark:border-dark-600 light:border light:border-gray-300 rounded-lg dark:text-white light:text-gray-900 hover:dark:border-blue-500 hover:light:border-blue-400 transition-all shadow-lg"
           >
-            <div className="flex items-center gap-2 mb-1">
-              <span className="text-2xl">📧</span>
-              <span className="font-semibold">Email</span>
-            </div>
-            <span className="text-xs dark:text-gray-400 light:text-gray-600">{email}</span>
+            <span className="text-2xl">📧</span>
+            <span className="font-semibold">Email</span>
           </a>
           <a
             href="#contact"
