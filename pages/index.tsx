@@ -369,21 +369,21 @@ const Home: NextPage = () => {
         </div>
       </section>
 
-      <section id="capabilities" className="py-20">
+      <section id="capabilities" className="py-20 dark:bg-dark-900 light:bg-white transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
+            <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 dark:text-white light:text-gray-900 transition-colors duration-300">
               Elite <span className="text-gradient">Capabilities</span>
             </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            <p className="text-xl dark:text-gray-400 light:text-gray-600 max-w-3xl mx-auto transition-colors duration-300">
               Why industry leaders trust us with their most critical projects
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
             <div>
-              <h3 className="text-3xl font-bold mb-6">Secure-by-Design Development</h3>
-              <p className="text-gray-400 text-lg mb-6 leading-relaxed">
+              <h3 className="text-3xl font-bold mb-6 dark:text-white light:text-gray-900 transition-colors duration-300">Secure-by-Design Development</h3>
+              <p className="dark:text-gray-400 light:text-gray-700 text-lg mb-6 leading-relaxed transition-colors duration-300">
                 Security isn&apos;t an afterthought—it&apos;s embedded in every line of code. Our cybersecurity-integrated 
                 development approach ensures your applications are protected from day one.
               </p>
@@ -394,32 +394,32 @@ const Home: NextPage = () => {
                   'Automated security testing',
                   'Regular vulnerability assessments'
                 ].map((item, i) => (
-                  <div key={i} className="flex items-center bg-dark-800 p-4 rounded-lg">
+                  <div key={i} className="flex items-center dark:bg-dark-800 light:bg-gray-100 p-4 rounded-lg transition-colors duration-300">
                     <div className="w-2 h-2 bg-primary-400 rounded-full mr-4"></div>
-                    <span className="text-gray-200">{item}</span>
+                    <span className="dark:text-gray-200 light:text-gray-800 transition-colors duration-300">{item}</span>
                   </div>
                 ))}
               </div>
             </div>
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-primary-500/20 to-blue-500/20 rounded-3xl blur-2xl"></div>
-              <div className="relative bg-dark-800 p-8 rounded-3xl border border-dark-700">
+              <div className="relative dark:bg-dark-800 light:bg-gray-50 p-8 rounded-3xl dark:border dark:border-dark-700 light:border light:border-gray-200 transition-colors duration-300">
                 <div className="space-y-6">
                   <div className="flex items-center justify-between">
-                    <span className="text-gray-300">Code Security Score</span>
+                    <span className="dark:text-gray-300 light:text-gray-700 transition-colors duration-300">Code Security Score</span>
                     <span className="text-2xl font-bold text-gradient">A+</span>
                   </div>
-                  <div className="h-4 bg-dark-700 rounded-full overflow-hidden">
+                  <div className="h-4 dark:bg-dark-700 light:bg-gray-200 rounded-full overflow-hidden transition-colors duration-300">
                     <div className="h-full bg-gradient-to-r from-primary-500 to-blue-600" style={{ width: '98%' }}></div>
                   </div>
                   <div className="grid grid-cols-2 gap-4 pt-4">
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-primary-400">100%</div>
-                      <div className="text-sm text-gray-400">Test Coverage</div>
+                      <div className="text-3xl font-bold text-primary-400 transition-colors duration-300">100%</div>
+                      <div className="text-sm dark:text-gray-400 light:text-gray-600 transition-colors duration-300">Test Coverage</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-primary-400">0</div>
-                      <div className="text-sm text-gray-400">Critical Vulns</div>
+                      <div className="text-3xl font-bold text-primary-400 transition-colors duration-300">0</div>
+                      <div className="text-sm dark:text-gray-400 light:text-gray-600 transition-colors duration-300">Critical Vulns</div>
                     </div>
                   </div>
                 </div>
@@ -448,11 +448,11 @@ const Home: NextPage = () => {
                 highlight: 'Technologies'
               }
             ].map((capability, i) => (
-              <div key={i} className="bg-gradient-to-br from-dark-800 to-dark-900 p-8 rounded-2xl border border-dark-700 hover:border-primary-500/50 transition-all">
+              <div key={i} className="dark:bg-gradient-to-br dark:from-dark-800 dark:to-dark-900 light:bg-gradient-to-br light:from-gray-100 light:to-gray-50 p-8 rounded-2xl dark:border dark:border-dark-700 light:border light:border-gray-200 dark:hover:border-primary-500/50 light:hover:border-primary-400 transition-all duration-300">
                 <div className="text-4xl font-bold text-gradient mb-2">{capability.metric}</div>
-                <div className="text-sm text-primary-400 mb-4">{capability.highlight}</div>
-                <h4 className="text-xl font-bold mb-3">{capability.title}</h4>
-                <p className="text-gray-400 leading-relaxed">{capability.description}</p>
+                <div className="text-sm text-primary-400 mb-4 transition-colors duration-300">{capability.highlight}</div>
+                <h4 className="text-xl font-bold mb-3 dark:text-white light:text-gray-900 transition-colors duration-300">{capability.title}</h4>
+                <p className="dark:text-gray-400 light:text-gray-700 leading-relaxed transition-colors duration-300">{capability.description}</p>
               </div>
             ))}
           </div>

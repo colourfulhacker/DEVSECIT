@@ -141,6 +141,19 @@ html[data-theme='light'] {
     @apply text-gray-600 transition-colors duration-300;
   }
 
+  /* Primary text colors in light mode */
+  html[data-theme='light'] .text-primary-400 {
+    @apply text-primary-600 transition-colors duration-300;
+  }
+
+  html[data-theme='light'] .text-primary-300 {
+    @apply text-primary-700 transition-colors duration-300;
+  }
+
+  html[data-theme='light'] .text-primary-500 {
+    @apply text-primary-600 transition-colors duration-300;
+  }
+
   /* Borders in light mode */
   html[data-theme='light'] [class*='border'] {
     @apply border-gray-200 transition-colors duration-300;
