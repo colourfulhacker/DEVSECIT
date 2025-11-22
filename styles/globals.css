@@ -45,12 +45,58 @@ html[data-theme='light'] {
   html[data-theme='light'] a:hover {
     @apply text-primary-700;
   }
+
+  html[data-theme='light'] span {
+    @apply text-gray-900 transition-colors duration-300;
+  }
+
+  html[data-theme='light'] div {
+    @apply text-gray-900 transition-colors duration-300;
+  }
+
+  html[data-theme='light'] li {
+    @apply text-gray-900 transition-colors duration-300;
+  }
 }
 
 @layer components {
-  /* Override ALL dark: and light: prefixed classes for comprehensive light mode support */
-  
-  /* Background overrides */
+  /* ============================================ */
+  /* COMPREHENSIVE LIGHT MODE TEXT COLOR OVERRIDES */
+  /* ============================================ */
+
+  /* OVERRIDE ALL gray text classes for light mode */
+  html[data-theme='light'] .text-gray-50 { @apply text-gray-900 !important; }
+  html[data-theme='light'] .text-gray-100 { @apply text-gray-900 !important; }
+  html[data-theme='light'] .text-gray-200 { @apply text-gray-800 !important; }
+  html[data-theme='light'] .text-gray-300 { @apply text-gray-700 !important; }
+  html[data-theme='light'] .text-gray-400 { @apply text-gray-600 !important; }
+  html[data-theme='light'] .text-gray-500 { @apply text-gray-600 !important; }
+  html[data-theme='light'] .text-gray-600 { @apply text-gray-700 !important; }
+  html[data-theme='light'] .text-gray-700 { @apply text-gray-800 !important; }
+  html[data-theme='light'] .text-gray-800 { @apply text-gray-900 !important; }
+  html[data-theme='light'] .text-gray-900 { @apply text-gray-900 !important; }
+
+  /* OVERRIDE ALL dark: classes */
+  html[data-theme='light'] .dark\:text-white { @apply text-gray-900 !important; }
+  html[data-theme='light'] .dark\:text-gray-50 { @apply text-gray-900 !important; }
+  html[data-theme='light'] .dark\:text-gray-100 { @apply text-gray-900 !important; }
+  html[data-theme='light'] .dark\:text-gray-200 { @apply text-gray-800 !important; }
+  html[data-theme='light'] .dark\:text-gray-300 { @apply text-gray-700 !important; }
+  html[data-theme='light'] .dark\:text-gray-400 { @apply text-gray-600 !important; }
+  html[data-theme='light'] .dark\:text-gray-500 { @apply text-gray-600 !important; }
+  html[data-theme='light'] .dark\:text-gray-600 { @apply text-gray-700 !important; }
+  html[data-theme='light'] .dark\:text-gray-700 { @apply text-gray-800 !important; }
+  html[data-theme='light'] .dark\:text-gray-800 { @apply text-gray-900 !important; }
+  html[data-theme='light'] .dark\:text-gray-900 { @apply text-gray-900 !important; }
+
+  /* Primary color text overrides */
+  html[data-theme='light'] .text-primary-400 { @apply text-primary-600 !important; }
+  html[data-theme='light'] .text-primary-500 { @apply text-primary-600 !important; }
+  html[data-theme='light'] .dark\:text-primary-400 { @apply text-primary-600 !important; }
+
+  /* ============================================ */
+  /* BACKGROUND OVERRIDES */
+  /* ============================================ */
   html[data-theme='light'] .dark\:bg-dark-900 { @apply bg-white !important; }
   html[data-theme='light'] .dark\:bg-dark-800 { @apply bg-gray-50 !important; }
   html[data-theme='light'] .dark\:bg-dark-700 { @apply bg-gray-100 !important; }
@@ -61,35 +107,36 @@ html[data-theme='light'] {
   html[data-theme='light'] .dark\:bg-primary-500\/10 { @apply bg-primary-100 !important; }
   html[data-theme='light'] .dark\:bg-primary-900\/20 { @apply bg-primary-50 !important; }
   html[data-theme='light'] .dark\:bg-blue-500\/10 { @apply bg-blue-100 !important; }
-  
-  /* Text color overrides */
-  html[data-theme='light'] .dark\:text-white { @apply text-gray-900 !important; }
-  html[data-theme='light'] .dark\:text-gray-100 { @apply text-gray-900 !important; }
-  html[data-theme='light'] .dark\:text-gray-200 { @apply text-gray-800 !important; }
-  html[data-theme='light'] .dark\:text-gray-300 { @apply text-gray-700 !important; }
-  html[data-theme='light'] .dark\:text-gray-400 { @apply text-gray-600 !important; }
-  html[data-theme='light'] .dark\:text-gray-500 { @apply text-gray-600 !important; }
-  
-  /* Border overrides */
+
+  /* ============================================ */
+  /* BORDER OVERRIDES */
+  /* ============================================ */
   html[data-theme='light'] .dark\:border-dark-700 { @apply border-gray-200 !important; }
   html[data-theme='light'] .dark\:border-dark-600 { @apply border-gray-300 !important; }
   html[data-theme='light'] .dark\:border-dark-800 { @apply border-gray-200 !important; }
   html[data-theme='light'] .dark\:border-primary-500\/30 { @apply border-primary-300 !important; }
   html[data-theme='light'] .dark\:border-primary-500\/50 { @apply border-primary-400 !important; }
-  
-  /* Hover state overrides */
+
+  /* ============================================ */
+  /* HOVER STATE OVERRIDES */
+  /* ============================================ */
   html[data-theme='light'] .dark\:hover\:bg-dark-700:hover { @apply bg-gray-200 !important; }
   html[data-theme='light'] .dark\:hover\:bg-dark-600:hover { @apply bg-gray-300 !important; }
   html[data-theme='light'] .dark\:hover\:border-primary-500\/50:hover { @apply border-primary-400 !important; }
   html[data-theme='light'] .dark\:hover\:border-primary-500:hover { @apply border-primary-500 !important; }
   html[data-theme='light'] .dark\:hover\:shadow-primary-500\/50:hover { @apply shadow-primary-400/30 !important; }
-  
-  /* Focus state overrides */
+  html[data-theme='light'] .dark\:hover\:bg-primary-500\/10:hover { @apply bg-primary-50 !important; }
+
+  /* ============================================ */
+  /* FOCUS STATE OVERRIDES */
+  /* ============================================ */
   html[data-theme='light'] .dark\:focus\:border-primary-500:focus { @apply border-primary-400 !important; }
   html[data-theme='light'] .dark\:focus\:ring-primary-500:focus { @apply ring-primary-400 !important; }
   html[data-theme='light'] .dark\:focus\:ring-offset-dark-900:focus { @apply ring-offset-white !important; }
-  
-  /* Form elements overrides */
+
+  /* ============================================ */
+  /* FORM ELEMENTS */
+  /* ============================================ */
   html[data-theme='light'] input.dark\:bg-dark-800,
   html[data-theme='light'] textarea.dark\:bg-dark-800 { @apply bg-white !important; }
   
@@ -117,17 +164,20 @@ html[data-theme='light'] {
   html[data-theme='light'] input.light\:placeholder-gray-400::placeholder,
   html[data-theme='light'] textarea.light\:placeholder-gray-400::placeholder { @apply text-gray-400 !important; }
 
-  /* Gradient button text must be white in light mode */
+  /* ============================================ */
+  /* GRADIENT & SPECIAL ELEMENTS */
+  /* ============================================ */
   html[data-theme='light'] .bg-gradient-to-r {
     @apply text-white;
   }
 
-  /* Text gradient in light mode */
   html[data-theme='light'] .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-600 via-primary-500 to-primary-700;
   }
 
-  /* Navigation */
+  /* ============================================ */
+  /* NAVIGATION */
+  /* ============================================ */
   html[data-theme='light'] nav {
     @apply bg-white/95 border-gray-200 transition-colors duration-300 !important;
   }
@@ -137,7 +187,13 @@ html[data-theme='light'] {
     @apply text-gray-700 transition-colors duration-300;
   }
 
-  /* Sections */
+  html[data-theme='light'] nav a {
+    @apply text-gray-700 transition-colors duration-300 !important;
+  }
+
+  /* ============================================ */
+  /* SECTIONS */
+  /* ============================================ */
   html[data-theme='light'] section {
     @apply bg-white text-gray-900 transition-colors duration-300;
   }
@@ -158,11 +214,17 @@ html[data-theme='light'] {
     @apply bg-gray-50;
   }
 
-  /* Buttons */
+  /* ============================================ */
+  /* BUTTONS */
+  /* ============================================ */
   html[data-theme='light'] button {
     @apply transition-colors duration-300;
   }
 
+  /* ============================================ */
+  /* SEMANTIC TEXT ELEMENTS */
+  /* ============================================ */
+  
   /* All span text in light mode */
   html[data-theme='light'] span.dark\:text-gray-300,
   html[data-theme='light'] span.dark\:text-gray-400 {
@@ -183,12 +245,32 @@ html[data-theme='light'] {
     @apply text-gray-700 transition-colors duration-300;
   }
 
+  html[data-theme='light'] div.dark\:text-gray-100 {
+    @apply text-gray-900 transition-colors duration-300;
+  }
+
   html[data-theme='light'] div.dark\:text-primary-400 {
     @apply text-primary-600 transition-colors duration-300;
   }
 
   html[data-theme='light'] div.dark\:text-white {
     @apply text-gray-900 transition-colors duration-300;
+  }
+
+  /* All list items in light mode */
+  html[data-theme='light'] li.dark\:text-gray-300,
+  html[data-theme='light'] li.dark\:text-gray-400 {
+    @apply text-gray-700 transition-colors duration-300;
+  }
+
+  html[data-theme='light'] li {
+    @apply text-gray-900 transition-colors duration-300;
+  }
+
+  /* Paragraph overrides */
+  html[data-theme='light'] p.dark\:text-gray-400,
+  html[data-theme='light'] p.dark\:text-gray-300 {
+    @apply text-gray-700 transition-colors duration-300;
   }
 }
 
