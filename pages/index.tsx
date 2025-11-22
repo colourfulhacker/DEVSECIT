@@ -552,47 +552,47 @@ const Home: NextPage = () => {
       </section>
 
 {/* Virtual CTO Service Section */}
-      <section className="py-20 bg-dark-800/50">
+      <section className="py-20 dark:bg-dark-800/50 light:bg-gray-50/50 transition-colors duration-300">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="bg-dark-800 p-8 rounded-2xl border border-dark-700">
+            <div className="dark:bg-dark-800 light:bg-white p-8 rounded-2xl dark:border dark:border-dark-700 light:border light:border-gray-200 transition-colors duration-300">
               <div className="space-y-6">
-                <div className="bg-dark-900 p-6 rounded-xl border border-dark-700">
-                  <h4 className="text-sm font-bold text-primary-400 mb-4">What&apos;s Included:</h4>
-                  <ul className="space-y-3 text-gray-300 text-sm">
+                <div className="dark:bg-dark-900 light:bg-gray-50 p-6 rounded-xl dark:border dark:border-dark-700 light:border light:border-gray-200 transition-colors duration-300">
+                  <h4 className="text-sm font-bold dark:text-primary-400 light:text-primary-600 mb-4 transition-colors duration-300">What&apos;s Included:</h4>
+                  <ul className="space-y-3 dark:text-gray-300 light:text-gray-700 text-sm transition-colors duration-300">
                     <li className="flex items-start gap-2">
-                      <span className="text-primary-400 font-bold">✓</span>
+                      <span className="dark:text-primary-400 light:text-primary-600 font-bold transition-colors duration-300">✓</span>
                       <span>Experienced CTO as Technical Co-founder (full-time/part-time)</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-primary-400 font-bold">✓</span>
+                      <span className="dark:text-primary-400 light:text-primary-600 font-bold transition-colors duration-300">✓</span>
                       <span>Architecture &amp; Tech Stack Design</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-primary-400 font-bold">✓</span>
+                      <span className="dark:text-primary-400 light:text-primary-600 font-bold transition-colors duration-300">✓</span>
                       <span>MVP Development &amp; Deployment</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-primary-400 font-bold">✓</span>
+                      <span className="dark:text-primary-400 light:text-primary-600 font-bold transition-colors duration-300">✓</span>
                       <span>Team Building &amp; Engineering Leadership</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-primary-400 font-bold">✓</span>
+                      <span className="dark:text-primary-400 light:text-primary-600 font-bold transition-colors duration-300">✓</span>
                       <span>DevOps &amp; Infrastructure Management</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-primary-400 font-bold">✓</span>
+                      <span className="dark:text-primary-400 light:text-primary-600 font-bold transition-colors duration-300">✓</span>
                       <span>90-day launch guarantee</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-primary-400 font-bold">✓</span>
+                      <span className="dark:text-primary-400 light:text-primary-600 font-bold transition-colors duration-300">✓</span>
                       <span>Long-term technical strategy &amp; scaling</span>
                     </li>
                   </ul>
                 </div>
 
-                <div className="bg-gradient-to-br from-blue-500/10 to-primary-500/10 p-4 rounded-xl border border-blue-500/30">
-                  <p className="text-xs text-gray-400">
+                <div className="dark:bg-gradient-to-br dark:from-blue-500/10 dark:to-primary-500/10 light:bg-blue-50 p-4 rounded-xl dark:border dark:border-blue-500/30 light:border light:border-blue-200 transition-colors duration-300">
+                  <p className="text-xs dark:text-gray-400 light:text-gray-600 transition-colors duration-300">
                     <strong>Best for:</strong> Tech-first startups needing proven technical leadership, architecture expertise, and rapid MVP execution with scalable foundations.
                   </p>
                 </div>
@@ -600,13 +600,13 @@ const Home: NextPage = () => {
             </div>
 
             <div>
-              <div className="inline-block mb-6 px-4 py-2 bg-blue-500/10 rounded-full border border-blue-500/30">
-                <span className="text-blue-400 font-semibold text-sm">Premium Technical Leadership</span>
+              <div className="inline-block mb-6 px-4 py-2 dark:bg-blue-500/10 light:bg-blue-100 rounded-full dark:border dark:border-blue-500/30 light:border light:border-blue-300 transition-colors duration-300">
+                <span className="dark:text-blue-400 light:text-blue-700 font-semibold text-sm transition-colors duration-300">Premium Technical Leadership</span>
               </div>
-              <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 leading-tight">
+              <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 leading-tight dark:text-white light:text-gray-900 transition-colors duration-300">
                 Hire a <span className="text-gradient">Virtual CTO</span> for Your Startup
               </h2>
-              <p className="text-xl text-gray-300 mb-8">
+              <p className="text-xl dark:text-gray-300 light:text-gray-700 mb-8 transition-colors duration-300">
                 Get an experienced Chief Technology Officer as a technical co-founder to build your MVP and lead engineering. Equity-based partnership with 100% legal agreements.
               </p>
 
@@ -614,36 +614,36 @@ const Home: NextPage = () => {
                 <div className="flex items-start gap-4">
                   <div className="text-2xl">💻</div>
                   <div>
-                    <h4 className="font-bold text-white mb-1">Technical Leadership</h4>
-                    <p className="text-gray-400 text-sm">Proven engineering expertise with 15+ years building scalable tech products</p>
+                    <h4 className="font-bold dark:text-white light:text-gray-900 mb-1 transition-colors duration-300">Technical Leadership</h4>
+                    <p className="dark:text-gray-400 light:text-gray-600 text-sm transition-colors duration-300">Proven engineering expertise with 15+ years building scalable tech products</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <div className="text-2xl">🏗️</div>
                   <div>
-                    <h4 className="font-bold text-white mb-1">Architecture &amp; Design</h4>
-                    <p className="text-gray-400 text-sm">Enterprise-grade system design from day one, built for scale</p>
+                    <h4 className="font-bold dark:text-white light:text-gray-900 mb-1 transition-colors duration-300">Architecture &amp; Design</h4>
+                    <p className="dark:text-gray-400 light:text-gray-600 text-sm transition-colors duration-300">Enterprise-grade system design from day one, built for scale</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <div className="text-2xl">📊</div>
                   <div>
-                    <h4 className="font-bold text-white mb-1">Up to 10% Equity</h4>
-                    <p className="text-gray-400 text-sm">Performance-based equity stake aligned with product success</p>
+                    <h4 className="font-bold dark:text-white light:text-gray-900 mb-1 transition-colors duration-300">Up to 10% Equity</h4>
+                    <p className="dark:text-gray-400 light:text-gray-600 text-sm transition-colors duration-300">Performance-based equity stake aligned with product success</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <div className="text-2xl">⚖️</div>
                   <div>
-                    <h4 className="font-bold text-white mb-1">100% Legal Framework</h4>
-                    <p className="text-gray-400 text-sm">Complete legal documentation from incorporation to equity agreements</p>
+                    <h4 className="font-bold dark:text-white light:text-gray-900 mb-1 transition-colors duration-300">100% Legal Framework</h4>
+                    <p className="dark:text-gray-400 light:text-gray-600 text-sm transition-colors duration-300">Complete legal documentation from incorporation to equity agreements</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <div className="text-2xl">🤝</div>
                   <div>
-                    <h4 className="font-bold text-white mb-1">Beyond Launch Support</h4>
-                    <p className="text-gray-400 text-sm">Ongoing CTO-level guidance for Series A, scaling, and team building</p>
+                    <h4 className="font-bold dark:text-white light:text-gray-900 mb-1 transition-colors duration-300">Beyond Launch Support</h4>
+                    <p className="dark:text-gray-400 light:text-gray-600 text-sm transition-colors duration-300">Ongoing CTO-level guidance for Series A, scaling, and team building</p>
                   </div>
                 </div>
               </div>
@@ -659,7 +659,7 @@ const Home: NextPage = () => {
                 </a>
                 <a 
                   href="#contact" 
-                  className="px-8 py-4 border-2 border-blue-500/50 rounded-lg font-bold hover:bg-blue-500/10 transition-all text-white text-center"
+                  className="px-8 py-4 dark:border-2 dark:border-blue-500/50 light:border-2 light:border-blue-400 rounded-lg font-bold dark:hover:bg-blue-500/10 light:hover:bg-blue-100 transition-all dark:text-white light:text-blue-700 text-center transition-colors duration-300"
                 >
                   Learn More
                 </a>
