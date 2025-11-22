@@ -2,16 +2,18 @@
 const nextConfig = {
   reactStrictMode: true,
   compress: true,
+  poweredByHeader: false,
+  productionBrowserSourceMaps: false,
   
-  // Image optimization
+  // Image optimization for Core Web Vitals
   images: {
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    domains: ['devsecit.com'],
+    domains: ['devsecit.com', 'images.unsplash.com', 'images.pexels.com'],
     formats: ['image/webp', 'image/avif'],
   },
 
-  // Headers for SEO and security
+  // Headers for SEO, security, and performance
   async headers() {
     return [
       {
@@ -38,17 +40,34 @@ const nextConfig = {
             value: 'strict-origin-when-cross-origin'
           },
           {
-            key: 'Cache-Control',
-            value: 'no-cache, no-store, must-revalidate'
+            key: 'Strict-Transport-Security',
+            value: 'max-age=31536000; includeSubDomains'
+          },
+          {
+            key: 'Content-Security-Policy',
+            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' *.vercel-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:;"
           }
         ]
       },
       {
-        source: '/sitemap.xml',
+        source: '/api/sitemap',
         headers: [
           {
             key: 'Content-Type',
-            value: 'application/xml'
+            value: 'application/xml; charset=utf-8'
+          },
+          {
+            key: 'Cache-Control',
+            value: 'public, s-maxage=3600, stale-while-revalidate=86400'
+          }
+        ]
+      },
+      {
+        source: '/_next/static/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable'
           }
         ]
       }
