@@ -77,7 +77,7 @@ const Home: NextPage = () => {
               <ThemeToggle />
               <Link
                 href="/console"
-                className="hidden sm:inline-block text-primary-400 hover:text-primary-300 font-semibold transition-colors text-sm"
+                className="hidden sm:inline-block dark:text-primary-400 light:text-primary-600 dark:hover:text-primary-300 light:hover:text-primary-700 font-semibold transition-colors text-sm"
               >
                 Sign In to Console
               </Link>

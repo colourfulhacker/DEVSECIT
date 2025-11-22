@@ -57,7 +57,7 @@ export const FloatingCTA = () => {
 
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-14 h-14 rounded-full bg-gradient-to-r from-primary-500 to-blue-600 text-white shadow-2xl shadow-primary-500/50 hover:shadow-3xl hover:shadow-primary-500/70 transition-all transform hover:scale-110 flex items-center justify-center font-bold text-2xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:focus:ring-offset-dark-900 light:focus:ring-offset-white"
+        className="w-14 h-14 rounded-full bg-gradient-to-r from-primary-500 to-blue-600 text-white shadow-2xl dark:shadow-primary-500/50 light:shadow-primary-400/40 dark:hover:shadow-primary-500/70 light:hover:shadow-primary-400/50 transition-all transform hover:scale-110 flex items-center justify-center font-bold text-2xl focus:outline-none focus:ring-2 dark:focus:ring-primary-500 light:focus:ring-primary-400 focus:ring-offset-2 dark:focus:ring-offset-dark-900 light:focus:ring-offset-white"
         aria-label="Open contact options"
         title="Quick contact options"
       >

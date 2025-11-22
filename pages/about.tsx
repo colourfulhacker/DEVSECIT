@@ -30,7 +30,7 @@ const About: NextPage = () => {
       <nav className="fixed top-0 w-full z-50 dark:bg-dark-900/95 light:bg-white/95 backdrop-blur-lg dark:border-dark-700 light:border-gray-200 border-b transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <Link href="/" className="text-2xl font-display font-bold text-gradient">DevSecIT</Link>
+            <Link href="/" className="text-2xl font-display font-bold text-gradient dark:text-gradient light:text-gradient">DevSecIT</Link>
             <div className="flex items-center gap-4">
               <ThemeToggle />
               <Link href="/#contact" className="hidden sm:inline-block bg-gradient-to-r from-primary-500 to-blue-600 px-6 py-2 rounded-lg font-semibold hover:shadow-lg hover:shadow-primary-500/50 transition-all text-white">
