@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from 'react';
 import { APIService } from '../lib/apiServices';
 
