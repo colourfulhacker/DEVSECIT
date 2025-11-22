@@ -1,3 +1,5 @@
+'use client';
+
 import type { NextPage, GetStaticProps, GetStaticPaths } from 'next';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -58,7 +60,7 @@ const CityPage: NextPage<CityPageProps> = ({ city }) => {
   };
 
   return (
-    <div className="min-h-screen dark:bg-dark-900 light:bg-white transition-colors duration-300">
+    <div suppressHydrationWarning className="min-h-screen dark:bg-dark-900 light:bg-white transition-colors duration-300">
       <Head>
         <title>{`Software Development & Custom APIs in ${city.name} | DevSecIT`}</title>
         <meta name="description" content={city.metaDescription} />
