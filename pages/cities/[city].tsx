@@ -175,7 +175,7 @@ const CityPage: NextPage<CityPageProps> = ({ city }) => {
               </p>
               <div className="space-y-4">
                 <a href={`mailto:${city.managerEmail}`} className="block p-4 dark:bg-primary-900/20 light:bg-primary-50 rounded-lg border dark:border-primary-500/30 light:border-primary-200 dark:hover:border-primary-500/50 light:hover:border-primary-300 transition-colors">
-                  <div className="text-primary-400 font-bold text-lg mb-2">{city.name} Office Manager</div>
+                  <div className="text-primary-400 font-bold text-lg mb-2">Dedicated contact for {city.name}</div>
                   <div className="dark:text-gray-300 light:text-gray-800 text-base font-semibold">{city.managerEmail}</div>
                   <div className="dark:text-gray-400 light:text-gray-600 text-xs mt-2">Click to email</div>
                 </a>
