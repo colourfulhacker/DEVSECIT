@@ -2,6 +2,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import { ThemeToggle } from '../components/ThemeToggle';
+import { PricingCalculator } from '../components/PricingCalculator';
 
 const Pricing: NextPage = () => {
   const pricingSchema = {
@@ -159,6 +160,8 @@ const Pricing: NextPage = () => {
           </div>
         </div>
       </section>
+
+      <PricingCalculator />
 
       <section className="py-20 dark:bg-dark-900 light:bg-white transition-colors duration-300">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
