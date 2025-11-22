@@ -275,7 +275,7 @@ This requirement was submitted via the IT Services Requirements Form on DevSecIT
                           type="checkbox"
                           checked={selectedServices.includes(service.id)}
                           onChange={() => handleServiceToggle(service.id)}
-                          className="w-4 h-4 text-primary-500 rounded focus:ring-2 focus:ring-primary-500 cursor-pointer"
+                          className="w-4 h-4 text-primary-500 rounded dark:focus:ring-2 light:focus:ring-2 dark:focus:ring-primary-500 light:focus:ring-primary-400 cursor-pointer"
                         />
                         <span className="ml-3 text-2xl">{service.icon}</span>
                         <span className="ml-3 dark:text-gray-300 light:text-gray-700 transition-colors duration-300">{service.name}</span>
