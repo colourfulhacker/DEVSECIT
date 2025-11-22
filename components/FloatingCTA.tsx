@@ -30,7 +30,7 @@ export const FloatingCTA = () => {
             <span className="font-semibold">WhatsApp</span>
           </a>
           <a
-            href="mailto:sales@devsecit.com"
+            href={`mailto:${city ? city.managerEmail : 'sales@devsecit.com'}`}
             className="flex items-center gap-2 px-4 py-3 dark:bg-dark-800 light:bg-white dark:border dark:border-dark-600 light:border light:border-gray-300 rounded-lg dark:text-white light:text-gray-900 hover:dark:border-blue-500 hover:light:border-blue-400 transition-all shadow-lg"
           >
             <span className="text-2xl">📧</span>
