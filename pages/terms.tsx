@@ -17,7 +17,7 @@ const Terms: NextPage = () => {
   };
 
   return (
-    <div suppressHydrationWarning className="min-h-screen bg-dark-900 dark:bg-dark-900 light:bg-white transition-colors duration-300">
+    <div className="min-h-screen bg-dark-900 dark:bg-dark-900 light:bg-white transition-colors duration-300">
       <Head>
         <title>Terms of Service - DevSecIT | Custom Software Development</title>
         <meta name="description" content="DevSecIT Terms of Service - Legal terms and conditions for custom software development, API integration, and cybersecurity services in West Bengal, India." />

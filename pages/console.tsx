@@ -23,7 +23,7 @@ const Console: NextPage = () => {
         </div>
       </nav>
 
-      <div suppressHydrationWarning className="min-h-screen pt-32 pb-20 dark:bg-dark-900 light:bg-white transition-colors duration-300 flex items-center justify-center">
+      <div className="min-h-screen pt-32 pb-20 dark:bg-dark-900 light:bg-white transition-colors duration-300 flex items-center justify-center">
         <div className="text-center max-w-2xl mx-auto px-4">
           <div className="text-6xl mb-6">🚀</div>
           <h1 className="text-5xl font-display font-bold mb-4 dark:text-white light:text-gray-900 transition-colors duration-300">

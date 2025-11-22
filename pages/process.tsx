@@ -88,7 +88,7 @@ const Process: NextPage = () => {
   ];
 
   return (
-    <div suppressHydrationWarning className="min-h-screen dark:bg-dark-900 light:bg-white transition-colors duration-300">
+    <div className="min-h-screen dark:bg-dark-900 light:bg-white transition-colors duration-300">
       <Head>
         <title>Our Development Process - DevSecIT | West Bengal, India</title>
         <meta name="description" content="Learn about DevSecIT&apos;s proven development process: Discovery, Design, Development, Testing, Deployment, and 24/7 Support. From concept to production." />

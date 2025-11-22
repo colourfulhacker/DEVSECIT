@@ -18,7 +18,7 @@ const About: NextPage = () => {
   };
 
   return (
-    <div suppressHydrationWarning className="min-h-screen dark:bg-dark-900 light:bg-white transition-colors duration-300">
+    <div className="min-h-screen dark:bg-dark-900 light:bg-white transition-colors duration-300">
       <Head>
         <title>About DevSecIT - Team & Company Mission | West Bengal, India</title>
         <meta name="description" content="Meet the DevSecIT team. We&apos;re a group of elite developers, architects, and security experts building the future of Indian software technology." />

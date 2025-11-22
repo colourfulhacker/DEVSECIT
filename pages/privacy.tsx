@@ -17,7 +17,7 @@ const Privacy: NextPage = () => {
   };
 
   return (
-    <div suppressHydrationWarning className="min-h-screen bg-dark-900 dark:bg-dark-900 light:bg-white transition-colors duration-300">
+    <div className="min-h-screen bg-dark-900 dark:bg-dark-900 light:bg-white transition-colors duration-300">
       <Head>
         <title>Privacy Policy - DevSecIT | Software Development West Bengal</title>
         <meta name="description" content="DevSecIT Privacy Policy - Data protection and privacy practices for software development services in West Bengal, India. Secure and compliant." />

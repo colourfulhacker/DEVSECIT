@@ -11,11 +11,8 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [isDark, setIsDark] = useState(true);
-  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    // Only access localStorage after component is mounted on client
-    setIsMounted(true);
     const saved = localStorage.getItem('theme');
     const theme = saved === 'light' ? 'light' : 'dark';
     setIsDark(theme === 'dark');

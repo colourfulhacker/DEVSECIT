@@ -143,7 +143,7 @@ This requirement was submitted via the IT Services Requirements Form on DevSecIT
         </div>
       </nav>
 
-      <div suppressHydrationWarning className="min-h-screen pt-24 pb-20 dark:bg-dark-900 light:bg-white transition-colors duration-300">
+      <div className="min-h-screen pt-24 pb-20 dark:bg-dark-900 light:bg-white transition-colors duration-300">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h1 className="text-5xl font-display font-bold mb-4 dark:text-white light:text-gray-900 transition-colors duration-300">

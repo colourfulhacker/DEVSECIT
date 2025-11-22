@@ -50,7 +50,7 @@ const Home: NextPage = () => {
   ];
 
   return (
-    <div suppressHydrationWarning className="min-h-screen bg-dark-900 dark:bg-dark-900 light:bg-white transition-colors duration-300">
+    <div className="min-h-screen bg-dark-900 dark:bg-dark-900 light:bg-white transition-colors duration-300">
       <SEOHead
         title="DevSecIT - Custom Software Development & API Integration | West Bengal, India"
         description="Leading custom software development and cybersecurity solutions company in West Bengal, India. Specializing in API integration, MVP development, AI automation, and startup tech products. 500+ projects delivered. Get lifetime free hosting."

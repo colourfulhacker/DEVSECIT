@@ -1,24 +1,24 @@
-'use client';
-
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import { useEffect, useState } from 'react'
+import dynamic from 'next/dynamic'
 import { ThemeProvider } from '../context/ThemeContext'
-import { FloatingCTA } from '../components/FloatingCTA'
-import { HostingPromoPopup } from '../components/HostingPromoPopup'
+
+const FloatingCTA = dynamic(() => import('../components/FloatingCTA').then(mod => ({ default: mod.FloatingCTA })), {
+  ssr: false,
+  loading: () => null
+})
+
+const HostingPromoPopup = dynamic(() => import('../components/HostingPromoPopup').then(mod => ({ default: mod.HostingPromoPopup })), {
+  ssr: false,
+  loading: () => null
+})
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
   return (
     <ThemeProvider>
       <Component {...pageProps} />
-      {mounted && <HostingPromoPopup />}
-      {mounted && <FloatingCTA />}
+      <HostingPromoPopup />
+      <FloatingCTA />
     </ThemeProvider>
   )
 }

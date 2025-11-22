@@ -57,7 +57,7 @@ const Portfolio: NextPage = () => {
   ];
 
   return (
-    <div suppressHydrationWarning className="min-h-screen dark:bg-dark-900 light:bg-white transition-colors duration-300">
+    <div className="min-h-screen dark:bg-dark-900 light:bg-white transition-colors duration-300">
       <Head>
         <title>Portfolio - DevSecIT | Software Development Case Studies</title>
         <meta name="description" content="View DevSecIT&apos;s portfolio of 500+ successful projects. Case studies of e-commerce platforms, mobile apps, SaaS solutions, and enterprise systems." />

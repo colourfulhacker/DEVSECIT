@@ -16,7 +16,7 @@ const VirtualCTO: NextPage = () => {
   };
 
   return (
-    <div suppressHydrationWarning className="min-h-screen dark:bg-dark-900 light:bg-white transition-colors duration-300">
+    <div className="min-h-screen dark:bg-dark-900 light:bg-white transition-colors duration-300">
       <Head>
         <title>Virtual CTO Service - DevSecIT | Startup Technology Leadership</title>
         <meta name="description" content="Virtual CTO service with 10% equity stake. 90-day MVP guarantee, 100% legal agreements, strategic technology mentorship for startups." />
