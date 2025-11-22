@@ -9,6 +9,7 @@ import { APIService, allAPICategories, topCommonAPIs } from '../lib/apiServices'
 import { FAQ } from '../components/FAQ';
 import { Testimonials } from '../components/Testimonials';
 import { FloatingCTA } from '../components/FloatingCTA';
+import { FactsSlider } from '../components/FactsSlider';
 import { 
   generateOrganizationSchema, 
   generateLocalBusinessSchema,
@@ -962,6 +963,8 @@ const Home: NextPage = () => {
           </div>
         </div>
       </section>
+
+      <FactsSlider />
 
       <Testimonials />
 
