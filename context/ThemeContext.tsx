@@ -9,22 +9,29 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [isDark, setIsDark] = useState(true);
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
-    const saved = localStorage.getItem('theme');
-    const theme = saved === 'light' ? 'light' : 'dark';
-    setIsDark(theme === 'dark');
-    document.documentElement.setAttribute('data-theme', theme);
+    if (typeof window === 'undefined') return;
+    
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 
+                        localStorage.getItem('theme') || 
+                        'dark';
+    
+    const isDarkMode = currentTheme === 'dark';
+    setIsDark(isDarkMode);
+    document.documentElement.setAttribute('data-theme', currentTheme);
   }, []);
 
-  const toggleTheme = () => {
-    const newIsDark = !isDark;
-    setIsDark(newIsDark);
-    const themeValue = newIsDark ? 'dark' : 'light';
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    
+    const themeValue = isDark ? 'dark' : 'light';
     localStorage.setItem('theme', themeValue);
     document.documentElement.setAttribute('data-theme', themeValue);
+  }, [isDark]);
+
+  const toggleTheme = () => {
+    setIsDark(prev => !prev);
   };
 
   return (
