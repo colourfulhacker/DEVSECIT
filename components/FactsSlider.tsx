@@ -138,43 +138,43 @@ export const FactsSlider = () => {
 
         {/* Slider Container */}
         <div className="relative">
-          <div className="dark:bg-dark-800/50 light:bg-gray-50 rounded-2xl border dark:border-dark-700 light:border-gray-200 p-8 md:p-12 min-h-96 flex flex-col justify-between transition-colors duration-300">
+          <div className="dark:bg-dark-800/50 light:bg-gray-50 rounded-xl md:rounded-2xl border dark:border-dark-700 light:border-gray-200 p-4 sm:p-6 md:p-12 min-h-80 sm:min-h-96 flex flex-col justify-between transition-colors duration-300">
             {/* Fact Content */}
-            <div className="space-y-6">
-              <div className="flex items-start justify-between gap-6">
-                <div className="text-6xl md:text-7xl">{currentFact.icon}</div>
-                <div className={`px-3 py-1 rounded-full border text-sm font-semibold ${categoryColors[currentFact.category]} transition-colors duration-300`}>
+            <div className="space-y-4 md:space-y-6">
+              <div className="flex items-start justify-between gap-3 md:gap-6">
+                <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl flex-shrink-0">{currentFact.icon}</div>
+                <div className={`px-2 sm:px-3 py-1 rounded-full border text-xs sm:text-sm font-semibold whitespace-nowrap ${categoryColors[currentFact.category]} transition-colors duration-300`}>
                   {currentFact.category}
                 </div>
               </div>
 
               <div>
-                <h3 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white light:text-gray-900 transition-colors duration-300">
+                <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-4 dark:text-white light:text-gray-900 transition-colors duration-300 line-clamp-2 md:line-clamp-none">
                   {currentFact.title}
                 </h3>
-                <p className="text-lg md:text-xl dark:text-gray-300 light:text-gray-700 leading-relaxed transition-colors duration-300">
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl dark:text-gray-300 light:text-gray-700 leading-relaxed transition-colors duration-300">
                   {currentFact.description}
                 </p>
               </div>
             </div>
 
             {/* Navigation Arrows */}
-            <div className="flex justify-between items-center mt-8">
+            <div className="flex justify-between items-center gap-2 md:gap-4 mt-6 md:mt-8 flex-wrap sm:flex-nowrap">
               <button
                 onClick={handlePrev}
-                className="p-3 dark:bg-dark-700 light:bg-gray-200 dark:hover:bg-dark-600 light:hover:bg-gray-300 rounded-lg dark:text-gray-300 light:text-gray-700 transition-all hover:scale-110"
+                className="px-3 py-2 sm:px-4 sm:py-3 text-xs sm:text-sm dark:bg-dark-700 light:bg-gray-200 dark:hover:bg-dark-600 light:hover:bg-gray-300 rounded-lg dark:text-gray-300 light:text-gray-700 transition-all hover:scale-110"
                 aria-label="Previous fact"
               >
-                ← Previous
+                ← Prev
               </button>
 
-              <div className="text-sm dark:text-gray-400 light:text-gray-600 transition-colors duration-300">
+              <div className="text-xs sm:text-sm dark:text-gray-400 light:text-gray-600 transition-colors duration-300">
                 {currentIndex + 1} / {facts.length}
               </div>
 
               <button
                 onClick={handleNext}
-                className="p-3 dark:bg-dark-700 light:bg-gray-200 dark:hover:bg-dark-600 light:hover:bg-gray-300 rounded-lg dark:text-gray-300 light:text-gray-700 transition-all hover:scale-110"
+                className="px-3 py-2 sm:px-4 sm:py-3 text-xs sm:text-sm dark:bg-dark-700 light:bg-gray-200 dark:hover:bg-dark-600 light:hover:bg-gray-300 rounded-lg dark:text-gray-300 light:text-gray-700 transition-all hover:scale-110"
                 aria-label="Next fact"
               >
                 Next →
@@ -199,15 +199,15 @@ export const FactsSlider = () => {
           </div>
 
           {/* Category Filter Info */}
-          <div className="mt-12 grid grid-cols-2 md:grid-cols-5 gap-4">
+          <div className="mt-8 md:mt-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 md:gap-4">
             {['Security', 'API', 'Development', 'DevOps', 'Best Practice'].map((cat) => {
               const count = facts.filter(f => f.category === cat).length;
               return (
                 <div key={cat} className="text-center">
-                  <div className={`inline-block px-3 py-1 rounded-full text-sm font-semibold mb-2 ${categoryColors[cat as Fact['category']]}`}>
+                  <div className={`inline-block px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-semibold mb-1 md:mb-2 ${categoryColors[cat as Fact['category']]}`}>
                     {cat}
                   </div>
-                  <div className="dark:text-gray-400 light:text-gray-600 text-sm">{count} facts</div>
+                  <div className="dark:text-gray-400 light:text-gray-600 text-xs sm:text-sm">{count} facts</div>
                 </div>
               );
             })}

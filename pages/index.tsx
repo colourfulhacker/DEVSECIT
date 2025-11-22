@@ -135,30 +135,30 @@ const Home: NextPage = () => {
             <div className="inline-block mb-4 px-4 py-2 dark:bg-primary-500/10 light:bg-primary-50 rounded-full border dark:border-primary-500/30 light:border-primary-200 transition-colors duration-300">
               <span className="text-primary-400 dark:text-primary-400 light:text-primary-600 font-semibold text-sm transition-colors duration-300">Elite Development & Cybersecurity</span>
             </div>
-            <h1 className="text-5xl md:text-7xl font-display font-bold mb-6 leading-tight dark:text-white light:text-gray-900 transition-colors duration-300">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-display font-bold mb-4 md:mb-6 leading-tight dark:text-white light:text-gray-900 transition-colors duration-300">
               Custom Software Development <br />
               <span className="text-gradient">& API Integration in West Bengal</span>
             </h1>
-            <p className="text-xl md:text-2xl dark:text-gray-400 light:text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed transition-colors duration-300">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl dark:text-gray-400 light:text-gray-600 mb-6 md:mb-8 max-w-3xl mx-auto leading-relaxed transition-colors duration-300">
               Full-spectrum software development, cybersecurity integration, and AI-powered solutions. 
               From concept to deployment, we build what others can&apos;t.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center w-full sm:w-auto">
               <a 
                 href="#contact" 
-                className="group px-8 py-4 bg-gradient-to-r from-primary-500 to-blue-600 rounded-xl font-bold text-lg text-white hover:shadow-2xl hover:shadow-primary-500/50 transition-all transform hover:scale-105 dark:hover:shadow-primary-500/50 light:hover:shadow-primary-400/30 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:focus:ring-offset-dark-900 light:focus:ring-offset-white"
+                className="group w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-primary-500 to-blue-600 rounded-lg md:rounded-xl font-bold text-base sm:text-lg text-white hover:shadow-2xl hover:shadow-primary-500/50 transition-all transform hover:scale-105 dark:hover:shadow-primary-500/50 light:hover:shadow-primary-400/30 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:focus:ring-offset-dark-900 light:focus:ring-offset-white text-center"
               >
                 Start Your Project
                 <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">→</span>
               </a>
               <a 
                 href="#services" 
-                className="px-8 py-4 border-2 dark:border-primary-500/50 light:border-primary-400 rounded-xl font-bold text-lg dark:text-gray-100 light:text-gray-900 dark:hover:bg-primary-500/10 light:hover:bg-primary-50 transition-all focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:focus:ring-offset-dark-900 light:focus:ring-offset-white"
+                className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 border-2 dark:border-primary-500/50 light:border-primary-400 rounded-lg md:rounded-xl font-bold text-base sm:text-lg dark:text-gray-100 light:text-gray-900 dark:hover:bg-primary-500/10 light:hover:bg-primary-50 transition-all focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:focus:ring-offset-dark-900 light:focus:ring-offset-white text-center"
               >
                 Explore Services
               </a>
             </div>
-            <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+            <div className="mt-8 md:mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 max-w-4xl mx-auto">
               {[
                 { value: '500+', label: 'Projects Delivered', role: 'doc-subtitle' },
                 { value: '99.9%', label: 'Uptime SLA', role: 'doc-subtitle' },
@@ -166,8 +166,8 @@ const Home: NextPage = () => {
                 { value: '24/7', label: 'Expert Support', role: 'doc-subtitle' }
               ].map((stat, i) => (
                 <div key={i} className="animate-slide-up transition-colors duration-300" style={{ animationDelay: `${i * 0.1}s` }} role="contentinfo">
-                  <div className="text-3xl md:text-4xl font-bold text-gradient">{stat.value}</div>
-                  <div className="dark:text-gray-400 light:text-gray-600 mt-1 transition-colors duration-300">{stat.label}</div>
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gradient">{stat.value}</div>
+                  <div className="dark:text-gray-400 light:text-gray-600 mt-1 text-xs sm:text-sm transition-colors duration-300">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -177,16 +177,16 @@ const Home: NextPage = () => {
 
       <section id="services" className="py-20 dark:bg-dark-800/50 light:bg-gray-50 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 dark:text-white light:text-gray-900 transition-colors duration-300">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-3 md:mb-4 dark:text-white light:text-gray-900 transition-colors duration-300">
               Comprehensive <span className="text-gradient">IT Services</span>
             </h2>
-            <p className="text-xl dark:text-gray-400 light:text-gray-600 max-w-3xl mx-auto transition-colors duration-300">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl dark:text-gray-400 light:text-gray-600 max-w-3xl mx-auto transition-colors duration-300">
               End-to-end technology solutions tailored to your unique requirements
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
             {[
               {
                 icon: '🚀',
@@ -227,15 +227,15 @@ const Home: NextPage = () => {
             ].map((service, i) => (
               <div 
                 key={i} 
-                className="group dark:bg-dark-900 light:bg-white p-8 rounded-2xl dark:border dark:border-dark-700 light:border light:border-gray-200 dark:hover:border-primary-500/50 light:hover:border-primary-400 transition-all duration-300 dark:hover:shadow-2xl dark:hover:shadow-primary-500/10 light:hover:shadow-lg light:hover:shadow-primary-200/20 animate-slide-up"
+                className="group dark:bg-dark-900 light:bg-white p-4 md:p-8 rounded-lg md:rounded-2xl dark:border dark:border-dark-700 light:border light:border-gray-200 dark:hover:border-primary-500/50 light:hover:border-primary-400 transition-all duration-300 dark:hover:shadow-2xl dark:hover:shadow-primary-500/10 light:hover:shadow-lg light:hover:shadow-primary-200/20 animate-slide-up"
                 style={{ animationDelay: `${i * 0.1}s` }}
               >
-                <div className="text-5xl mb-4 group-hover:scale-110 transition-transform">{service.icon}</div>
-                <h3 className="text-2xl font-bold mb-3 dark:text-gray-100 light:text-gray-900 transition-colors duration-300">{service.title}</h3>
-                <p className="dark:text-gray-400 light:text-gray-600 mb-4 leading-relaxed transition-colors duration-300">{service.description}</p>
-                <ul className="space-y-2">
+                <div className="text-4xl sm:text-5xl mb-3 md:mb-4 group-hover:scale-110 transition-transform">{service.icon}</div>
+                <h3 className="text-lg md:text-2xl font-bold mb-2 md:mb-3 dark:text-gray-100 light:text-gray-900 transition-colors duration-300">{service.title}</h3>
+                <p className="text-sm md:text-base dark:text-gray-400 light:text-gray-600 mb-3 md:mb-4 leading-relaxed transition-colors duration-300">{service.description}</p>
+                <ul className="space-y-1 md:space-y-2">
                   {service.features.map((feature, j) => (
-                    <li key={j} className="flex items-center dark:text-gray-300 light:text-gray-700 transition-colors duration-300">
+                    <li key={j} className="flex items-center text-xs md:text-sm dark:text-gray-300 light:text-gray-700 transition-colors duration-300">
                       <span className="text-primary-400 mr-2">✓</span>
                       {feature}
                     </li>
@@ -249,19 +249,19 @@ const Home: NextPage = () => {
 
       <section id="techstack" className="py-20 dark:bg-dark-900 light:bg-white transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 dark:text-white light:text-gray-900 transition-colors duration-300">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-3 md:mb-4 dark:text-white light:text-gray-900 transition-colors duration-300">
               Our <span className="text-gradient">Technology Stack</span>
             </h2>
-            <p className="text-xl dark:text-gray-400 light:text-gray-600 max-w-3xl mx-auto transition-colors duration-300">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl dark:text-gray-400 light:text-gray-600 max-w-3xl mx-auto transition-colors duration-300">
               We work with cutting-edge technologies to deliver exceptional solutions
             </p>
           </div>
 
           <div className="grid gap-8">
-            <div className="bg-dark-800 p-8 rounded-2xl border border-dark-700">
-              <h3 className="text-2xl font-bold mb-6 text-primary-400">Frontend Development</h3>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            <div className="bg-dark-800 p-4 md:p-8 rounded-lg md:rounded-2xl border border-dark-700">
+              <h3 className="text-lg md:text-2xl font-bold mb-4 md:mb-6 text-primary-400">Frontend Development</h3>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 md:gap-4">
                 {[
                   { name: 'React', icon: '⚛️' },
                   { name: 'Next.js', icon: '▲' },
@@ -270,17 +270,17 @@ const Home: NextPage = () => {
                   { name: 'TypeScript', icon: '📘' },
                   { name: 'Tailwind CSS', icon: '🎨' }
                 ].map((tech, i) => (
-                  <div key={i} className="bg-dark-900 p-4 rounded-lg text-center hover:border-primary-500/50 border border-dark-700 transition-all">
-                    <div className="text-3xl mb-2">{tech.icon}</div>
-                    <div className="text-sm text-gray-300">{tech.name}</div>
+                  <div key={i} className="bg-dark-900 p-3 md:p-4 rounded-lg text-center hover:border-primary-500/50 border border-dark-700 transition-all">
+                    <div className="text-2xl md:text-3xl mb-1 md:mb-2">{tech.icon}</div>
+                    <div className="text-xs md:text-sm text-gray-300">{tech.name}</div>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="bg-dark-800 p-8 rounded-2xl border border-dark-700">
-              <h3 className="text-2xl font-bold mb-6 text-primary-400">Backend Development</h3>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            <div className="bg-dark-800 p-4 md:p-8 rounded-lg md:rounded-2xl border border-dark-700">
+              <h3 className="text-lg md:text-2xl font-bold mb-4 md:mb-6 text-primary-400">Backend Development</h3>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 md:gap-4">
                 {[
                   { name: 'Node.js', icon: '🟢' },
                   { name: 'Python', icon: '🐍' },
@@ -289,8 +289,8 @@ const Home: NextPage = () => {
                   { name: 'Java', icon: '☕' },
                   { name: 'PHP', icon: '🐘' }
                 ].map((tech, i) => (
-                  <div key={i} className="bg-dark-900 p-4 rounded-lg text-center hover:border-primary-500/50 border border-dark-700 transition-all">
-                    <div className="text-3xl mb-2">{tech.icon}</div>
+                  <div key={i} className="bg-dark-900 p-3 md:p-4 rounded-lg text-center hover:border-primary-500/50 border border-dark-700 transition-all">
+                    <div className="text-2xl md:text-3xl mb-1 md:mb-2">{tech.icon}</div>
                     <div className="text-sm text-gray-300">{tech.name}</div>
                   </div>
                 ))}
@@ -848,12 +848,12 @@ const Home: NextPage = () => {
             ].map((feature, i) => (
               <div 
                 key={i}
-                className="group dark:bg-dark-800 light:bg-gray-50 p-8 rounded-2xl dark:border dark:border-dark-700 light:border light:border-gray-200 dark:hover:border-primary-500/50 light:hover:border-primary-400 transition-all duration-300 dark:hover:shadow-2xl dark:hover:shadow-primary-500/10 light:hover:shadow-lg light:hover:shadow-primary-200/20 animate-slide-up text-center"
+                className="group dark:bg-dark-800 light:bg-gray-50 p-4 md:p-8 rounded-lg md:rounded-2xl dark:border dark:border-dark-700 light:border light:border-gray-200 dark:hover:border-primary-500/50 light:hover:border-primary-400 transition-all duration-300 dark:hover:shadow-2xl dark:hover:shadow-primary-500/10 light:hover:shadow-lg light:hover:shadow-primary-200/20 animate-slide-up text-center"
                 style={{ animationDelay: `${i * 0.1}s` }}
               >
-                <div className="text-5xl mb-4 group-hover:scale-110 transition-transform">{feature.icon}</div>
-                <h3 className="text-xl font-bold mb-3 dark:text-gray-100 light:text-gray-900 transition-colors duration-300">{feature.title}</h3>
-                <p className="dark:text-gray-400 light:text-gray-600 transition-colors duration-300">{feature.description}</p>
+                <div className="text-4xl sm:text-5xl mb-3 md:mb-4 group-hover:scale-110 transition-transform">{feature.icon}</div>
+                <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3 dark:text-gray-100 light:text-gray-900 transition-colors duration-300">{feature.title}</h3>
+                <p className="text-sm md:text-base dark:text-gray-400 light:text-gray-600 transition-colors duration-300">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -862,16 +862,16 @@ const Home: NextPage = () => {
 
       <section id="contact" className="py-20 bg-dark-800/50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-3 md:mb-4">
               Ready to <span className="text-gradient">Build Something Great?</span>
             </h2>
-            <p className="text-xl text-gray-400">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-400">
               Let&apos;s discuss your project and turn your vision into reality
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} className="bg-dark-900 p-8 md:p-12 rounded-2xl border border-dark-700">
+          <form onSubmit={handleSubmit} className="bg-dark-900 p-4 md:p-8 lg:p-12 rounded-lg md:rounded-2xl border border-dark-700">
             <div className="grid md:grid-cols-2 gap-6 mb-6">
               <div>
                 <label className="block text-gray-300 mb-2 font-semibold">Name *</label>
@@ -921,10 +921,10 @@ const Home: NextPage = () => {
                 aria-label="Project Details"
               />
             </div>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
               <button
                 type="submit"
-                className="flex-1 px-8 py-4 bg-gradient-to-r from-primary-500 to-blue-600 rounded-lg font-bold text-lg hover:shadow-2xl hover:shadow-primary-500/50 transition-all transform hover:scale-105"
+                className="flex-1 px-4 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-primary-500 to-blue-600 rounded-lg font-bold text-sm sm:text-base md:text-lg hover:shadow-2xl hover:shadow-primary-500/50 transition-all transform hover:scale-105"
               >
                 📧 Send via Email
               </button>
@@ -932,33 +932,33 @@ const Home: NextPage = () => {
                 href={whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 rounded-lg font-bold text-lg hover:shadow-2xl hover:shadow-green-500/50 transition-all transform hover:scale-105 text-center"
+                className="flex-1 px-4 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-green-500 to-green-600 rounded-lg font-bold text-sm sm:text-base md:text-lg hover:shadow-2xl hover:shadow-green-500/50 transition-all transform hover:scale-105 text-center"
               >
                 💬 WhatsApp Chat
               </a>
             </div>
           </form>
 
-          <div className="mt-12 grid md:grid-cols-4 gap-6 text-center">
-            <a href="mailto:sales@devsecit.com" className="bg-dark-900 p-6 rounded-xl border border-dark-700 hover:border-primary-500/50 transition-all">
-              <div className="text-3xl mb-2">📧</div>
-              <div className="font-semibold text-gray-300">Sales Email</div>
-              <div className="text-primary-400 hover:text-primary-300 text-sm">sales@devsecit.com</div>
+          <div className="mt-8 md:mt-12 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 text-center">
+            <a href="mailto:sales@devsecit.com" className="bg-dark-900 p-3 md:p-6 rounded-lg md:rounded-xl border border-dark-700 hover:border-primary-500/50 transition-all">
+              <div className="text-2xl md:text-3xl mb-1 md:mb-2">📧</div>
+              <div className="font-semibold text-gray-300 text-xs md:text-sm">Sales</div>
+              <div className="text-primary-400 hover:text-primary-300 text-xs">sales@devsecit.com</div>
             </a>
-            <a href="mailto:info@devsecit.com" className="bg-dark-900 p-6 rounded-xl border border-dark-700 hover:border-primary-500/50 transition-all">
-              <div className="text-3xl mb-2">ℹ️</div>
-              <div className="font-semibold text-gray-300">General Info</div>
-              <div className="text-primary-400 hover:text-primary-300 text-sm">info@devsecit.com</div>
+            <a href="mailto:info@devsecit.com" className="bg-dark-900 p-3 md:p-6 rounded-lg md:rounded-xl border border-dark-700 hover:border-primary-500/50 transition-all">
+              <div className="text-2xl md:text-3xl mb-1 md:mb-2">ℹ️</div>
+              <div className="font-semibold text-gray-300 text-xs md:text-sm">Info</div>
+              <div className="text-primary-400 hover:text-primary-300 text-xs">info@devsecit.com</div>
             </a>
-            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="bg-dark-900 p-6 rounded-xl border border-dark-700 hover:border-green-500/50 transition-all">
-              <div className="text-3xl mb-2">💬</div>
-              <div className="font-semibold text-gray-300">WhatsApp</div>
-              <div className="text-green-400 hover:text-green-300 text-sm">+91 8101 979855</div>
+            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="bg-dark-900 p-3 md:p-6 rounded-lg md:rounded-xl border border-dark-700 hover:border-green-500/50 transition-all">
+              <div className="text-2xl md:text-3xl mb-1 md:mb-2">💬</div>
+              <div className="font-semibold text-gray-300 text-xs md:text-sm">WhatsApp</div>
+              <div className="text-green-400 hover:text-green-300 text-xs">+91 8101 979855</div>
             </a>
-            <div className="bg-dark-900 p-6 rounded-xl border border-dark-700">
-              <div className="text-3xl mb-2">⚡</div>
-              <div className="font-semibold text-gray-300">Response Time</div>
-              <div className="text-primary-400">Within 4 hours</div>
+            <div className="bg-dark-900 p-3 md:p-6 rounded-lg md:rounded-xl border border-dark-700">
+              <div className="text-2xl md:text-3xl mb-1 md:mb-2">⚡</div>
+              <div className="font-semibold text-gray-300 text-xs md:text-sm">Response</div>
+              <div className="text-primary-400 text-xs">Within 4 hours</div>
             </div>
           </div>
         </div>
