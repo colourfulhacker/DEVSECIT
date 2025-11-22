@@ -805,6 +805,54 @@ const Home: NextPage = () => {
         </div>
       </section>
 
+      <section id="features" className="py-20 dark:bg-dark-900 light:bg-white transition-colors duration-300">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 dark:text-white light:text-gray-900 transition-colors duration-300">
+              <span className="text-gradient">Robust Features</span>
+            </h2>
+            <p className="text-xl dark:text-gray-400 light:text-gray-600 max-w-3xl mx-auto transition-colors duration-300">
+              Simplify operations for your business. With concepts in mind, we carefully design and perfect every detail to match your vision and goals.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                icon: '🔗',
+                title: 'Integrate and synchronize',
+                description: 'Integrate and synchronize easily with DSI APIs'
+              },
+              {
+                icon: '🎨',
+                title: 'Personalize your site',
+                description: 'Using DSI Studio you can customize your website as you want!'
+              },
+              {
+                icon: '🤖',
+                title: 'Enhance and automate',
+                description: 'DSI AI is here to help you automate business!'
+              },
+              {
+                icon: '🧠',
+                title: 'AI companion',
+                description: 'Create your own AI agent with DSI AI and take benefits of AI'
+              }
+            ].map((feature, i) => (
+              <div 
+                key={i}
+                className="group dark:bg-dark-800 light:bg-gray-50 p-8 rounded-2xl dark:border dark:border-dark-700 light:border light:border-gray-200 dark:hover:border-primary-500/50 light:hover:border-primary-400 transition-all duration-300 dark:hover:shadow-2xl dark:hover:shadow-primary-500/10 light:hover:shadow-lg light:hover:shadow-primary-200/20 animate-slide-up text-center"
+                style={{ animationDelay: `${i * 0.1}s` }}
+              >
+                <div className="text-5xl mb-4 group-hover:scale-110 transition-transform">{feature.icon}</div>
+                <h3 className="text-xl font-bold mb-3 dark:text-gray-100 light:text-gray-900 transition-colors duration-300">{feature.title}</h3>
+                <p className="dark:text-gray-400 light:text-gray-600 transition-colors duration-300">{feature.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="contact" className="py-20 bg-dark-800/50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -884,16 +932,21 @@ const Home: NextPage = () => {
             </div>
           </form>
 
-          <div className="mt-12 grid md:grid-cols-3 gap-6 text-center">
+          <div className="mt-12 grid md:grid-cols-4 gap-6 text-center">
             <a href="mailto:sales@devsecit.com" className="bg-dark-900 p-6 rounded-xl border border-dark-700 hover:border-primary-500/50 transition-all">
               <div className="text-3xl mb-2">📧</div>
-              <div className="font-semibold text-gray-300">Email Sales</div>
-              <div className="text-primary-400 hover:text-primary-300">sales@devsecit.com</div>
+              <div className="font-semibold text-gray-300">Sales Email</div>
+              <div className="text-primary-400 hover:text-primary-300 text-sm">sales@devsecit.com</div>
+            </a>
+            <a href="mailto:info@devsecit.com" className="bg-dark-900 p-6 rounded-xl border border-dark-700 hover:border-primary-500/50 transition-all">
+              <div className="text-3xl mb-2">ℹ️</div>
+              <div className="font-semibold text-gray-300">General Info</div>
+              <div className="text-primary-400 hover:text-primary-300 text-sm">info@devsecit.com</div>
             </a>
             <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="bg-dark-900 p-6 rounded-xl border border-dark-700 hover:border-green-500/50 transition-all">
               <div className="text-3xl mb-2">💬</div>
               <div className="font-semibold text-gray-300">WhatsApp</div>
-              <div className="text-green-400 hover:text-green-300">+91-8101979855</div>
+              <div className="text-green-400 hover:text-green-300 text-sm">+91 8101 979855</div>
             </a>
             <div className="bg-dark-900 p-6 rounded-xl border border-dark-700">
               <div className="text-3xl mb-2">⚡</div>
