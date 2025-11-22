@@ -39,7 +39,7 @@ const nextConfig = {
           },
           {
             key: 'Cache-Control',
-            value: 'public, max-age=3600, must-revalidate'
+            value: 'no-cache, no-store, must-revalidate'
           }
         ]
       },
@@ -65,6 +65,10 @@ const nextConfig = {
       }
     ]
   }
+}
+
+if (process.env.REPLIT_DOMAINS) {
+  nextConfig.allowedDevOrigins = process.env.REPLIT_DOMAINS.split(",");
 }
 
 module.exports = nextConfig
