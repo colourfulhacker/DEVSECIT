@@ -1,0 +1,189 @@
+Project Idea: Client Insight Extractor (Next.js + Gemini API)
+1. Project Name
+
+Cehpoint Client Insight Engine (CCIE)
+
+2. Core Purpose
+
+A web application where a user uploads a Google Sheet / Excel file containing LinkedIn leads or prospect data.
+The backend uses Google Gemini API to analyze and generate a structured output:
+
+Identify ideal clients
+
+Provide three approach suggestions per person
+
+Create personalized conversation starters
+
+Output format mirrors the one you received earlier.
+
+This tool is meant for Cehpoint’s marketing interns to speed up B2B outreach preparation.
+
+3. Technology Stack
+Frontend
+
+Next.js 15 (App Router)
+
+React Server Components
+
+TailwindCSS for styling
+
+File upload form built with UploadThing or native Next.js file API
+
+Backend
+
+Next.js Server Actions / API Routes
+
+Gemini API (Google Generative AI for Developers)
+
+Node.js XLSX parser (xlsx npm package) for reading Excel/Google Sheet exports
+
+Output generation logic orchestrated in the backend
+
+Storage (optional)
+
+Temporary file storage via edge-compatible in-memory buffer
+
+Or Supabase Storage for logged audit trails
+
+4. Core Features (Minimal, Only What You Need)
+Feature 1: File Upload (Excel/CSV)
+
+User uploads a dataset containing:
+
+name
+
+role
+
+company
+
+location
+
+description
+
+etc.
+
+Backend automatically parses it using xlsx or CSV parser.
+
+Feature 2: Gemini-Driven Insight Generation
+
+Backend sends structured JSON extracted from the sheet to Gemini with this instruction:
+
+Identify ideal clients
+
+Generate 3 pitch suggestions for each person
+
+Write one conversation starter for each person
+
+Return results in a consistent structured JSON format
+
+Feature 3: Output Formatting
+
+The returned structured JSON is transformed into a clean UI output:
+
+Example:
+
+[
+  {
+    "name": "Deepak Kumar",
+    "role": "Co-Founder & CTO",
+    "suggestions": [...],
+    "conversation_starter": "..."
+  }
+]
+
+Feature 4: Downloadable Report
+
+A button generates a PDF or DOCX report containing:
+
+Client insights
+
+Pitches
+
+Conversation starters
+
+For interns to send or review.
+
+5. User Flow
+
+User visits /upload
+
+Upload Excel/CSV
+
+Backend parses → sends structured data to Gemini
+
+Gemini responds with insight JSON
+
+UI displays structured results
+
+User can download PDF or copy the results
+
+6. API Flow Diagram (Simplified)
+UI: Upload File
+        |
+        v
+Next.js API Route (/api/process-file)
+        |
+  Parse Excel → JSON
+        |
+        v
+Send JSON → Gemini API with instruction prompt
+        |
+        v
+Gemini returns insight JSON
+        |
+        v
+Next.js formats → UI response
+
+7. Prompt for Gemini (Backend)
+
+You can reuse this exact structure:
+
+You are an AI lead-analysis engine.
+
+Input: JSON extracted from Excel containing person name, role, company, description.
+
+For each person:
+1. Identify whether he/she is an ideal client for software development or cybersecurity services.
+2. Provide exactly 3 pitch/approach suggestions tailored to their role.
+3. Provide one strong conversation-starter message.
+4. Output strictly in structured JSON with keys:
+{
+  "name": "",
+  "role": "",
+  "ideal_client_reason": "",
+  "suggestions": [],
+  "conversation_starter": ""
+}
+
+8. Developer Tasks (Clear Roadmap)
+Phase 1 – Backend
+
+ Create Next.js API route /api/process-file
+
+ Parse Excel/CSV with xlsx
+
+ Validate schema
+
+ Integrate Gemini API
+
+ Return structured JSON
+
+Phase 2 – Frontend
+
+ File upload UI
+
+ Result rendering component
+
+ PDF export option
+
+9. What You Will Get From This System
+
+Exactly the type of insights I generated for your uploaded CSV:
+
+Ideal client classification
+
+3 useful suggestions per lead
+
+Conversation starter for outreach
+
+Ready to hand over to Cehpoint marketing interns
