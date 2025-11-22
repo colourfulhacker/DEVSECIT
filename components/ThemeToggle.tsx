@@ -4,29 +4,17 @@ import { useTheme } from '../context/ThemeContext';
 import { useEffect, useState } from 'react';
 
 export const ThemeToggle = () => {
+  const { isDark, toggleTheme } = useTheme();
   const [isMounted, setIsMounted] = useState(false);
-  const [isDark, setIsDark] = useState(true);
 
   useEffect(() => {
     setIsMounted(true);
-    const saved = localStorage.getItem('theme');
-    if (saved) {
-      setIsDark(saved === 'dark');
-    }
   }, []);
-
-  const toggleTheme = () => {
-    const newTheme = !isDark;
-    setIsDark(newTheme);
-    localStorage.setItem('theme', newTheme ? 'dark' : 'light');
-    document.documentElement.setAttribute('data-theme', newTheme ? 'dark' : 'light');
-  };
-
-  if (!isMounted) return null;
 
   return (
     <button
       onClick={toggleTheme}
+      suppressHydrationWarning
       className={`relative inline-flex items-center justify-center w-10 h-10 rounded-lg transition-colors ${
         isDark
           ? 'bg-dark-800 hover:bg-dark-700 text-yellow-400'

@@ -17,6 +17,8 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) =
     const saved = localStorage.getItem('theme');
     if (saved) {
       setIsDark(saved === 'dark');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
     }
     setIsMounted(true);
   }, []);
@@ -34,10 +36,8 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) =
     }
   }, [isDark, isMounted]);
 
-  if (!isMounted) return <>{children}</>;
-
   return (
-    <ThemeContext.Provider value={{ isDark, toggleTheme }}>
+    <ThemeContext.Provider value={{ isDark, toggleTheme }} suppressHydrationWarning>
       {children}
     </ThemeContext.Provider>
   );
