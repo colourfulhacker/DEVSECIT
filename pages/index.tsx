@@ -455,8 +455,8 @@ const Home: NextPage = () => {
               }
             ].map((capability, i) => (
               <div key={i} className="dark:bg-gradient-to-br dark:from-dark-800 dark:to-dark-900 light:bg-gradient-to-br light:from-gray-100 light:to-gray-50 p-8 rounded-2xl dark:border dark:border-dark-700 light:border light:border-gray-200 dark:hover:border-primary-500/50 light:hover:border-primary-400 transition-all duration-300">
-                <div className="text-4xl font-bold text-gradient mb-2">{capability.metric}</div>
-                <div className="text-sm text-primary-400 mb-4 transition-colors duration-300">{capability.highlight}</div>
+                <div className="text-4xl font-bold dark:text-gradient light:bg-gradient-to-r light:from-primary-600 light:to-blue-700 light:bg-clip-text light:text-transparent mb-2">{capability.metric}</div>
+                <div className="text-sm dark:text-primary-400 light:text-primary-700 font-semibold mb-4 transition-colors duration-300">{capability.highlight}</div>
                 <h4 className="text-xl font-bold mb-3 dark:text-white light:text-gray-900 transition-colors duration-300">{capability.title}</h4>
                 <p className="dark:text-gray-400 light:text-gray-700 leading-relaxed transition-colors duration-300">{capability.description}</p>
               </div>
