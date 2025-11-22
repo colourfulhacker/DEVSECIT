@@ -2,23 +2,23 @@
 
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import dynamic from 'next/dynamic'
+import { useEffect, useState } from 'react'
 import { ThemeProvider } from '../context/ThemeContext'
-
-const FloatingCTA = dynamic(() => import('../components/FloatingCTA').then(mod => ({ default: mod.FloatingCTA })), {
-  ssr: false
-})
-
-const HostingPromoPopup = dynamic(() => import('../components/HostingPromoPopup').then(mod => ({ default: mod.HostingPromoPopup })), {
-  ssr: false
-})
+import { FloatingCTA } from '../components/FloatingCTA'
+import { HostingPromoPopup } from '../components/HostingPromoPopup'
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
   return (
     <ThemeProvider>
       <Component {...pageProps} />
-      <HostingPromoPopup />
-      <FloatingCTA />
+      {mounted && <HostingPromoPopup />}
+      {mounted && <FloatingCTA />}
     </ThemeProvider>
   )
 }
