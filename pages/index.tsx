@@ -659,7 +659,7 @@ const Home: NextPage = () => {
                 </a>
                 <a 
                   href="#contact" 
-                  className="px-8 py-4 dark:border-2 dark:border-blue-500/50 light:border-2 light:border-blue-400 rounded-lg font-bold dark:hover:bg-blue-500/10 light:hover:bg-blue-100 transition-all dark:text-white light:text-blue-700 text-center transition-colors duration-300"
+                  className="px-8 py-4 dark:border-2 dark:border-blue-500/50 light:border-2 light:border-blue-600 rounded-lg font-bold dark:hover:bg-blue-500/10 light:hover:bg-blue-200 transition-all dark:text-white light:text-blue-900 text-center transition-colors duration-300"
                 >
                   Learn More
                 </a>
