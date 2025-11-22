@@ -183,10 +183,6 @@ const CityPage: NextPage<CityPageProps> = ({ city }) => {
                   <div className="text-green-400 font-bold">💬 WhatsApp</div>
                   <div className="dark:text-gray-400 light:text-gray-600 text-sm transition-colors">Chat with us directly</div>
                 </a>
-                <a href={`mailto:${city.managerEmail}`} className="block p-4 dark:bg-dark-800 light:bg-gray-100 rounded-lg dark:hover:bg-dark-700 light:hover:bg-gray-200 transition-colors">
-                  <div className="text-primary-400 font-bold">📧 Email</div>
-                  <div className="dark:text-gray-400 light:text-gray-600 text-sm transition-colors">{city.managerEmail}</div>
-                </a>
                 <a href="mailto:sales@devsecit.com" className="block p-4 dark:bg-dark-800 light:bg-gray-100 rounded-lg dark:hover:bg-dark-700 light:hover:bg-gray-200 transition-colors">
                   <div className="text-primary-400 font-bold">📧 General Sales</div>
                   <div className="dark:text-gray-400 light:text-gray-600 text-sm transition-colors">sales@devsecit.com</div>
