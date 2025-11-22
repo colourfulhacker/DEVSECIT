@@ -81,9 +81,42 @@ html[data-theme='light'] {
     @apply bg-white text-gray-900 transition-colors duration-300;
   }
 
-  /* Buttons in light mode */
-  html[data-theme='light'] button:not(.gradient-button) {
-    @apply text-gray-900 transition-colors duration-300;
+  /* Buttons in light mode - comprehensive fix */
+  html[data-theme='light'] button,
+  html[data-theme='light'] a[class*='px-'][class*='py-'] {
+    @apply transition-colors duration-300;
+  }
+
+  /* Gradient buttons - ensure text is always white */
+  html[data-theme='light'] button:has(.bg-gradient-to-r),
+  html[data-theme='light'] .bg-gradient-to-r:not([class*='light:bg']) {
+    @apply text-white transition-colors duration-300;
+  }
+
+  /* Border buttons in light mode - enhance visibility */
+  html[data-theme='light'] .border-2,
+  html[data-theme='light'] [class*='border-primary'],
+  html[data-theme='light'] [class*='border-blue'] {
+    @apply border-gray-400 transition-colors duration-300 !important;
+  }
+
+  /* Light mode button text must be dark for contrast */
+  html[data-theme='light'] .light\:text-blue-700,
+  html[data-theme='light'] .light\:text-gray-700,
+  html[data-theme='light'] .light\:text-primary-600 {
+    @apply text-gray-900 font-semibold transition-colors duration-300;
+  }
+
+  /* Ensure button borders are visible */
+  html[data-theme='light'] .border-primary-400,
+  html[data-theme='light'] .border-blue-400 {
+    @apply border-primary-500 transition-colors duration-300 !important;
+  }
+
+  /* Light mode button hover states */
+  html[data-theme='light'] .light\:hover\:bg-blue-100:hover,
+  html[data-theme='light'] .light\:hover\:bg-primary-50:hover {
+    @apply bg-gray-200 transition-colors duration-300 !important;
   }
 
   /* Form elements in light mode */
