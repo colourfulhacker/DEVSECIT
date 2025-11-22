@@ -7,13 +7,14 @@ export const ThemeToggle = () => {
   return (
     <button
       onClick={toggleTheme}
-      className={`relative inline-flex items-center justify-center w-10 h-10 rounded-lg transition-colors ${
+      className={`relative inline-flex items-center justify-center w-10 h-10 rounded-lg transition-all duration-300 focus-visible:ring-2 ${
         isDark
-          ? 'bg-dark-800 hover:bg-dark-700 text-yellow-400'
-          : 'bg-gray-100 hover:bg-gray-200 text-gray-800'
+          ? 'bg-dark-800 hover:bg-dark-700 text-yellow-400 focus-visible:ring-primary-500'
+          : 'bg-gray-100 hover:bg-gray-200 text-gray-800 focus-visible:ring-primary-400'
       }`}
-      aria-label="Toggle theme"
+      aria-label={isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
       title={isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+      aria-pressed={isDark}
     >
       {isDark ? (
         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">

@@ -119,3 +119,64 @@ export const generateAggregateOfferSchema = () => {
     ]
   };
 };
+
+export const generateBreadcrumbSchema = (items: Array<{ name: string; url: string }>) => {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": items.map((item, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": item.name,
+      "item": item.url
+    }))
+  };
+};
+
+export const generateFAQPageSchema = (faqs: Array<{ question: string; answer: string }>) => {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+};
+
+export const generateArticleSchema = (title: string, description: string, publishDate: string) => {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "datePublished": publishDate,
+    "author": {
+      "@type": "Organization",
+      "name": "DevSecIT"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "DevSecIT",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://devsecit.com/logo.png"
+      }
+    }
+  };
+};
+
+export const generateRatingSchema = (ratingValue: number, reviewCount: number) => {
+  return {
+    "@context": "https://schema.org",
+    "@type": "AggregateRating",
+    "ratingValue": ratingValue.toString(),
+    "reviewCount": reviewCount.toString(),
+    "bestRating": "5",
+    "worstRating": "1"
+  };
+};
