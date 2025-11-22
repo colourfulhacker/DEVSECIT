@@ -11,27 +11,24 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [isDark, setIsDark] = useState(true);
-  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    setIsMounted(true);
-    const saved = localStorage.getItem('theme');
-    const theme = saved === 'light' ? 'light' : 'dark';
-    setIsDark(theme === 'dark');
-    document.documentElement.setAttribute('data-theme', theme);
+    // Read theme from data-theme attribute set by script in _document
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+    setIsDark(currentTheme === 'dark');
   }, []);
 
   const toggleTheme = () => {
-    const newTheme = !isDark;
-    setIsDark(newTheme);
-    const themeValue = newTheme ? 'dark' : 'light';
+    const newIsDark = !isDark;
+    setIsDark(newIsDark);
+    const themeValue = newIsDark ? 'dark' : 'light';
     localStorage.setItem('theme', themeValue);
     document.documentElement.setAttribute('data-theme', themeValue);
   };
 
   return (
     <ThemeContext.Provider value={{ isDark, toggleTheme }}>
-      {isMounted ? children : <div suppressHydrationWarning>{children}</div>}
+      {children}
     </ThemeContext.Provider>
   );
 };
