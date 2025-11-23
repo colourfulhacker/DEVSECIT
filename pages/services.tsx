@@ -62,17 +62,23 @@ const ServicesForm: NextPage = () => {
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
 
   useEffect(() => {
-    const savedEmail = localStorage.getItem('clientEmail');
-    const savedName = localStorage.getItem('clientName');
-    const savedCompany = localStorage.getItem('clientCompany');
+    if (typeof window === 'undefined') return;
+    
+    try {
+      const savedEmail = localStorage.getItem('clientEmail');
+      const savedName = localStorage.getItem('clientName');
+      const savedCompany = localStorage.getItem('clientCompany');
 
-    if (savedEmail || savedName || savedCompany) {
-      setFormData(prev => ({
-        ...prev,
-        email: savedEmail || '',
-        name: savedName || '',
-        company: savedCompany || ''
-      }));
+      if (savedEmail || savedName || savedCompany) {
+        setFormData(prev => ({
+          ...prev,
+          email: savedEmail || '',
+          name: savedName || '',
+          company: savedCompany || ''
+        }));
+      }
+    } catch (e) {
+      console.error('localStorage access failed:', e);
     }
   }, []);
 
@@ -87,9 +93,15 @@ const ServicesForm: NextPage = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    localStorage.setItem('clientEmail', formData.email);
-    localStorage.setItem('clientName', formData.name);
-    localStorage.setItem('clientCompany', formData.company);
+    if (typeof window !== 'undefined') {
+      try {
+        localStorage.setItem('clientEmail', formData.email);
+        localStorage.setItem('clientName', formData.name);
+        localStorage.setItem('clientCompany', formData.company);
+      } catch (e) {
+        console.error('localStorage save failed:', e);
+      }
+    }
 
     const selectedServiceNames = selectedServices
       .map(id => IT_SERVICES.find(s => s.id === id)?.name)

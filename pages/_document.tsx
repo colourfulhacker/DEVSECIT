@@ -10,22 +10,7 @@ export default function Document() {
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Lexend:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
         <meta name="theme-color" content="#0f172a" />
       </Head>
-      <body>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                try {
-                  const theme = localStorage.getItem('theme') || 'dark';
-                  document.documentElement.setAttribute('data-theme', theme);
-                  if (theme === 'light') document.documentElement.classList.add('light');
-                } catch (e) {
-                  document.documentElement.setAttribute('data-theme', 'dark');
-                }
-              })()
-            `,
-          }}
-        />
+      <body data-theme="dark">
         <Main />
         <NextScript />
       </body>
