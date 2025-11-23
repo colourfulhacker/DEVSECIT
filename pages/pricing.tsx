@@ -2,11 +2,17 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
+import { useState, useLayoutEffect } from 'react';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { PricingCalculator } from '../components/PricingCalculator';
 
 const Pricing: NextPage = () => {
+  const [isClient, setIsClient] = useState(false);
+  
+  useLayoutEffect(() => {
+    setIsClient(true);
+  }, []);
   const pricingSchema = {
     '@context': 'https://schema.org',
     '@type': 'PriceSpecification',
@@ -67,7 +73,7 @@ const Pricing: NextPage = () => {
   ];
 
   return (
-    <div suppressHydrationWarning className="min-h-screen dark:bg-dark-900 light:bg-white transition-colors duration-300">
+    <div suppressHydrationWarning className="min-h-screen bg-dark-900">
       <Head>
         <title>Pricing - DevSecIT | Transparent Software Development Costs</title>
         <meta name="description" content="DevSecIT offers transparent, flexible pricing for custom software development, API integration, and cybersecurity services. No hidden costs." />
@@ -78,6 +84,8 @@ const Pricing: NextPage = () => {
 
       <Header activePage="pricing" />
 
+      {isClient && (
+      <>
       <section className="relative pt-32 pb-20 dark:bg-dark-900 light:bg-white transition-colors duration-300">
         <div className="absolute inset-0 dark:bg-gradient-to-br dark:from-primary-900/20 dark:via-dark-900 dark:to-blue-900/20 light:bg-gradient-to-br light:from-primary-50 light:via-white light:to-blue-50"></div>
         <div className="absolute top-20 left-10 w-72 h-72 dark:bg-primary-500/10 light:bg-primary-400/5 rounded-full blur-3xl animate-pulse-slow"></div>
@@ -204,6 +212,8 @@ const Pricing: NextPage = () => {
           </Link>
         </div>
       </section>
+      </>
+      )}
 
       <Footer />
     </div>

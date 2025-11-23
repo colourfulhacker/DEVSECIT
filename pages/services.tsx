@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useLayoutEffect } from 'react';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 
@@ -36,10 +36,15 @@ const INDUSTRIES = [
 ];
 
 const ServicesPage: NextPage = () => {
+  const [isClient, setIsClient] = useState(false);
   const [formData, setFormData] = useState({
     name: '', email: '', company: '', industry: '', budget: '', timeline: '', description: ''
   });
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
+
+  useLayoutEffect(() => {
+    setIsClient(true);
+  }, []);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -95,7 +100,7 @@ const ServicesPage: NextPage = () => {
   }, {} as Record<string, typeof IT_SERVICES>);
 
   return (
-    <div suppressHydrationWarning className="min-h-screen dark:bg-dark-900 light:bg-white transition-colors">
+    <div suppressHydrationWarning className="min-h-screen bg-dark-900">
       <Head>
         <title>Services - DEV SEC IT | Professional IT Solutions</title>
         <meta name="description" content="Comprehensive IT services including custom software development, DevOps, cloud solutions, AI/ML, cybersecurity, and more." />
@@ -103,6 +108,8 @@ const ServicesPage: NextPage = () => {
 
       <Header activePage="services" />
 
+      {isClient && (
+      <>
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 text-center dark:bg-gradient-to-b dark:from-dark-800 dark:to-dark-900 light:bg-gradient-to-b light:from-gray-50 light:to-white">
         <div className="max-w-4xl mx-auto">
@@ -335,6 +342,8 @@ const ServicesPage: NextPage = () => {
           </form>
         </div>
       </section>
+      </>
+      )}
 
       <Footer />
     </div>

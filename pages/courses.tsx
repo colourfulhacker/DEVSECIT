@@ -1,9 +1,15 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import { useState, useLayoutEffect } from 'react';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 
 const Courses: NextPage = () => {
+  const [isClient, setIsClient] = useState(false);
+  
+  useLayoutEffect(() => {
+    setIsClient(true);
+  }, []);
   const courses = [
     {
       id: 1,
@@ -98,7 +104,7 @@ const Courses: NextPage = () => {
   ];
 
   return (
-    <div suppressHydrationWarning className="min-h-screen dark:bg-dark-900 light:bg-white transition-colors">
+    <div suppressHydrationWarning className="min-h-screen bg-dark-900">
       <Head>
         <title>Courses - DEV SEC IT | Professional IT Training</title>
         <meta name="description" content="10 professional IT courses from Full-Stack Development to AI/ML. Practical training with certifications and job support." />
@@ -106,6 +112,8 @@ const Courses: NextPage = () => {
 
       <Header activePage="courses" />
 
+      {isClient && (
+      <>
       {/* Header */}
       <div className="pt-24 pb-20 px-4 text-center dark:bg-gradient-to-b dark:from-dark-800 dark:to-dark-900 light:bg-gradient-to-b light:from-gray-50 light:to-white">
         <h1 className="text-5xl md:text-6xl font-display font-bold mb-6 dark:text-white light:text-gray-900">
@@ -172,6 +180,9 @@ const Courses: NextPage = () => {
           </div>
         </div>
       </section>
+
+      </>
+      )}
 
       <Footer />
     </div>
