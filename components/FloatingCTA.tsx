@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { MessageCircle } from 'lucide-react';
 
 export const FloatingCTA = () => {
   const [isMounted, setIsMounted] = useState(false);
@@ -18,7 +19,7 @@ export const FloatingCTA = () => {
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"
       >
-        <span className="text-2xl">💬</span>
+        <MessageCircle className="w-6 h-6" />
         <span className="hidden sm:inline">WhatsApp Now</span>
       </a>
     </div>

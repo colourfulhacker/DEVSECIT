@@ -5,6 +5,7 @@ import { useState, useLayoutEffect } from 'react';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { PricingCalculator } from '../components/PricingCalculator';
+import { Rocket, Briefcase, Building2, Check } from 'lucide-react';
 
 const Pricing: NextPage = () => {
   const [isClient, setIsClient] = useState(false);
@@ -35,7 +36,7 @@ const Pricing: NextPage = () => {
         '30 days support',
         'Source code included'
       ],
-      icon: '🚀'
+      Icon: Rocket
     },
     {
       name: 'Professional',
@@ -51,7 +52,7 @@ const Pricing: NextPage = () => {
         'Deployment included',
         '3 rounds revision'
       ],
-      icon: '💼',
+      Icon: Briefcase,
       highlight: true
     },
     {
@@ -68,7 +69,7 @@ const Pricing: NextPage = () => {
         'Dedicated team',
         'Ongoing optimization'
       ],
-      icon: '🏢'
+      Icon: Building2
     }
   ];
 
@@ -106,13 +107,15 @@ const Pricing: NextPage = () => {
             {plans.map((plan, i) => (
               <div
                 key={i}
-                className={`rounded-2xl p-8 transition-all duration-300 ${
+                className={`rounded-2xl p-8 transition-all duration-300 group ${
                   plan.highlight
                     ? 'dark:bg-gradient-to-br dark:from-primary-900/40 dark:to-blue-900/40 light:bg-gradient-to-br light:from-primary-50 light:to-blue-50 dark:border-2 dark:border-primary-500 light:border-2 light:border-primary-400 transform scale-105'
                     : 'dark:bg-dark-900 light:bg-white dark:border dark:border-dark-700 light:border light:border-gray-200'
                 }`}
               >
-                <div className="text-5xl mb-4">{plan.icon}</div>
+                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-primary-500/20 to-blue-500/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <plan.Icon className="w-8 h-8 text-primary-400" />
+                </div>
                 <h3 className="text-2xl font-bold mb-2 dark:text-white light:text-gray-900 transition-colors duration-300">{plan.name}</h3>
                 <div className="mb-2 dark:text-gray-400 light:text-gray-600 transition-colors duration-300">{plan.description}</div>
                 <div className="text-3xl font-bold text-primary-400 mb-1">{plan.price}</div>
@@ -120,8 +123,8 @@ const Pricing: NextPage = () => {
                 
                 <ul className="space-y-3 mb-8">
                   {plan.features.map((feature, j) => (
-                    <li key={j} className="flex gap-2 dark:text-gray-300 light:text-gray-700 transition-colors duration-300">
-                      <span className="text-primary-400">✓</span>
+                    <li key={j} className="flex items-center gap-2 dark:text-gray-300 light:text-gray-700 transition-colors duration-300">
+                      <Check className="w-4 h-4 text-primary-400 flex-shrink-0" />
                       <span>{feature}</span>
                     </li>
                   ))}
@@ -149,8 +152,8 @@ const Pricing: NextPage = () => {
                 'Responsive Design',
                 'Technical Documentation'
               ].map((item, i) => (
-                <div key={i} className="flex gap-2 dark:text-gray-300 light:text-gray-700 transition-colors duration-300">
-                  <span className="text-primary-400 font-bold">✓</span>
+                <div key={i} className="flex items-center gap-2 dark:text-gray-300 light:text-gray-700 transition-colors duration-300">
+                  <Check className="w-5 h-5 text-primary-400 flex-shrink-0" />
                   <span>{item}</span>
                 </div>
               ))}

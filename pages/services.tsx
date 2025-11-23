@@ -1,32 +1,39 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { useState, useEffect, useLayoutEffect } from 'react';
+import { useState, useLayoutEffect } from 'react';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
+import { ProjectSubmissionForm } from '../components/ProjectSubmissionForm';
+import {
+  Globe, Smartphone, Zap, Cloud, RefreshCw, Bot, Brain, BarChart3,
+  Shield, Database, Layers, Link2, Plug, CheckSquare, Blocks,
+  Lightbulb, Wrench, Gauge, Search, Users, TrendingUp, Rocket,
+  Target, Check
+} from 'lucide-react';
 
 const IT_SERVICES = [
-  { id: 'web-dev', name: 'Web Application Development', icon: '🌐', category: 'Development' },
-  { id: 'mobile-dev', name: 'Mobile App Development', icon: '📱', category: 'Development' },
-  { id: 'api-dev', name: 'Custom API Development', icon: '⚡', category: 'Development' },
-  { id: 'cloud-solutions', name: 'Cloud Solutions & Migration', icon: '☁️', category: 'Infrastructure' },
-  { id: 'devops', name: 'DevOps & CI/CD Pipeline', icon: '🔄', category: 'Infrastructure' },
-  { id: 'automation', name: 'Business Process Automation', icon: '🤖', category: 'Automation' },
-  { id: 'ai-ml', name: 'AI & Machine Learning Solutions', icon: '🧠', category: 'AI' },
-  { id: 'data-analytics', name: 'Data Analytics & BI', icon: '📊', category: 'Analytics' },
-  { id: 'cybersecurity', name: 'Cybersecurity & Compliance', icon: '🔒', category: 'Security' },
-  { id: 'database-design', name: 'Database Design & Optimization', icon: '💾', category: 'Database' },
-  { id: 'microservices', name: 'Microservices Architecture', icon: '🏗️', category: 'Architecture' },
-  { id: 'blockchain', name: 'Blockchain Development', icon: '⛓️', category: 'Emerging Tech' },
-  { id: 'iot', name: 'IoT Solutions', icon: '🔌', category: 'Emerging Tech' },
-  { id: 'testing', name: 'QA & Automation Testing', icon: '✔️', category: 'Quality Assurance' },
-  { id: 'integration', name: 'Third-party Integration', icon: '🔗', category: 'Integration' },
-  { id: 'legacy', name: 'Legacy System Modernization', icon: '🔄', category: 'Modernization' },
-  { id: 'consulting', name: 'IT Consulting & Strategy', icon: '💡', category: 'Consulting' },
-  { id: 'maintenance', name: 'Application Maintenance & Support', icon: '🛠️', category: 'Support' },
-  { id: 'performance', name: 'Performance Optimization', icon: '⚡', category: 'Optimization' },
-  { id: 'security-audit', name: 'Security Audit & Penetration Testing', icon: '🔍', category: 'Security' },
-  { id: 'training', name: 'Staff Training & Onboarding', icon: '👥', category: 'Training' },
-  { id: 'scalability', name: 'Scalability Planning', icon: '📈', category: 'Planning' },
+  { id: 'web-dev', name: 'Web Application Development', Icon: Globe, category: 'Development' },
+  { id: 'mobile-dev', name: 'Mobile App Development', Icon: Smartphone, category: 'Development' },
+  { id: 'api-dev', name: 'Custom API Development', Icon: Zap, category: 'Development' },
+  { id: 'cloud-solutions', name: 'Cloud Solutions & Migration', Icon: Cloud, category: 'Infrastructure' },
+  { id: 'devops', name: 'DevOps & CI/CD Pipeline', Icon: RefreshCw, category: 'Infrastructure' },
+  { id: 'automation', name: 'Business Process Automation', Icon: Bot, category: 'Automation' },
+  { id: 'ai-ml', name: 'AI & Machine Learning Solutions', Icon: Brain, category: 'AI' },
+  { id: 'data-analytics', name: 'Data Analytics & BI', Icon: BarChart3, category: 'Analytics' },
+  { id: 'cybersecurity', name: 'Cybersecurity & Compliance', Icon: Shield, category: 'Security' },
+  { id: 'database-design', name: 'Database Design & Optimization', Icon: Database, category: 'Database' },
+  { id: 'microservices', name: 'Microservices Architecture', Icon: Layers, category: 'Architecture' },
+  { id: 'blockchain', name: 'Blockchain Development', Icon: Blocks, category: 'Emerging Tech' },
+  { id: 'iot', name: 'IoT Solutions', Icon: Plug, category: 'Emerging Tech' },
+  { id: 'testing', name: 'QA & Automation Testing', Icon: CheckSquare, category: 'Quality Assurance' },
+  { id: 'integration', name: 'Third-party Integration', Icon: Link2, category: 'Integration' },
+  { id: 'legacy', name: 'Legacy System Modernization', Icon: RefreshCw, category: 'Modernization' },
+  { id: 'consulting', name: 'IT Consulting & Strategy', Icon: Lightbulb, category: 'Consulting' },
+  { id: 'maintenance', name: 'Application Maintenance & Support', Icon: Wrench, category: 'Support' },
+  { id: 'performance', name: 'Performance Optimization', Icon: Gauge, category: 'Optimization' },
+  { id: 'security-audit', name: 'Security Audit & Penetration Testing', Icon: Search, category: 'Security' },
+  { id: 'training', name: 'Staff Training & Onboarding', Icon: Users, category: 'Training' },
+  { id: 'scalability', name: 'Scalability Planning', Icon: TrendingUp, category: 'Planning' },
 ];
 
 const INDUSTRIES = [
@@ -37,67 +44,11 @@ const INDUSTRIES = [
 
 const ServicesPage: NextPage = () => {
   const [isClient, setIsClient] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '', email: '', company: '', industry: '', budget: '', timeline: '', description: ''
-  });
-  const [selectedServices, setSelectedServices] = useState<string[]>([]);
+  const [showProjectForm, setShowProjectForm] = useState(false);
 
   useLayoutEffect(() => {
     setIsClient(true);
   }, []);
-
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-    try {
-      const savedEmail = localStorage.getItem('clientEmail');
-      const savedName = localStorage.getItem('clientName');
-      const savedCompany = localStorage.getItem('clientCompany');
-      if (savedEmail || savedName || savedCompany) {
-        setFormData(prev => ({
-          ...prev,
-          email: savedEmail || '',
-          name: savedName || '',
-          company: savedCompany || ''
-        }));
-      }
-    } catch (e) {
-      console.error('localStorage access failed:', e);
-    }
-  }, []);
-
-  const handleServiceToggle = (serviceId: string) => {
-    setSelectedServices(prev =>
-      prev.includes(serviceId)
-        ? prev.filter(s => s !== serviceId)
-        : [...prev, serviceId]
-    );
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (typeof window !== 'undefined') {
-      try {
-        localStorage.setItem('clientEmail', formData.email);
-        localStorage.setItem('clientName', formData.name);
-        localStorage.setItem('clientCompany', formData.company);
-      } catch (e) {
-        console.error('localStorage save failed:', e);
-      }
-    }
-    const selectedServiceNames = selectedServices
-      .map(id => IT_SERVICES.find(s => s.id === id)?.name)
-      .filter(Boolean)
-      .join(', ');
-    const whatsappMessage = `Hi DevSecIT! 👋\n\n*IT Services Requirement*\n\n*Contact Info:*\nName: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.company}\n\n*Project Details:*\nIndustry: ${formData.industry}\nBudget: ${formData.budget}\nTimeline: ${formData.timeline}\n\n*Required Services:*\n${selectedServiceNames}\n\n*Project Description:*\n${formData.description}`;
-    const whatsappLink = `https://wa.me/918101979855?text=${encodeURIComponent(whatsappMessage)}`;
-    window.location.href = whatsappLink;
-  };
-
-  const servicesByCategory = IT_SERVICES.reduce((acc, service) => {
-    if (!acc[service.category]) acc[service.category] = [];
-    acc[service.category].push(service);
-    return acc;
-  }, {} as Record<string, typeof IT_SERVICES>);
 
   return (
     <div suppressHydrationWarning className="min-h-screen dark:bg-dark-900 light:bg-white">
@@ -133,50 +84,53 @@ const ServicesPage: NextPage = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                icon: '🚀',
+                Icon: Rocket,
                 title: 'Custom Software Development',
                 description: 'Bespoke applications for individuals, startups, and enterprises. Full-stack development with modern frameworks and scalable architecture.',
                 features: ['Web & Mobile Apps', 'SaaS Platforms', 'Enterprise Solutions', 'Legacy Modernization']
               },
               {
-                icon: '🔒',
+                Icon: Shield,
                 title: 'Cybersecurity Integration',
                 description: 'Security-first development approach. Protect your digital assets with enterprise-grade security measures built into every layer.',
                 features: ['Secure-by-Design', 'Penetration Testing', 'Compliance (GDPR, SOC 2)', 'Security Audits']
               },
               {
-                icon: '🤖',
+                Icon: Bot,
                 title: 'AI & Automation',
                 description: 'Harness the power of artificial intelligence and machine learning to automate processes and gain competitive advantages.',
                 features: ['Machine Learning', 'Process Automation', 'Intelligent Analytics', 'AI Integration']
               },
               {
-                icon: '⚡',
+                Icon: Zap,
                 title: 'Custom API Development',
                 description: 'Build any API you need, no matter how specialized. 7-day MVP delivery for rapid prototyping and market validation.',
                 features: ['RESTful APIs', 'GraphQL', 'Microservices', 'Real-time APIs']
               },
               {
-                icon: '🎯',
+                Icon: Target,
                 title: 'Full Project Outsourcing',
                 description: 'Hand over your entire project to our expert team. From planning to deployment, we handle everything while you focus on your business.',
                 features: ['End-to-End Delivery', 'Agile Development', 'DevOps & CI/CD', 'Maintenance & Support']
               },
               {
-                icon: '💡',
+                Icon: Lightbulb,
                 title: 'Digital Transformation',
                 description: 'Modernize your business with cutting-edge technology. Cloud migration, digital solutions, and strategic IT consulting.',
                 features: ['Cloud Solutions', 'System Integration', 'IT Strategy', 'Performance Optimization']
               }
             ].map((service, i) => (
-              <div key={i} className="dark:bg-dark-900 light:bg-white p-8 rounded-2xl dark:border dark:border-dark-700 light:border light:border-gray-200 hover:dark:border-primary-500/50 transition-all">
-                <div className="text-5xl mb-4">{service.icon}</div>
+              <div key={i} className="dark:bg-dark-900 light:bg-white p-8 rounded-2xl dark:border dark:border-dark-700 light:border light:border-gray-200 hover:dark:border-primary-500/50 transition-all group">
+                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-primary-500/20 to-blue-500/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <service.Icon className="w-8 h-8 text-primary-400" />
+                </div>
                 <h3 className="text-2xl font-bold mb-3 dark:text-white light:text-gray-900">{service.title}</h3>
                 <p className="dark:text-gray-400 light:text-gray-600 mb-4">{service.description}</p>
                 <ul className="space-y-2">
                   {service.features.map((feature, j) => (
-                    <li key={j} className="flex items-center dark:text-gray-300 light:text-gray-700">
-                      <span className="text-primary-400 mr-2">✓</span>{feature}
+                    <li key={j} className="flex items-center gap-2 dark:text-gray-300 light:text-gray-700">
+                      <Check className="w-4 h-4 text-primary-400 flex-shrink-0" />
+                      <span>{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -243,103 +197,38 @@ const ServicesPage: NextPage = () => {
         </div>
       </section>
 
-      {/* IT Services Selection Form */}
+      {/* Project Submission Section */}
       <section className="py-20 dark:bg-dark-900 light:bg-white transition-colors">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 dark:text-white light:text-gray-900">
-              Select Your <span className="text-gradient">Required Services</span>
-            </h2>
-            <p className="text-xl dark:text-gray-400 light:text-gray-600">
-              Choose the services you need and submit your requirements
-            </p>
-          </div>
-
-          <form onSubmit={handleSubmit} className="dark:bg-dark-800 light:bg-gray-50 p-8 md:p-12 rounded-2xl dark:border dark:border-dark-700 light:border light:border-gray-200 transition-colors">
-            {/* Contact Info */}
-            <div className="mb-8">
-              <h3 className="text-2xl font-bold mb-6 dark:text-white light:text-gray-900">Contact Information</h3>
-              <div className="grid md:grid-cols-2 gap-6 mb-6">
-                {[
-                  { label: 'Full Name', key: 'name' },
-                  { label: 'Email Address', key: 'email' },
-                  { label: 'Company Name', key: 'company' },
-                  { label: 'Industry', key: 'industry' }
-                ].map(({ label, key }) => (
-                  <input
-                    key={key}
-                    type={key === 'email' ? 'email' : 'text'}
-                    placeholder={label}
-                    required
-                    value={formData[key as keyof typeof formData]}
-                    onChange={(e) => setFormData({ ...formData, [key]: e.target.value })}
-                    className="dark:bg-dark-900 light:bg-white dark:text-white light:text-gray-900 dark:border-dark-700 light:border-gray-200 border px-4 py-3 rounded-lg focus:ring-2 focus:ring-primary-500 outline-none"
-                  />
-                ))}
-              </div>
-              <div className="grid md:grid-cols-2 gap-6">
-                {[
-                  { label: 'Budget Range', key: 'budget', options: ['₹1L-5L', '₹5L-10L', '₹10L-25L', '₹25L+'] },
-                  { label: 'Timeline', key: 'timeline', options: ['Urgent (1-2 weeks)', '1-2 months', '2-3 months', '3+ months'] }
-                ].map(({ label, key, options }) => (
-                  <select
-                    key={key}
-                    value={formData[key as keyof typeof formData]}
-                    onChange={(e) => setFormData({ ...formData, [key]: e.target.value })}
-                    className="dark:bg-dark-900 light:bg-white dark:text-white light:text-gray-900 dark:border-dark-700 light:border-gray-200 border px-4 py-3 rounded-lg focus:ring-2 focus:ring-primary-500 outline-none"
-                  >
-                    <option value="">{label}</option>
-                    {options.map(opt => <option key={opt} value={opt}>{opt}</option>)}
-                  </select>
-                ))}
-              </div>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          {showProjectForm ? (
+            <>
+              <button
+                onClick={() => setShowProjectForm(false)}
+                className="mb-6 flex items-center gap-2 dark:text-gray-400 light:text-gray-600 hover:text-primary-400"
+              >
+                ← Back to Services
+              </button>
+              <ProjectSubmissionForm onClose={() => setShowProjectForm(false)} />
+            </>
+          ) : (
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 dark:text-white light:text-gray-900">
+                Ready to Start Your <span className="text-gradient">Project?</span>
+              </h2>
+              <p className="text-xl dark:text-gray-400 light:text-gray-600 mb-8">
+                Tell us about your requirements and we'll provide a detailed proposal with timeline and cost
+              </p>
+              <button
+                onClick={() => setShowProjectForm(true)}
+                className="px-10 py-4 bg-gradient-to-r from-primary-500 to-blue-600 text-white font-bold rounded-lg hover:shadow-lg hover:shadow-primary-500/50 transition-all text-lg"
+              >
+                Submit Your Project Requirements
+              </button>
+              <p className="text-sm dark:text-gray-500 light:text-gray-500 mt-4">
+                Free consultation • Quick response within 24 hours • No obligations
+              </p>
             </div>
-
-            {/* Services Selection */}
-            <div className="mb-8">
-              <h3 className="text-2xl font-bold mb-6 dark:text-white light:text-gray-900">Select Services by Category</h3>
-              <div className="space-y-6">
-                {Object.entries(servicesByCategory).map(([category, services]) => (
-                  <div key={category}>
-                    <h4 className="font-semibold dark:text-primary-400 light:text-primary-600 mb-3">{category}</h4>
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-                      {services.map(service => (
-                        <label key={service.id} className="flex items-center dark:bg-dark-900 light:bg-white p-3 rounded-lg dark:border dark:border-dark-700 light:border light:border-gray-200 cursor-pointer hover:dark:border-primary-500/50">
-                          <input
-                            type="checkbox"
-                            checked={selectedServices.includes(service.id)}
-                            onChange={() => handleServiceToggle(service.id)}
-                            className="w-4 h-4 text-primary-500 rounded focus:ring-2 focus:ring-primary-500"
-                          />
-                          <span className="ml-3 dark:text-gray-300 light:text-gray-700 text-sm">{service.name}</span>
-                        </label>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Description */}
-            <div className="mb-8">
-              <label className="block text-lg font-semibold dark:text-white light:text-gray-900 mb-3">Project Description</label>
-              <textarea
-                placeholder="Tell us about your project, goals, and any specific requirements..."
-                required
-                rows={5}
-                value={formData.description}
-                onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                className="w-full dark:bg-dark-900 light:bg-white dark:text-white light:text-gray-900 dark:border-dark-700 light:border-gray-200 border px-4 py-3 rounded-lg focus:ring-2 focus:ring-primary-500 outline-none"
-              />
-            </div>
-
-            <button
-              type="submit"
-              className="w-full bg-gradient-to-r from-primary-500 to-blue-600 text-white font-bold py-3 rounded-lg hover:shadow-lg hover:shadow-primary-500/50 transition-all"
-            >
-              Submit Requirements
-            </button>
-          </form>
+          )}
         </div>
       </section>
       </>

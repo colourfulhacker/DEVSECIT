@@ -9,6 +9,12 @@ import { FAQ } from '../components/FAQ';
 import { Testimonials } from '../components/Testimonials';
 import { FloatingCTA } from '../components/FloatingCTA';
 import { 
+  Rocket, GraduationCap, Briefcase, Globe, RefreshCw, Shield, Brain,
+  Cloud, Bot, Zap, Lightbulb, Building2, BookOpen, Clock, Search,
+  DollarSign, Target, TrendingUp, Sparkles, Smartphone, Phone, 
+  MessageCircle, Award, Users, HeadphonesIcon
+} from 'lucide-react';
+import { 
   generateOrganizationSchema, 
   generateLocalBusinessSchema,
   generateServiceSchema,
@@ -30,7 +36,7 @@ const Home: NextPage = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const whatsappMessage = `Hi DevSecIT! 👋\n\n*Project Inquiry*\n\nName: ${formData.name}\nEmail: ${formData.email}\n${formData.company ? `Company: ${formData.company}\n` : ''}Project Details:\n${formData.message}`;
+    const whatsappMessage = `Hi DevSecIT!\n\n*Project Inquiry*\n\nName: ${formData.name}\nEmail: ${formData.email}\n${formData.company ? `Company: ${formData.company}\n` : ''}Project Details:\n${formData.message}`;
     const whatsappLink = `https://wa.me/918101979855?text=${encodeURIComponent(whatsappMessage)}`;
     window.location.href = whatsappLink;
     setFormData({ name: '', email: '', company: '', message: '' });
@@ -46,25 +52,25 @@ const Home: NextPage = () => {
   ];
 
   const featuredCourses = [
-    { title: 'Full-Stack Web Development', price: '₹24,999', duration: '4–6 Months', emoji: '🌐' },
-    { title: 'DevSecOps', price: '₹29,999', duration: '3 Months', emoji: '🔄' },
-    { title: 'Cyber Security & Ethical Hacking', price: '₹34,999', duration: '4–6 Months', emoji: '🔒' },
-    { title: 'AI & Machine Learning', price: '₹34,999', duration: '4–6 Months', emoji: '🧠' }
+    { title: 'Full-Stack Web Development', price: '₹24,999', duration: '4–6 Months', Icon: Globe },
+    { title: 'DevSecOps', price: '₹29,999', duration: '3 Months', Icon: RefreshCw },
+    { title: 'Cyber Security & Ethical Hacking', price: '₹34,999', duration: '4–6 Months', Icon: Shield },
+    { title: 'AI & Machine Learning', price: '₹34,999', duration: '4–6 Months', Icon: Brain }
   ];
 
   const serviceCategories = [
-    { title: 'Custom Software Development', desc: 'Web, mobile, enterprise solutions', emoji: '🚀', link: '/services' },
-    { title: 'Cybersecurity & Compliance', desc: 'Secure-by-design approach', emoji: '🔒', link: '/services' },
-    { title: 'Cloud Solutions & DevOps', desc: 'AWS, Azure, GCP & CI/CD', emoji: '☁️', link: '/services' },
-    { title: 'AI & Automation', desc: 'ML models & process automation', emoji: '🤖', link: '/services' },
-    { title: 'API Development', desc: '7-day MVP delivery', emoji: '⚡', link: '/services' },
-    { title: 'IT Consulting', desc: 'Strategy & digital transformation', emoji: '💡', link: '/services' }
+    { title: 'Custom Software Development', desc: 'Web, mobile, enterprise solutions', Icon: Rocket, link: '/services' },
+    { title: 'Cybersecurity & Compliance', desc: 'Secure-by-design approach', Icon: Shield, link: '/services' },
+    { title: 'Cloud Solutions & DevOps', desc: 'AWS, Azure, GCP & CI/CD', Icon: Cloud, link: '/services' },
+    { title: 'AI & Automation', desc: 'ML models & process automation', Icon: Bot, link: '/services' },
+    { title: 'API Development', desc: '7-day MVP delivery', Icon: Zap, link: '/services' },
+    { title: 'IT Consulting', desc: 'Strategy & digital transformation', Icon: Lightbulb, link: '/services' }
   ];
 
   const pricingPlans = [
-    { name: 'Startup MVP', price: '₹99,999', emoji: '🚀' },
-    { name: 'Professional', price: '₹299,999', emoji: '💼', highlight: true },
-    { name: 'Enterprise', price: 'Custom', emoji: '🏢' }
+    { name: 'Startup MVP', price: '₹99,999', Icon: Rocket },
+    { name: 'Professional', price: '₹299,999', Icon: Briefcase, highlight: true },
+    { name: 'Enterprise', price: 'Custom', Icon: Building2 }
   ];
 
   return (
@@ -102,21 +108,24 @@ const Home: NextPage = () => {
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center flex-wrap">
               <a 
                 href="#contact" 
-                className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-primary-500 to-blue-600 rounded-lg font-bold text-white hover:shadow-2xl transition-all transform hover:scale-105 text-center"
+                className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-primary-500 to-blue-600 rounded-lg font-bold text-white hover:shadow-2xl transition-all transform hover:scale-105 text-center flex items-center justify-center gap-2"
               >
-                🚀 Start Your Project
+                <Rocket className="w-5 h-5" />
+                Start Your Project
               </a>
               <Link 
                 href="/courses" 
-                className="w-full sm:w-auto px-8 py-4 border-2 dark:border-primary-500/50 light:border-primary-400 rounded-lg font-bold dark:text-gray-100 light:text-gray-900 hover:shadow-lg transition text-center"
+                className="w-full sm:w-auto px-8 py-4 border-2 dark:border-primary-500/50 light:border-primary-400 rounded-lg font-bold dark:text-gray-100 light:text-gray-900 hover:shadow-lg transition text-center flex items-center justify-center gap-2"
               >
-                🎓 Explore Courses
+                <GraduationCap className="w-5 h-5" />
+                Explore Courses
               </Link>
               <Link 
                 href="/services" 
-                className="w-full sm:w-auto px-8 py-4 border-2 dark:border-blue-500/50 light:border-blue-400 rounded-lg font-bold dark:text-blue-300 light:text-blue-600 hover:shadow-lg transition text-center"
+                className="w-full sm:w-auto px-8 py-4 border-2 dark:border-blue-500/50 light:border-blue-400 rounded-lg font-bold dark:text-blue-300 light:text-blue-600 hover:shadow-lg transition text-center flex items-center justify-center gap-2"
               >
-                💼 Browse Services
+                <Briefcase className="w-5 h-5" />
+                Browse Services
               </Link>
             </div>
             <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
@@ -148,22 +157,32 @@ const Home: NextPage = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
             {featuredCourses.map((course, i) => (
-              <div key={i} className="dark:bg-dark-900 light:bg-white p-6 rounded-lg dark:border dark:border-dark-700 light:border light:border-gray-200 hover:shadow-lg transition">
-                <div className="text-4xl mb-3">{course.emoji}</div>
+              <div key={i} className="dark:bg-dark-900 light:bg-white p-6 rounded-lg dark:border dark:border-dark-700 light:border light:border-gray-200 hover:shadow-lg transition group">
+                <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-primary-500/20 to-blue-500/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <course.Icon className="w-7 h-7 text-primary-400" />
+                </div>
                 <h3 className="text-lg font-bold mb-2 dark:text-white light:text-gray-900">{course.title}</h3>
                 <div className="text-sm dark:text-gray-400 light:text-gray-600 mb-4">
-                  <div>{course.price}</div>
-                  <div className="text-xs">⏱️ {course.duration}</div>
+                  <div className="font-semibold text-primary-400">{course.price}</div>
+                  <div className="text-xs flex items-center gap-1 mt-1">
+                    <Clock className="w-3 h-3" />
+                    {course.duration}
+                  </div>
                 </div>
               </div>
             ))}
           </div>
 
           <div className="text-center space-y-3">
-            <Link href="/courses" className="inline-block px-8 py-3 bg-gradient-to-r from-primary-500 to-blue-600 rounded-lg font-bold text-white hover:shadow-lg transition">
-              📚 View All 10 Courses
+            <Link href="/courses" className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-primary-500 to-blue-600 rounded-lg font-bold text-white hover:shadow-lg transition">
+              <BookOpen className="w-5 h-5" />
+              View All 10 Courses
             </Link>
-            <p className="text-sm dark:text-gray-400 light:text-gray-600">100% Practical • Job Support • Certifications</p>
+            <p className="text-sm dark:text-gray-400 light:text-gray-600 flex items-center justify-center gap-2 flex-wrap">
+              <span className="flex items-center gap-1"><Award className="w-4 h-4" /> 100% Practical</span> •
+              <span className="flex items-center gap-1"><Users className="w-4 h-4" /> Job Support</span> •
+              <span className="flex items-center gap-1"><Award className="w-4 h-4" /> Certifications</span>
+            </p>
           </div>
         </div>
       </section>
@@ -180,18 +199,23 @@ const Home: NextPage = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {serviceCategories.map((service, i) => (
-              <Link key={i} href={service.link} className="dark:bg-dark-800/50 light:bg-gray-50 p-6 rounded-lg dark:border dark:border-dark-700 light:border light:border-gray-200 hover:shadow-lg hover:border-primary-500/50 transition">
-                <div className="text-4xl mb-3">{service.emoji}</div>
+              <Link key={i} href={service.link} className="dark:bg-dark-800/50 light:bg-gray-50 p-6 rounded-lg dark:border dark:border-dark-700 light:border light:border-gray-200 hover:shadow-lg hover:border-primary-500/50 transition group">
+                <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-primary-500/20 to-blue-500/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <service.Icon className="w-7 h-7 text-primary-400" />
+                </div>
                 <h3 className="text-lg font-bold mb-2 dark:text-white light:text-gray-900">{service.title}</h3>
                 <p className="text-sm dark:text-gray-400 light:text-gray-600 mb-3">{service.desc}</p>
-                <div className="text-primary-400 font-semibold text-sm hover:text-primary-300">Explore →</div>
+                <div className="text-primary-400 font-semibold text-sm hover:text-primary-300 flex items-center gap-1">
+                  Explore <span>→</span>
+                </div>
               </Link>
             ))}
           </div>
 
           <div className="text-center">
-            <Link href="/services" className="inline-block px-8 py-3 dark:bg-dark-700 light:bg-gray-100 rounded-lg font-bold dark:text-white light:text-gray-900 hover:shadow-lg transition">
-              🔍 Browse All 22 Services
+            <Link href="/services" className="inline-flex items-center gap-2 px-8 py-3 dark:bg-dark-700 light:bg-gray-100 rounded-lg font-bold dark:text-white light:text-gray-900 hover:shadow-lg transition">
+              <Search className="w-5 h-5" />
+              Browse All 22 Services
             </Link>
           </div>
         </div>
@@ -211,23 +235,28 @@ const Home: NextPage = () => {
             {pricingPlans.map((plan, i) => (
               <div 
                 key={i} 
-                className={`p-8 rounded-lg transition-all ${
+                className={`p-8 rounded-lg transition-all group ${
                   plan.highlight
                     ? 'dark:bg-gradient-to-br dark:from-primary-900/40 dark:to-blue-900/40 light:bg-gradient-to-br light:from-primary-50 light:to-blue-50 dark:border-2 dark:border-primary-500 light:border-2 light:border-primary-400 transform scale-105'
                     : 'dark:bg-dark-900 light:bg-white dark:border dark:border-dark-700 light:border light:border-gray-200'
                 }`}
               >
-                <div className="text-4xl mb-3">{plan.emoji}</div>
+                <div className="w-16 h-16 rounded-lg bg-gradient-to-br from-primary-500/20 to-blue-500/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <plan.Icon className="w-8 h-8 text-primary-400" />
+                </div>
                 <h3 className="text-2xl font-bold mb-2 dark:text-white light:text-gray-900">{plan.name}</h3>
                 <div className="text-3xl font-bold text-primary-400 mb-2">{plan.price}</div>
-                {plan.highlight && <div className="text-sm text-primary-400 font-semibold mb-4">Most Popular</div>}
+                {plan.highlight && <div className="text-sm text-primary-400 font-semibold mb-4 flex items-center gap-1">
+                  <Award className="w-4 h-4" /> Most Popular
+                </div>}
               </div>
             ))}
           </div>
 
           <div className="text-center">
-            <Link href="/pricing" className="inline-block px-8 py-3 bg-gradient-to-r from-primary-500 to-blue-600 rounded-lg font-bold text-white hover:shadow-lg transition">
-              💰 View Complete Pricing & Details
+            <Link href="/pricing" className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-primary-500 to-blue-600 rounded-lg font-bold text-white hover:shadow-lg transition">
+              <DollarSign className="w-5 h-5" />
+              View Complete Pricing & Details
             </Link>
           </div>
         </div>
@@ -244,15 +273,17 @@ const Home: NextPage = () => {
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { icon: '🎯', title: 'Industry Expert Team', desc: 'Vetted professionals with 10+ years of experience' },
-              { icon: '⚡', title: 'Rapid Delivery', desc: '2-4 week MVPs, 7-day API development' },
-              { icon: '🔒', title: 'Security First', desc: 'OWASP compliance, penetration testing built-in' },
-              { icon: '📈', title: 'Scalable Solutions', desc: 'Handle millions of users without breaking' },
-              { icon: '24/7', title: '24/7 Support', desc: 'Round-the-clock assistance & maintenance' },
-              { icon: '✨', title: 'Quality Guaranteed', desc: '100% test coverage, zero critical vulnerabilities' }
+              { Icon: Target, title: 'Industry Expert Team', desc: 'Vetted professionals with 10+ years of experience' },
+              { Icon: Zap, title: 'Rapid Delivery', desc: '2-4 week MVPs, 7-day API development' },
+              { Icon: Shield, title: 'Security First', desc: 'OWASP compliance, penetration testing built-in' },
+              { Icon: TrendingUp, title: 'Scalable Solutions', desc: 'Handle millions of users without breaking' },
+              { Icon: HeadphonesIcon, title: '24/7 Support', desc: 'Round-the-clock assistance & maintenance' },
+              { Icon: Sparkles, title: 'Quality Guaranteed', desc: '100% test coverage, zero critical vulnerabilities' }
             ].map((item, i) => (
-              <div key={i} className="text-center">
-                <div className="text-4xl mb-3">{item.icon}</div>
+              <div key={i} className="text-center group">
+                <div className="w-16 h-16 mx-auto rounded-lg bg-gradient-to-br from-primary-500/20 to-blue-500/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <item.Icon className="w-8 h-8 text-primary-400" />
+                </div>
                 <h3 className="text-xl font-bold mb-2 dark:text-white light:text-gray-900">{item.title}</h3>
                 <p className="dark:text-gray-400 light:text-gray-600">{item.desc}</p>
               </div>
@@ -309,20 +340,23 @@ const Home: NextPage = () => {
             />
             <button
               type="submit"
-              className="w-full px-8 py-3 bg-gradient-to-r from-primary-500 to-blue-600 rounded-lg font-bold text-white hover:shadow-lg transition-all"
+              className="w-full px-8 py-3 bg-gradient-to-r from-primary-500 to-blue-600 rounded-lg font-bold text-white hover:shadow-lg transition-all flex items-center justify-center gap-2"
             >
-              📱 Send via WhatsApp
+              <Smartphone className="w-5 h-5" />
+              Send via WhatsApp
             </button>
           </form>
 
           <div className="mt-8 text-center">
             <p className="text-sm dark:text-gray-400 light:text-gray-600 mb-4">Or reach out directly:</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="tel:+918101979855" className="px-6 py-2 dark:text-primary-400 light:text-primary-600 font-semibold hover:underline">
-                📞 +91 8101 979855
+              <a href="tel:+918101979855" className="px-6 py-2 dark:text-primary-400 light:text-primary-600 font-semibold hover:underline flex items-center justify-center gap-2">
+                <Phone className="w-4 h-4" />
+                +91 8101 979855
               </a>
-              <a href="https://wa.me/918101979855" className="px-6 py-2 dark:text-green-400 light:text-green-600 font-semibold hover:underline">
-                💬 WhatsApp
+              <a href="https://wa.me/918101979855" className="px-6 py-2 dark:text-green-400 light:text-green-600 font-semibold hover:underline flex items-center justify-center gap-2">
+                <MessageCircle className="w-4 h-4" />
+                WhatsApp
               </a>
             </div>
           </div>
