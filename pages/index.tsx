@@ -1,7 +1,7 @@
 
 import type { NextPage } from 'next';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useLayoutEffect } from 'react';
 import SEOHead from '../components/SEOHead';
 import { APISlider } from '../components/APISlider';
 import { APIOrderModal } from '../components/APIOrderModal';
@@ -27,6 +27,11 @@ const Home: NextPage = () => {
   });
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [selectedAPIService, setSelectedAPIService] = useState<APIService | null>(null);
+  const [isClient, setIsClient] = useState(false);
+
+  useLayoutEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

@@ -1,8 +1,27 @@
-
 import { useTheme } from '../context/ThemeContext';
+import { useLayoutEffect, useState } from 'react';
 
 export const ThemeToggle = () => {
   const { isDark, toggleTheme } = useTheme();
+  const [isMounted, setIsMounted] = useState(false);
+
+  useLayoutEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return (
+      <button
+        className="relative inline-flex items-center justify-center w-10 h-10 rounded-lg transition-all duration-300 focus-visible:ring-2 bg-dark-800 hover:bg-dark-700 text-yellow-400 focus-visible:ring-primary-500"
+        aria-label="Theme toggle"
+        disabled
+      >
+        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+        </svg>
+      </button>
+    );
+  }
 
   return (
     <button
