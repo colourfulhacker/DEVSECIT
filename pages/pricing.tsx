@@ -1,223 +1,162 @@
+import { useState } from 'react';
 
-import type { NextPage } from 'next';
-import Head from 'next/head';
-import Link from 'next/link';
-import { useState, useLayoutEffect } from 'react';
-import { Header } from '../components/Header';
-import { Footer } from '../components/Footer';
-import { PricingCalculator } from '../components/PricingCalculator';
+export const PricingCalculator = () => {
+  const [selectedCourses, setSelectedCourses] = useState<number[]>([]);
+  const [teamSize, setTeamSize] = useState(1);
 
-const Pricing: NextPage = () => {
-  const [isClient, setIsClient] = useState(false);
-  
-  useLayoutEffect(() => {
-    setIsClient(true);
-  }, []);
-  const pricingSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'PriceSpecification',
-    priceCurrency: 'INR',
-    price: 'Custom',
-    description: 'DevSecIT offers flexible pricing models for custom software development, API integration, and cybersecurity services'
-  };
-
-  const plans = [
-    {
-      name: 'Startup MVP',
-      price: '₹99,999',
-      duration: 'Starting price',
-      description: 'Perfect for startups and MVPs',
-      features: [
-        'Basic web application',
-        '5-7 day delivery',
-        'Responsive design',
-        'Basic security',
-        '30 days support',
-        'Source code included'
-      ],
-      icon: '🚀'
-    },
-    {
-      name: 'Professional',
-      price: '₹299,999',
-      duration: 'Starting price',
-      description: 'For growing businesses',
-      features: [
-        'Full-stack application',
-        'API integration',
-        'Database design',
-        'Advanced security',
-        '90 days support',
-        'Deployment included',
-        '3 rounds revision'
-      ],
-      icon: '💼',
-      highlight: true
-    },
-    {
-      name: 'Enterprise',
-      price: 'Custom',
-      duration: 'Contact for quote',
-      description: 'For large-scale projects',
-      features: [
-        'Complex systems',
-        'Multiple APIs',
-        'Microservices',
-        'Enterprise security',
-        '6 months support',
-        'Dedicated team',
-        'Ongoing optimization'
-      ],
-      icon: '🏢'
-    }
+  const courses = [
+    { id: 1, name: 'Full-Stack Web Development', price: 24999 },
+    { id: 2, name: 'DevSecOps', price: 29999 },
+    { id: 3, name: 'Cyber Security & Ethical Hacking', price: 34999 },
+    { id: 4, name: 'Mobile App Development', price: 27999 },
+    { id: 5, name: 'Cloud Computing (AWS/Azure/GCP)', price: 22999 },
+    { id: 6, name: 'AI & Machine Learning', price: 34999 },
+    { id: 7, name: 'Secure Software Engineering', price: 19999 },
+    { id: 8, name: 'Advanced Backend Engineering', price: 28999 },
+    { id: 9, name: 'Data Engineering & Big Data', price: 32999 },
+    { id: 10, name: 'Software Testing & QA', price: 17999 }
   ];
 
+  const toggleCourse = (courseId: number) => {
+    setSelectedCourses(prev =>
+      prev.includes(courseId)
+        ? prev.filter(id => id !== courseId)
+        : [...prev, courseId]
+    );
+  };
+
+  const coursesSubtotal = courses
+    .filter(c => selectedCourses.includes(c.id))
+    .reduce((sum, c) => sum + c.price, 0);
+
+  const teamDiscount = teamSize > 1 ? 0.1 * teamSize : 0; // 10% per person in team
+  const discountAmount = coursesSubtotal * Math.min(teamDiscount, 0.3); // Max 30% discount
+  const totalPerPerson = teamSize > 0 ? Math.ceil((coursesSubtotal - discountAmount) / teamSize) : 0;
+  const totalAmount = coursesSubtotal - discountAmount;
+
   return (
-    <div suppressHydrationWarning className="min-h-screen bg-dark-900">
-      <Head>
-        <title>Pricing - DevSecIT | Transparent Software Development Costs</title>
-        <meta name="description" content="DevSecIT offers transparent, flexible pricing for custom software development, API integration, and cybersecurity services. No hidden costs." />
-        <meta name="keywords" content="pricing, software development cost, API development pricing, cybersecurity pricing, India" />
-        <link rel="canonical" href="https://devsecit.com/pricing" />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pricingSchema) }} />
-      </Head>
-
-      <Header activePage="pricing" />
-
-      {isClient && (
-      <>
-      <section className="relative pt-32 pb-20 dark:bg-dark-900 light:bg-white transition-colors duration-300">
-        <div className="absolute inset-0 dark:bg-gradient-to-br dark:from-primary-900/20 dark:via-dark-900 dark:to-blue-900/20 light:bg-gradient-to-br light:from-primary-50 light:via-white light:to-blue-50"></div>
-        <div className="absolute top-20 left-10 w-72 h-72 dark:bg-primary-500/10 light:bg-primary-400/5 rounded-full blur-3xl animate-pulse-slow"></div>
-        
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-7xl font-display font-bold mb-6 leading-tight dark:text-white light:text-gray-900 transition-colors duration-300">
-            Simple, Transparent <span className="text-gradient">Pricing</span>
-          </h1>
-          <p className="text-xl md:text-2xl dark:text-gray-400 light:text-gray-600 mb-8 max-w-3xl mx-auto transition-colors duration-300">
-            Flexible pricing models tailored to your project needs. No hidden costs, no surprises.
+    <section className="py-20 dark:bg-dark-900 light:bg-white transition-colors duration-300">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-display font-bold mb-4 dark:text-white light:text-gray-900">
+            Training <span className="text-gradient">Pricing Calculator</span>
+          </h2>
+          <p className="text-lg dark:text-gray-400 light:text-gray-600">
+            Select courses and team size to calculate your training investment
           </p>
         </div>
-      </section>
 
-      <section className="py-20 dark:bg-dark-800/50 light:bg-gray-50 transition-colors duration-300">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
-            {plans.map((plan, i) => (
-              <div
-                key={i}
-                className={`rounded-2xl p-8 transition-all duration-300 ${
-                  plan.highlight
-                    ? 'dark:bg-gradient-to-br dark:from-primary-900/40 dark:to-blue-900/40 light:bg-gradient-to-br light:from-primary-50 light:to-blue-50 dark:border-2 dark:border-primary-500 light:border-2 light:border-primary-400 transform scale-105'
-                    : 'dark:bg-dark-900 light:bg-white dark:border dark:border-dark-700 light:border light:border-gray-200'
-                }`}
-              >
-                <div className="text-5xl mb-4">{plan.icon}</div>
-                <h3 className="text-2xl font-bold mb-2 dark:text-white light:text-gray-900 transition-colors duration-300">{plan.name}</h3>
-                <div className="mb-2 dark:text-gray-400 light:text-gray-600 transition-colors duration-300">{plan.description}</div>
-                <div className="text-3xl font-bold text-primary-400 mb-1">{plan.price}</div>
-                <div className="text-sm dark:text-gray-400 light:text-gray-600 mb-6 transition-colors duration-300">{plan.duration}</div>
-                
-                <ul className="space-y-3 mb-8">
-                  {plan.features.map((feature, j) => (
-                    <li key={j} className="flex gap-2 dark:text-gray-300 light:text-gray-700 transition-colors duration-300">
-                      <span className="text-primary-400">✓</span>
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <Link href="/#contact" className="block w-full px-6 py-3 bg-gradient-to-r from-primary-500 to-blue-600 rounded-lg font-bold text-white hover:shadow-2xl hover:shadow-primary-500/50 transition-all text-center">
-                  Get Started
-                </Link>
+        <div className="grid lg:grid-cols-3 gap-8">
+          {/* Course Selection */}
+          <div className="lg:col-span-2">
+            <div className="dark:bg-dark-800/50 light:bg-gray-50 p-8 rounded-xl dark:border dark:border-dark-700 light:border light:border-gray-200">
+              <h3 className="text-2xl font-bold mb-6 dark:text-white light:text-gray-900">
+                Select Courses (₹ INR)
+              </h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                {courses.map(course => (
+                  <label
+                    key={course.id}
+                    className="flex items-center p-4 dark:bg-dark-900 light:bg-white rounded-lg dark:border dark:border-dark-700 light:border light:border-gray-200 hover:dark:border-primary-500/50 hover:light:border-primary-400 transition cursor-pointer"
+                  >
+                    <input
+                      type="checkbox"
+                      checked={selectedCourses.includes(course.id)}
+                      onChange={() => toggleCourse(course.id)}
+                      className="w-5 h-5 accent-primary-500 cursor-pointer"
+                    />
+                    <div className="ml-3 flex-1">
+                      <div className="font-semibold dark:text-white light:text-gray-900">{course.name}</div>
+                      <div className="text-sm text-primary-400 font-bold">₹{course.price.toLocaleString('en-IN')}</div>
+                    </div>
+                  </label>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
 
-          <div className="dark:bg-dark-900 light:bg-white rounded-2xl p-8 border dark:border-dark-700 light:border-gray-200">
-            <h2 className="text-3xl font-bold mb-6 text-center dark:text-white light:text-gray-900 transition-colors duration-300">
-              What&apos;s Included in All Plans?
-            </h2>
-            <div className="grid md:grid-cols-2 gap-4">
-              {[
-                '24/7 Expert Support',
-                '99.9% Uptime SLA',
-                'Security Audit',
-                'Performance Optimization',
-                'Free Maintenance (90 days)',
-                'Source Code Ownership',
-                'Responsive Design',
-                'Technical Documentation'
-              ].map((item, i) => (
-                <div key={i} className="flex gap-2 dark:text-gray-300 light:text-gray-700 transition-colors duration-300">
-                  <span className="text-primary-400 font-bold">✓</span>
-                  <span>{item}</span>
+          {/* Summary & Team Size */}
+          <div className="space-y-6">
+            {/* Team Size */}
+            <div className="dark:bg-dark-800/50 light:bg-gray-50 p-6 rounded-xl dark:border dark:border-dark-700 light:border light:border-gray-200">
+              <h3 className="font-bold mb-4 dark:text-white light:text-gray-900">Team Size</h3>
+              <div className="space-y-4">
+                <div>
+                  <label className="block text-sm mb-2 dark:text-gray-400 light:text-gray-600">
+                    Number of people: <span className="text-primary-400 font-bold">{teamSize}</span>
+                  </label>
+                  <input
+                    type="range"
+                    min="1"
+                    max="20"
+                    value={teamSize}
+                    onChange={(e) => setTeamSize(parseInt(e.target.value))}
+                    className="w-full h-2 dark:bg-dark-700 light:bg-gray-300 rounded-lg appearance-none cursor-pointer accent-primary-500"
+                  />
+                  <div className="flex justify-between text-xs dark:text-gray-500 light:text-gray-500 mt-2">
+                    <span>1 person</span>
+                    <span>20+ people</span>
+                  </div>
                 </div>
-              ))}
+              </div>
+              {teamSize > 1 && (
+                <div className="mt-4 p-3 dark:bg-green-500/10 light:bg-green-50 rounded-lg border dark:border-green-500/30 light:border-green-300">
+                  <div className="text-sm dark:text-green-300 light:text-green-700 font-semibold">
+                    Group Discount: {Math.min(teamSize * 10, 30)}% Applied! 🎉
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Price Summary */}
+            <div className="dark:bg-gradient-to-br dark:from-primary-900/30 dark:to-blue-900/30 light:bg-gradient-to-br light:from-primary-50 light:to-blue-50 p-6 rounded-xl dark:border-2 dark:border-primary-500/50 light:border-2 light:border-primary-300">
+              <h3 className="font-bold mb-4 dark:text-white light:text-gray-900">Price Summary</h3>
+              <div className="space-y-3 mb-4">
+                <div className="flex justify-between dark:text-gray-300 light:text-gray-700">
+                  <span>Courses Subtotal:</span>
+                  <span className="font-semibold">₹{coursesSubtotal.toLocaleString('en-IN')}</span>
+                </div>
+                {discountAmount > 0 && (
+                  <div className="flex justify-between text-green-400">
+                    <span>Group Discount:</span>
+                    <span className="font-semibold">-₹{Math.ceil(discountAmount).toLocaleString('en-IN')}</span>
+                  </div>
+                )}
+                {teamSize > 1 && (
+                  <div className="flex justify-between dark:text-gray-300 light:text-gray-700">
+                    <span>Per Person:</span>
+                    <span className="font-semibold">₹{totalPerPerson.toLocaleString('en-IN')}</span>
+                  </div>
+                )}
+                <div className="border-t dark:border-primary-500/30 light:border-primary-300 pt-3 flex justify-between">
+                  <span className="font-bold dark:text-white light:text-gray-900">Total Amount:</span>
+                  <span className="text-2xl font-bold text-primary-400">₹{totalAmount.toLocaleString('en-IN')}</span>
+                </div>
+              </div>
+
+              {selectedCourses.length > 0 ? (
+                <a
+                  href={`https://wa.me/918101979855?text=Hi DevSecIT! 👋 I'm interested in ${selectedCourses.length} course(s) for ${teamSize} person(s). Total: ₹${totalAmount}. Please send enrollment details and payment options.`}
+                  className="block w-full px-6 py-3 bg-gradient-to-r from-primary-500 to-blue-600 rounded-lg font-bold text-white hover:shadow-lg transition text-center"
+                >
+                  💬 Enroll via WhatsApp
+                </a>
+              ) : (
+                <button
+                  disabled
+                  className="block w-full px-6 py-3 dark:bg-dark-700 light:bg-gray-300 rounded-lg font-bold dark:text-gray-500 light:text-gray-600 cursor-not-allowed opacity-50 text-center"
+                >
+                  Select courses to continue
+                </button>
+              )}
+            </div>
+
+            <div className="text-xs dark:text-gray-500 light:text-gray-500 text-center">
+              💡 Discounts apply automatically for groups of 2+ people
             </div>
           </div>
         </div>
-      </section>
-
-      <PricingCalculator />
-
-      <section className="py-20 dark:bg-dark-900 light:bg-white transition-colors duration-300">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-display font-bold mb-12 text-center dark:text-white light:text-gray-900 transition-colors duration-300">
-            Other Engagement <span className="text-gradient">Models</span>
-          </h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            {[
-              {
-                title: 'Time & Materials',
-                desc: 'Pay for actual hours worked. Perfect for flexible or evolving projects. Hourly rate starting from ₹1,500/hour.',
-                icon: '⏰'
-              },
-              {
-                title: 'Fixed Price',
-                desc: 'Agree on scope and deliverables. Best for well-defined projects with clear requirements.',
-                icon: '📋'
-              },
-              {
-                title: 'Virtual CTO',
-                desc: 'Strategic technology leadership with equity stake. 90-day MVP guarantee with ongoing mentorship.',
-                icon: '👔'
-              },
-              {
-                title: 'Retainer Support',
-                desc: 'Monthly retainer for ongoing support, maintenance, and optimization of your existing systems.',
-                icon: '🔧'
-              }
-            ].map((model, i) => (
-              <div key={i} className="dark:bg-dark-800 light:bg-gray-50 p-6 rounded-lg border dark:border-dark-700 light:border-gray-200 transition-colors duration-300">
-                <div className="text-4xl mb-3">{model.icon}</div>
-                <h3 className="text-xl font-bold mb-2 dark:text-white light:text-gray-900 transition-colors duration-300">{model.title}</h3>
-                <p className="dark:text-gray-400 light:text-gray-600 transition-colors duration-300">{model.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 dark:bg-dark-800/50 light:bg-gray-50 transition-colors duration-300">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-display font-bold mb-6 dark:text-white light:text-gray-900 transition-colors duration-300">
-            Have Questions About <span className="text-gradient">Pricing?</span>
-          </h2>
-          <p className="text-lg dark:text-gray-400 light:text-gray-600 mb-8 transition-colors duration-300">
-            Every project is unique. Let&apos;s discuss your requirements and create a custom quote.
-          </p>
-          <Link href="/#contact" className="inline-block px-8 py-4 bg-gradient-to-r from-primary-500 to-blue-600 rounded-lg font-bold text-white hover:shadow-2xl hover:shadow-primary-500/50 transition-all transform hover:scale-105">
-            Request a Custom Quote
-          </Link>
-        </div>
-      </section>
-      </>
-      )}
-
-      <Footer />
-    </div>
+      </div>
+    </section>
   );
 };
-
-export default Pricing;
