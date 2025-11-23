@@ -98,7 +98,7 @@ const Courses: NextPage = () => {
   ];
 
   return (
-    <div className="min-h-screen dark:bg-dark-900 light:bg-white transition-colors">
+    <div suppressHydrationWarning className="min-h-screen dark:bg-dark-900 light:bg-white transition-colors">
       <Head>
         <title>Courses - DEV SEC IT | Professional IT Training</title>
         <meta name="description" content="10 professional IT courses from Full-Stack Development to AI/ML. Practical training with certifications and job support." />
