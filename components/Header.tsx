@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useLayoutEffect } from 'react';
 import { ThemeToggle } from './ThemeToggle';
 
 interface HeaderProps {
@@ -8,6 +8,11 @@ interface HeaderProps {
 
 export const Header = ({ activePage }: HeaderProps) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+
+  useLayoutEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const navItems = [
     { href: '/', label: 'Home', page: 'home' },
@@ -69,7 +74,7 @@ export const Header = ({ activePage }: HeaderProps) => {
         </div>
 
         {/* Mobile Navigation Menu */}
-        {mobileMenuOpen && (
+        {isClient && mobileMenuOpen && (
           <div className="md:hidden bg-dark-800 border-t border-dark-700 py-4 space-y-2">
             {navItems.map(item => (
               <Link
