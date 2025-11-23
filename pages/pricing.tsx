@@ -2,7 +2,8 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
-import { ThemeToggle } from '../components/ThemeToggle';
+import { Header } from '../components/Header';
+import { Footer } from '../components/Footer';
 import { PricingCalculator } from '../components/PricingCalculator';
 
 const Pricing: NextPage = () => {
@@ -75,19 +76,7 @@ const Pricing: NextPage = () => {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pricingSchema) }} />
       </Head>
 
-      <nav className="fixed top-0 w-full z-50 dark:bg-dark-900/95 light:bg-white/95 backdrop-blur-lg dark:border-dark-700 light:border-gray-200 border-b transition-colors duration-300">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <Link href="/" className="text-2xl font-display font-bold text-gradient">DevSecIT</Link>
-            <div className="flex items-center gap-4">
-              <ThemeToggle />
-              <Link href="/#contact" className="hidden sm:inline-block bg-gradient-to-r from-primary-500 to-blue-600 px-6 py-2 rounded-lg font-semibold hover:shadow-lg hover:shadow-primary-500/50 transition-all text-white">
-                Get Started
-              </Link>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <Header activePage="pricing" />
 
       <section className="relative pt-32 pb-20 dark:bg-dark-900 light:bg-white transition-colors duration-300">
         <div className="absolute inset-0 dark:bg-gradient-to-br dark:from-primary-900/20 dark:via-dark-900 dark:to-blue-900/20 light:bg-gradient-to-br light:from-primary-50 light:via-white light:to-blue-50"></div>
@@ -215,6 +204,8 @@ const Pricing: NextPage = () => {
           </Link>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 };

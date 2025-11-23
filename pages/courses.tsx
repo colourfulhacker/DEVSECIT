@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Link from 'next/link';
-import { ThemeToggle } from '../components/ThemeToggle';
+import { Header } from '../components/Header';
+import { Footer } from '../components/Footer';
 
 const Courses: NextPage = () => {
   const courses = [
@@ -104,25 +104,7 @@ const Courses: NextPage = () => {
         <meta name="description" content="10 professional IT courses from Full-Stack Development to AI/ML. Practical training with certifications and job support." />
       </Head>
 
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-dark-900/95 dark:bg-dark-900/95 light:bg-white/95 backdrop-blur-lg border-b border-dark-700">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <Link href="/" className="text-2xl font-display font-bold text-gradient">DEV SEC IT</Link>
-            <div className="hidden md:flex space-x-6">
-              <Link href="/" className="text-gray-300 hover:text-primary-400 transition">Home</Link>
-              <a href="#courses" className="text-gray-300 hover:text-primary-400 transition">Courses</a>
-              <a href="mailto:sales@devsecit.com" className="text-gray-300 hover:text-primary-400 transition">Contact</a>
-            </div>
-            <div className="flex items-center gap-4">
-              <ThemeToggle />
-              <a href="https://wa.me/918101979855" className="hidden sm:inline-block bg-gradient-to-r from-primary-500 to-blue-600 px-4 py-2 rounded-lg font-semibold text-white hover:shadow-lg transition">
-                Enroll Now
-              </a>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <Header activePage="courses" />
 
       {/* Header */}
       <div className="pt-24 pb-20 px-4 text-center dark:bg-gradient-to-b dark:from-dark-800 dark:to-dark-900 light:bg-gradient-to-b light:from-gray-50 light:to-white">
@@ -191,12 +173,7 @@ const Courses: NextPage = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="dark:bg-dark-800 light:bg-gray-50 border-t dark:border-dark-700 light:border-gray-200 py-12 px-4 text-center">
-        <p className="dark:text-gray-400 light:text-gray-600">
-          © 2025 DEV SEC IT. Professional IT Training Institute. All rights reserved.
-        </p>
-      </footer>
+      <Footer />
     </div>
   );
 };
