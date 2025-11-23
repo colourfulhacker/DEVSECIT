@@ -28,6 +28,12 @@ export const Header = ({ activePage }: HeaderProps) => {
               Courses
             </Link>
             <Link 
+              href="/services" 
+              className={`transition-colors ${activePage === 'services' ? 'text-primary-400' : 'text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400'}`}
+            >
+              Services
+            </Link>
+            <Link 
               href="/pricing" 
               className={`transition-colors ${activePage === 'pricing' ? 'text-primary-400' : 'text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400'}`}
             >
