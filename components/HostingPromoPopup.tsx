@@ -4,15 +4,8 @@ import { useState, useEffect } from 'react';
 export const HostingPromoPopup = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isClosed, setIsClosed] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  useEffect(() => {
-    if (!isMounted) return;
-
     // Check if popup was already shown today
     const today = new Date().toDateString();
     const lastShownDate = localStorage.getItem('hostingPromoLastShown');
@@ -30,7 +23,7 @@ export const HostingPromoPopup = () => {
 
       return () => clearTimeout(timer);
     }
-  }, [isMounted, isClosed]);
+  }, [isClosed]);
 
   const handleClose = () => {
     setIsVisible(false);
