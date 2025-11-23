@@ -17,7 +17,7 @@ const Privacy: NextPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-dark-900 dark:bg-dark-900 light:bg-white transition-colors duration-300">
+    <div className="min-h-screen dark:bg-dark-900 light:bg-white transition-colors duration-300">
       <Head>
         <title>Privacy Policy - DevSecIT | Software Development West Bengal</title>
         <meta name="description" content="DevSecIT Privacy Policy - Data protection and privacy practices for software development services in West Bengal, India. Secure and compliant." />
@@ -33,7 +33,7 @@ const Privacy: NextPage = () => {
         />
       </Head>
 
-      <nav className="fixed top-0 w-full z-50 bg-dark-900/95 dark:bg-dark-900/95 light:bg-white/95 backdrop-blur-lg border-b border-dark-700 dark:border-dark-700 light:border-gray-200 transition-colors duration-300">
+      <nav className="fixed top-0 w-full z-50 dark:bg-dark-900/95 light:bg-white/95 backdrop-blur-lg dark:border-dark-700 light:border-gray-200 border-b transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link href="/" className="text-2xl font-display font-bold text-gradient">DevSecIT</Link>
@@ -43,7 +43,7 @@ const Privacy: NextPage = () => {
       </nav>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
-        <h1 className="text-4xl md:text-5xl font-display font-bold mb-6 text-dark-900 dark:text-white light:text-dark-900 transition-colors duration-300">
+        <h1 className="text-4xl md:text-5xl font-display font-bold mb-6 dark:text-white light:text-gray-900 transition-colors duration-300">
           Privacy <span className="text-gradient">Policy</span>
         </h1>
         <p className="text-gray-400 dark:text-gray-400 light:text-gray-600 mb-8 transition-colors duration-300">Last updated: November 21, 2025</p>
@@ -147,7 +147,7 @@ const Privacy: NextPage = () => {
           </section>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-dark-700">
+        <div className="mt-12 pt-8 border-t dark:border-dark-700 light:border-gray-200">
           <Link href="/" className="inline-block px-8 py-4 bg-gradient-to-r from-primary-500 to-blue-600 rounded-lg font-bold text-white hover:shadow-lg hover:shadow-primary-500/50 transition-all">
             Back to Home
           </Link>
