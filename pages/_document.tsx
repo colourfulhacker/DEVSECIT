@@ -10,7 +10,7 @@ export default function Document() {
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Lexend:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
         <meta name="theme-color" content="#0f172a" />
       </Head>
-      <body data-theme="dark">
+      <body data-theme="dark" suppressHydrationWarning>
         <Main />
         <NextScript />
       </body>
