@@ -142,7 +142,7 @@ Please help me integrate this API into my application.`;
             type="submit"
             className="w-full px-4 py-3 bg-gradient-to-r from-green-500 to-green-600 rounded-lg font-bold dark:hover:shadow-lg dark:hover:shadow-green-500/50 light:hover:shadow-lg light:hover:shadow-green-400/30 transition-all text-white mt-6"
           >
-            💬 Send via WhatsApp
+            Send via WhatsApp
           </button>
         </form>
       </div>

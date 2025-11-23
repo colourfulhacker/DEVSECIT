@@ -61,7 +61,6 @@ export const HostingPromoPopup = () => {
             >
               ×
             </button>
-            <div className="text-4xl mb-2">🎁</div>
             <h2 className="text-2xl font-bold dark:text-white light:text-gray-900 transition-colors duration-300">Exclusive Offer!</h2>
           </div>
 
@@ -119,7 +118,7 @@ export const HostingPromoPopup = () => {
               rel="noopener noreferrer"
               className="flex-1 px-4 py-3 bg-gradient-to-r from-green-500 to-green-600 dark:hover:shadow-lg dark:hover:shadow-green-500/50 light:hover:shadow-lg light:hover:shadow-green-400/30 text-white rounded-lg font-semibold transition-all text-center"
             >
-              💬 Learn More
+              Learn More
             </a>
           </div>
         </div>

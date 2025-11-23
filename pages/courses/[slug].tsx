@@ -57,7 +57,6 @@ const CourseDetail: NextPage<CourseDetailProps> = ({ course }) => {
                   
                   <div className="grid md:grid-cols-3 gap-8">
                     <div className="md:col-span-2">
-                      <div className="text-6xl mb-4">{course.emoji}</div>
                       <h1 className="text-4xl md:text-5xl font-display font-bold mb-4 dark:text-white light:text-gray-900">
                         {course.title}
                       </h1>
@@ -66,7 +65,7 @@ const CourseDetail: NextPage<CourseDetailProps> = ({ course }) => {
                       </p>
                       <div className="flex flex-wrap gap-3 mb-6">
                         <span className="px-4 py-2 dark:bg-primary-500/20 light:bg-primary-100 rounded-full dark:text-primary-400 light:text-primary-700 font-semibold">
-                          ⏱️ {course.duration}
+                          {course.duration}
                         </span>
                         <span className="px-4 py-2 dark:bg-green-500/20 light:bg-green-100 rounded-full dark:text-green-400 light:text-green-700 font-semibold">
                           {course.price}

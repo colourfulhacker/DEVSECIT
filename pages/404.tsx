@@ -39,16 +39,15 @@ const Custom404: NextPage = () => {
 
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl">
           {[
-            { icon: '🏠', title: 'Home', href: '/' },
-            { icon: '🛠️', title: 'Services', href: '/#services' },
-            { icon: '📧', title: 'Contact', href: '/#contact' }
+            { title: 'Home', href: '/' },
+            { title: 'Services', href: '/#services' },
+            { title: 'Contact', href: '/#contact' }
           ].map((item, i) => (
             <Link
               key={i}
               href={item.href}
               className="dark:bg-dark-800 light:bg-gray-50 p-6 rounded-lg dark:hover:bg-dark-700 light:hover:bg-gray-100 transition-colors"
             >
-              <div className="text-4xl mb-2">{item.icon}</div>
               <div className="font-semibold dark:text-white light:text-gray-900 transition-colors duration-300">{item.title}</div>
             </Link>
           ))}

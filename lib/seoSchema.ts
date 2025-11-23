@@ -180,3 +180,93 @@ export const generateRatingSchema = (ratingValue: number, reviewCount: number) =
     "worstRating": "1"
   };
 };
+
+export const generateWebsiteSchema = () => {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "DevSecIT",
+    "url": "https://devsecit.com",
+    "description": "Elite software development and cybersecurity solutions in West Bengal",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://devsecit.com/search?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  };
+};
+
+export const generateEducationalOrganizationSchema = () => {
+  return {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "DevSecIT Professional Training",
+    "url": "https://devsecit.com",
+    "logo": "https://devsecit.com/logo.png",
+    "description": "Professional IT training and certification programs in software development, cybersecurity, and cloud computing",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-8101979855",
+      "contactType": "Student Services",
+      "email": "admissions@devsecit.com"
+    },
+    "areaServed": ["West Bengal", "India", "Global"],
+    "knowsAbout": [
+      "Full Stack Web Development",
+      "DevSecOps",
+      "Cybersecurity & Ethical Hacking",
+      "Mobile App Development",
+      "Cloud Computing",
+      "AI & Machine Learning",
+      "Secure Software Engineering",
+      "QA & Testing",
+      "Business Analysis",
+      "Blockchain Development"
+    ]
+  };
+};
+
+export const generateCourseSchema = (courseName: string, courseDescription: string, duration: string, price: string) => {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": courseName,
+    "description": courseDescription,
+    "provider": {
+      "@type": "Organization",
+      "name": "DevSecIT",
+      "url": "https://devsecit.com"
+    },
+    "duration": duration,
+    "teaches": [
+      "Professional Development",
+      "Technical Skills",
+      "Industry Best Practices"
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "500"
+    }
+  };
+};
+
+export const generateContactPageSchema = () => {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact DevSecIT",
+    "url": "https://devsecit.com",
+    "telephone": "+91-8101979855",
+    "email": "sales@devsecit.com",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-8101979855",
+      "contactType": "Sales",
+      "email": "sales@devsecit.com"
+    }
+  };
+};

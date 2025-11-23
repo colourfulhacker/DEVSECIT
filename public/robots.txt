@@ -1,8 +1,20 @@
 User-agent: *
 Allow: /
+Allow: /api/sitemap
+
 Disallow: /api/
 Disallow: /.next/
 Disallow: /private/
+Disallow: /_*
+Disallow: /admin/
+Disallow: /*?*
+Disallow: /search
+Disallow: /404
+Disallow: /console
+
+Crawl-delay: 1
+Request-rate: 10/1s
 
 Sitemap: https://devsecit.com/api/sitemap
+Sitemap: https://devsecit.com/sitemap.xml
 Host: https://devsecit.com

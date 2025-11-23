@@ -146,15 +146,14 @@ const CityPage: NextPage<CityPageProps> = ({ city }) => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { icon: '🚀', title: 'Custom Software Development', desc: 'Bespoke applications built for your unique business needs' },
-              { icon: '🔒', title: 'Cybersecurity Integration', desc: 'Enterprise-grade security built into every layer' },
-              { icon: '⚡', title: 'Custom API Development', desc: '7-day MVP delivery for rapid prototyping' },
-              { icon: '🤖', title: 'AI & Automation', desc: 'Machine learning solutions to optimize processes' },
-              { icon: '🎯', title: 'Full Project Outsourcing', desc: 'End-to-end project delivery from concept to deployment' },
-              { icon: '💡', title: 'Digital Transformation', desc: 'Modernize your business with cutting-edge technology' }
+              { title: 'Custom Software Development', desc: 'Bespoke applications built for your unique business needs' },
+              { title: 'Cybersecurity Integration', desc: 'Enterprise-grade security built into every layer' },
+              { title: 'Custom API Development', desc: '7-day MVP delivery for rapid prototyping' },
+              { title: 'AI & Automation', desc: 'Machine learning solutions to optimize processes' },
+              { title: 'Full Project Outsourcing', desc: 'End-to-end project delivery from concept to deployment' },
+              { title: 'Digital Transformation', desc: 'Modernize your business with cutting-edge technology' }
             ].map((service, i) => (
               <div key={i} className="group dark:bg-dark-900 light:bg-white p-8 rounded-2xl dark:border dark:border-dark-700 light:border light:border-gray-200 dark:hover:border-primary-500/50 light:hover:border-primary-400 transition-all duration-300 dark:hover:shadow-2xl dark:hover:shadow-primary-500/10 light:hover:shadow-lg light:hover:shadow-primary-200/20">
-                <div className="text-5xl mb-4 group-hover:scale-110 transition-transform">{service.icon}</div>
                 <h3 className="text-2xl font-bold mb-3 dark:text-gray-100 light:text-gray-900 transition-colors duration-300">{service.title}</h3>
                 <p className="dark:text-gray-400 light:text-gray-600 transition-colors duration-300">{service.desc}</p>
               </div>
