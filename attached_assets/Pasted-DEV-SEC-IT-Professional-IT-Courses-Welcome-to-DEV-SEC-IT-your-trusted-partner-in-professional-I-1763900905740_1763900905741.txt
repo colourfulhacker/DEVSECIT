@@ -1,0 +1,407 @@
+DEV SEC IT – Professional IT Courses 
+Welcome to DEV SEC IT, your trusted partner in professional IT training. We offer industry-leading courses designed to build job-ready skills in Software Development, Cybersecurity, DevOps, Cloud, AI, and more.
+Our curriculum is fully aligned with the latest industry standards and crafted by senior engineers and security experts.
+
+⭐ Why Choose DEV SEC IT?
+100% Practical, Job-Oriented Training
+
+
+Live Projects & Real-World Case Studies
+
+
+Certification for Every Course
+
+
+Internship & Job Support
+
+
+Hands-on Labs and Premium Learning Materials
+
+
+Affordable Pricing with EMI Options
+
+
+
+📘 Top 10 Professional Courses
+Below is the complete list of courses with pricing, duration, learning outcomes, and syllabus highlights.
+
+1. Full-Stack Web Development (Beginner → Advanced)
+Price: ₹24,999
+ Duration: 4–6 Months
+ Mode: Online / Offline
+What Students Will Learn
+Frontend development (HTML, CSS, JavaScript, React.js)
+
+
+Backend development (Node.js, Express.js)
+
+
+Databases: MySQL, PostgreSQL, MongoDB
+
+
+API Design & Development
+
+
+Authentication, Security, DevOps basics
+
+
+Build & deploy real-world projects
+
+
+Key Modules
+Web Fundamentals
+
+
+Responsive UI with Tailwind
+
+
+JavaScript & Modern ES6+
+
+
+React.js + Next.js
+
+
+Backend APIs
+
+
+CI/CD & Deployment
+
+
+
+2. DevSecOps – Developers + Security + Operations
+Price: ₹29,999
+ Duration: 3 Months
+What Students Will Learn
+CI/CD Pipelines
+
+
+Docker, Kubernetes, Terraform
+
+
+Cloud DevOps (AWS/Azure)
+
+
+Secure SDLC & Code Scanning
+
+
+Pen-testing CI/CD
+
+
+Key Modules
+Git/GitHub Automation
+
+
+Jenkins/GitHub Actions
+
+
+Container Security
+
+
+Log Monitoring
+
+
+
+3. Cyber Security & Ethical Hacking
+Price: ₹34,999
+ Duration: 4–6 Months
+What Students Will Learn
+Ethical Hacking Techniques
+
+
+SOC Analyst Skills
+
+
+Bug Bounty Techniques
+
+
+Web, Mobile, Network Pentesting
+
+
+Tools: Burp Suite, Nmap, Wireshark, Metasploit
+
+
+Key Modules
+Linux Security
+
+
+OWASP Top 10
+
+
+Vulnerability Assessment
+
+
+Digital Forensics Basics
+
+
+
+4. Mobile App Development (Flutter + Android + iOS)
+Price: ₹27,999
+ Duration: 3–4 Months
+What Students Will Learn
+App UI/UX Development
+
+
+API Integration
+
+
+Firebase, SQLite
+
+
+Mobile Notifications
+
+
+Play Store & App Store Deployment
+
+
+Key Modules
+Dart Programming
+
+
+Flutter Framework
+
+
+State Management
+
+
+App Security
+
+
+
+5. Cloud Computing – AWS, Azure, GCP
+Price: ₹22,999
+ Duration: 2–3 Months
+What Students Will Learn
+Cloud Architecture
+
+
+Serverless Systems
+
+
+Networking, Storage, IAM
+
+
+Deployment & Monitoring
+
+
+Key Modules
+EC2, Lambda
+
+
+S3 Buckets
+
+
+VPC & Load Balancers
+
+
+Cloud Security
+
+
+
+6. AI & Machine Learning Engineering
+Price: ₹34,999
+ Duration: 4–6 Months
+What Students Will Learn
+Python for AI
+
+
+Data Preprocessing
+
+
+ML Algorithms
+
+
+Deep Learning (CNN, RNN)
+
+
+AI Model Deployment
+
+
+ChatGPT/Gemini API Integration
+
+
+Key Modules
+Pandas, NumPy
+
+
+Artificial Neural Networks
+
+
+NLP Fundamentals
+
+
+
+7. Secure Software Engineering
+Price: ₹19,999
+ Duration: 2–3 Months
+What Students Will Learn
+Secure Code Development
+
+
+Threat Modeling
+
+
+API Security
+
+
+Data Encryption & Hashing
+
+
+Key Modules
+SDLC Security
+
+
+OWASP Code Practices
+
+
+Input Validation
+
+
+
+8. Advanced Backend Engineering (Microservices)
+Price: ₹28,999
+ Duration: 3–4 Months
+What Students Will Learn
+Microservices Architecture
+
+
+Kafka, RabbitMQ
+
+
+API Gateway
+
+
+Database Scaling
+
+
+Key Modules
+Node.js/Python Backend
+
+
+Distributed Systems Basics
+
+
+Caching (Redis)
+
+
+
+9. Data Engineering & Big Data
+Price: ₹32,999
+ Duration: 4–5 Months
+What Students Will Learn
+ETL/ELT Data Pipelines
+
+
+Spark, Hadoop
+
+
+Data Warehousing
+
+
+Airflow Automation
+
+
+Key Modules
+BigQuery / AWS Glue
+
+
+Streaming Pipelines
+
+
+
+10. Software Testing & QA Automation
+Price: ₹17,999
+ Duration: 2–3 Months
+What Students Will Learn
+Manual + Automation Testing
+
+
+Selenium, Appium
+
+
+API Testing (Postman)
+
+
+CI/CD Testing
+
+
+Key Modules
+JMeter Performance Tests
+
+
+Test Planning & Reporting
+
+
+
+🎯 Additional Services
+Internship Program (2–3 Months)
+
+
+Job Placement Assistance
+
+
+Real-world Projects
+
+
+Certification for all courses
+
+
+
+📞 Contact Information
+DEV SEC IT – Professional IT Training Institute
+For admission, call or WhatsApp: +91 8101 979855
+
+If you want, I can also create:
+Homepage content
+
+
+Individual course pages
+
+
+SEO meta tags + keywords
+
+
+PDF brochures
+
+
+Pricing table UI design
+
+
+Email marketing templates
+
+
+
+
+❓ Frequently Asked Questions (FAQ)
+1. Are the courses beginner friendly?
+Yes. All courses start from basics and gradually move to advanced concepts.
+2. Do you provide certificates?
+Yes. Every student receives an official DEV SEC IT Certification after course completion.
+3. Will I get job assistance?
+Yes. We provide placement support, interview preparation, resume building, and internship opportunities.
+4. Are classes online or offline?
+Both options are available depending on your location.
+5. Are projects included?
+Yes. Each course includes real-world, industry-level projects.
+6. Can I pay in installments?
+Yes. EMI and flexible payment options are available.
+7. What if I miss a class?
+Recordings and backup classes are provided.
+8. Are there any prerequisites?
+Most courses need only basic computer knowledge. Advanced courses may require programming basics.
+9. Will I get lifetime access to study materials?
+Yes, you get lifetime access to notes, recordings, and project files.
+10. How do I enroll?
+You can call/WhatsApp our team, or fill out the admission form on our website.
+
+⭐ Student Testimonials
+⭐⭐⭐⭐⭐ – Priya Sharma, Pune
+“DEV SEC IT completely changed my career. I joined the Full Stack course and within 4 months I got placed as a Web Developer. The trainers were very supportive.”
+⭐⭐⭐⭐⭐ – Rohit Kumar, Delhi
+“The Ethical Hacking course was amazing. Hands-on labs, real hacking tools, and continuous mentoring. I even started bug bounty hunting.”
+⭐⭐⭐⭐⭐ – Sneha Das, Kolkata
+“I learned Flutter development here and now I am working as a Mobile App Developer. The projects were industry-standard.”
+⭐⭐⭐⭐⭐ – Arvind Mishra, Bangalore
+“The DevSecOps training gave me practical knowledge in Docker, Kubernetes, and CI/CD. I secured a job in just two months after completion.”
+⭐⭐⭐⭐⭐ – Meenakshi Iyer, Chennai
+“The trainers explain everything in a simple way. The AI/ML course was excellent and helped me build real ML models.”
+

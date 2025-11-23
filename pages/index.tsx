@@ -40,8 +40,8 @@ const Home: NextPage = () => {
 
   const whatsappLink = `https://wa.me/918101979855?text=Hi DevSecIT, I&apos;m interested in discussing a project. Let&apos;s connect!`;
 
-  // SEO Keywords - West Bengal & India focused - Comprehensive keyword strategy
-  const seoKeywords = "software development West Bengal, custom API development Kolkata, cybersecurity solutions India, AI integration services, startup MVP development, full-stack development India, web development services West Bengal, mobile app development, enterprise software solutions, digital transformation, API integration, tech company Kolkata, technology outsourcing India, software house West Bengal, IT services India, cloud development, web application development, e-commerce solutions";
+  // SEO Keywords - Professional IT Training focused
+  const seoKeywords = "professional IT courses, web development course, cybersecurity training, DevOps certification, cloud computing courses, AI machine learning training, full-stack development course, mobile app development, data engineering, IT training India";
 
   // Schema.org structured data
   const schemas = [
@@ -54,8 +54,8 @@ const Home: NextPage = () => {
   return (
     <div className="min-h-screen bg-dark-900 dark:bg-dark-900 light:bg-white transition-colors duration-300">
       <SEOHead
-        title="DevSecIT - Custom Software Development & API Integration | West Bengal, India"
-        description="Leading custom software development and cybersecurity solutions company in West Bengal, India. Specializing in API integration, MVP development, AI automation, and startup tech products. 500+ projects delivered. Get lifetime free hosting."
+        title="DEV SEC IT - Professional IT Training & Certification Courses"
+        description="Expert-led professional IT courses in Web Development, DevSecOps, Cybersecurity, Cloud, AI/ML, and more. 100% practical training with certifications, real projects, internship & job support."
         keywords={seoKeywords}
         canonicalUrl="https://devsecit.com"
         schemas={schemas}
@@ -68,20 +68,18 @@ const Home: NextPage = () => {
               <h1 className="text-2xl font-display font-bold text-gradient">DevSecIT</h1>
             </div>
             <div className="hidden md:flex space-x-8">
+              <Link href="/courses" className="text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors">Courses</Link>
               <Link href="/about" className="text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors">About</Link>
-              <a href="#services" className="text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors">Services</a>
-              <Link href="/pricing" className="text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors">Pricing</Link>
-              <Link href="/portfolio" className="text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors">Portfolio</Link>
-              <Link href="/virtual-cto" className="text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors">Virtual CTO</Link>
-              <a href="#contact" className="text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors">Contact</a>
+              <a href="#faq" className="text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors">FAQ</a>
+              <a href="https://wa.me/918101979855?text=Hi%20DEV%20SEC%20IT,%20I'm%20interested%20in%20enrolling%20in%20a%20course" className="text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors">Enroll</a>
             </div>
             <div className="flex items-center gap-4">
               <ThemeToggle />
               <Link
-                href="/console"
+                href="/courses"
                 className="hidden sm:inline-block dark:text-primary-400 light:text-primary-600 dark:hover:text-primary-300 light:hover:text-primary-700 font-semibold transition-colors text-sm"
               >
-                Sign In to Console
+                View Courses
               </Link>
               <a 
                 href="#contact" 
