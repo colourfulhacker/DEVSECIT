@@ -1,0 +1,52 @@
+Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <MyApp pageProps={{}} Component={function Home} err={undefined} router={{sdc:{},sbc:{}, ...}}>
+      <ThemeProvider>
+        <Home>
+          <div className="min-h-scre...">
+            <SEOHead>
+            <nav className="fixed top-...">
+              <div className="max-w-7xl ...">
+                <div className="flex justi...">
+                  <div>
+                  <div className="hidden md:...">
+                    <LinkComponent href="/about" className="text-gray-...">
+                      <a
+                        className="text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transit..."
+                        ref={function}
+                        onClick={function onClick}
+                        onMouseEnter={function onMouseEnter}
+                        onTouchStart={function onTouchStart}
++                       href="/about"
+-                       href="/courses"
+                      >
++                       About
+-                       Courses
+                    ...
+                  ...
+            ...
+        ...
+    ...
+
+    at throwOnHydrationMismatch (https://fe51a2e3-c010-4306-bc26-bbae871b443e-00-1si5mb2jbxxzv.spock.replit.dev/_next/static/chunks/node_modules_react-dom_82bb97c6._.js:2659:56)
+    at prepareToHydrateHostInstance (https://fe51a2e3-c010-4306-bc26-bbae871b443e-00-1si5mb2jbxxzv.spock.replit.dev/_next/static/chunks/node_modules_react-dom_82bb97c6._.js:2714:23)
+    at completeWork (https://fe51a2e3-c010-4306-bc26-bbae871b443e-00-1si5mb2jbxxzv.spock.replit.dev/_next/static/chunks/node_modules_react-dom_82bb97c6._.js:7263:60)
+    at runWithFiberInDEV (https://fe51a2e3-c010-4306-bc26-bbae871b443e-00-1si5mb2jbxxzv.spock.replit.dev/_next/static/chunks/node_modules_react-dom_82bb97c6._.js:631:20)
+    at completeUnitOfWork (https://fe51a2e3-c010-4306-bc26-bbae871b443e-00-1si5mb2jbxxzv.spock.replit.dev/_next/static/chunks/node_modules_react-dom_82bb97c6._.js:8012:23)
+    at performUnitOfWork (https://fe51a2e3-c010-4306-bc26-bbae871b443e-00-1si5mb2jbxxzv.spock.replit.dev/_next/static/chunks/node_modules_react-dom_82bb97c6._.js:7949:28)
+    at workLoopSync (https://fe51a2e3-c010-4306-bc26-bbae871b443e-00-1si5mb2jbxxzv.spock.replit.dev/_next/static/chunks/node_modules_react-dom_82bb97c6._.js:7840:40)
+    at renderRootSync (https://fe51a2e3-c010-4306-bc26-bbae871b443e-00-1si5mb2jbxxzv.spock.replit.dev/_next/static/chunks/node_modules_react-dom_82bb97c6._.js:7823:13)
+    at performWorkOnRoot (https://fe51a2e3-c010-4306-bc26-bbae871b443e-00-1si5mb2jbxxzv.spock.replit.dev/_next/static/chunks/node_modules_react-dom_82bb97c6._.js:7558:211)
+    at performWorkOnRootViaSchedulerTask (https://fe51a2e3-c010-4306-bc26-bbae871b443e-00-1si5mb2jbxxzv.spock.replit.dev/_next/static/chunks/node_modules_react-dom_82bb97c6._.js:8386:9)
+    at MessagePort.performWorkUntilDeadline (https://fe51a2e3-c010-4306-bc26-bbae871b443e-00-1si5mb2jbxxzv.spock.replit.dev/_next/static/chunks/node_modules_39d23571._.js:1875:64)
