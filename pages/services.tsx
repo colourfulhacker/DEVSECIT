@@ -100,7 +100,7 @@ const ServicesPage: NextPage = () => {
   }, {} as Record<string, typeof IT_SERVICES>);
 
   return (
-    <div suppressHydrationWarning className="min-h-screen bg-dark-900">
+    <div suppressHydrationWarning className="min-h-screen dark:bg-dark-900 light:bg-white">
       <Head>
         <title>Services - DEV SEC IT | Professional IT Solutions</title>
         <meta name="description" content="Comprehensive IT services including custom software development, DevOps, cloud solutions, AI/ML, cybersecurity, and more." />

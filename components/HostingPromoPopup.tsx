@@ -100,7 +100,7 @@ export const HostingPromoPopup = () => {
               </ul>
             </div>
 
-            <p className="text-xs text-gray-500">
+            <p className="text-xs dark:text-gray-500 light:text-gray-500">
               Limited time offer for new projects. Valid for 1 year minimum engagement.
             </p>
           </div>

@@ -68,7 +68,7 @@ const Home: NextPage = () => {
   ];
 
   return (
-    <div suppressHydrationWarning className="min-h-screen bg-dark-900">
+    <div suppressHydrationWarning className="min-h-screen dark:bg-dark-900 light:bg-white">
       <SEOHead
         title="DEV SEC IT - Professional IT Training & Custom Software Development"
         description="Expert-led IT courses and custom software solutions. Full-Stack Development, DevSecOps, Cybersecurity, Cloud, AI/ML training with certifications and job support."

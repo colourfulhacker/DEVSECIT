@@ -1,5 +1,5 @@
 export const SkeletonLoader = ({ width = 'w-full', height = 'h-4' }: { width?: string; height?: string }) => (
-  <div className={`${width} ${height} bg-gradient-to-r from-gray-700 to-gray-600 dark:from-dark-700 dark:to-dark-600 rounded animate-shimmer`} />
+  <div className={`${width} ${height} bg-gradient-to-r dark:from-dark-700 dark:to-dark-600 light:from-gray-300 light:to-gray-200 rounded animate-shimmer`} />
 );
 
 export const CardSkeleton = () => (

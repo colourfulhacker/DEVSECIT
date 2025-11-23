@@ -7,10 +7,10 @@ interface APIServiceCardProps {
 
 export const APIServiceCard = ({ service, onOrderClick }: APIServiceCardProps) => {
   return (
-    <div className="bg-dark-800 p-6 rounded-xl border border-dark-700 hover:border-primary-500/50 transition-all h-full flex flex-col">
+    <div className="dark:bg-dark-800 light:bg-white p-6 rounded-xl border dark:border-dark-700 light:border-gray-200 dark:hover:border-primary-500/50 light:hover:border-primary-400 transition-all h-full flex flex-col">
       <div className="text-5xl mb-3">{service.icon}</div>
-      <h3 className="text-xl font-bold text-white mb-2">{service.name}</h3>
-      <p className="text-gray-400 text-sm mb-4 flex-grow">{service.description}</p>
+      <h3 className="text-xl font-bold dark:text-white light:text-gray-900 mb-2">{service.name}</h3>
+      <p className="dark:text-gray-400 light:text-gray-600 text-sm mb-4 flex-grow">{service.description}</p>
       
       <div className="mb-4">
         <div className="text-xs font-semibold text-primary-400 mb-2">Features:</div>
@@ -21,7 +21,7 @@ export const APIServiceCard = ({ service, onOrderClick }: APIServiceCardProps) =
             </span>
           ))}
           {service.features.length > 2 && (
-            <span className="text-xs bg-dark-700 text-gray-400 px-2 py-1 rounded">
+            <span className="text-xs dark:bg-dark-700 light:bg-gray-100 dark:text-gray-400 light:text-gray-600 px-2 py-1 rounded">
               +{service.features.length - 2} more
             </span>
           )}

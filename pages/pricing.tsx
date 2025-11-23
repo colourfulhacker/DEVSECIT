@@ -73,7 +73,7 @@ const Pricing: NextPage = () => {
   ];
 
   return (
-    <div suppressHydrationWarning className="min-h-screen bg-dark-900">
+    <div suppressHydrationWarning className="min-h-screen dark:bg-dark-900 light:bg-white">
       <Head>
         <title>Pricing - DevSecIT | Transparent Software Development Costs</title>
         <meta name="description" content="DevSecIT offers transparent, flexible pricing for custom software development, API integration, and cybersecurity services. No hidden costs." />

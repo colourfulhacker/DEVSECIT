@@ -46,7 +46,7 @@ const Custom404: NextPage = () => {
             <Link
               key={i}
               href={item.href}
-              className="dark:bg-dark-800 light:bg-gray-50 p-6 rounded-lg hover:dark:bg-dark-700 hover:light:bg-gray-100 transition-colors"
+              className="dark:bg-dark-800 light:bg-gray-50 p-6 rounded-lg dark:hover:bg-dark-700 light:hover:bg-gray-100 transition-colors"
             >
               <div className="text-4xl mb-2">{item.icon}</div>
               <div className="font-semibold dark:text-white light:text-gray-900 transition-colors duration-300">{item.title}</div>
