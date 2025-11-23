@@ -100,7 +100,7 @@ export const FactsSlider = () => {
     }, 6000);
 
     return () => clearInterval(interval);
-  }, [autoPlay]);
+  }, [autoPlay, isMounted]);
 
   const handleNext = () => {
     setCurrentIndex((prev) => (prev + 1) % facts.length);

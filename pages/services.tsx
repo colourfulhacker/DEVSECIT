@@ -216,7 +216,7 @@ const ServicesPage: NextPage = () => {
                 Ready to Start Your <span className="text-gradient">Project?</span>
               </h2>
               <p className="text-xl dark:text-gray-400 light:text-gray-600 mb-8">
-                Tell us about your requirements and we'll provide a detailed proposal with timeline and cost
+                Tell us about your requirements and we&apos;ll provide a detailed proposal with timeline and cost
               </p>
               <button
                 onClick={() => setShowProjectForm(true)}

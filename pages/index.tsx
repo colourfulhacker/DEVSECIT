@@ -300,7 +300,7 @@ const Home: NextPage = () => {
               Ready to <span className="text-gradient">Get Started?</span>
             </h2>
             <p className="text-lg dark:text-gray-400 light:text-gray-600">
-              Tell us about your project or learning goals. We'll respond within 24 hours.
+              Tell us about your project or learning goals. We&apos;ll respond within 24 hours.
             </p>
           </div>
 

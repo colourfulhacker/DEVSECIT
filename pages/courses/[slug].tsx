@@ -233,7 +233,7 @@ const CourseDetail: NextPage<CourseDetailProps> = ({ course }) => {
                   {activeTab === 'outcomes' && (
                     <div className="space-y-8">
                       <div>
-                        <h2 className="text-2xl font-bold mb-6 dark:text-white light:text-gray-900">What You'll Learn</h2>
+                        <h2 className="text-2xl font-bold mb-6 dark:text-white light:text-gray-900">What You&apos;ll Learn</h2>
                         <div className="grid md:grid-cols-2 gap-4">
                           {course.outcomes.map((outcome, i) => (
                             <div key={i} className="flex items-start gap-3 dark:bg-dark-800 light:bg-gray-50 p-4 rounded-lg border dark:border-dark-700 light:border-gray-200">

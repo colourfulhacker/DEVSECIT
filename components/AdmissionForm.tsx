@@ -234,8 +234,8 @@ export function AdmissionForm({ onClose }: { onClose?: () => void }) {
               <option value="">Select qualification</option>
               <option value="High School">High School (10th/12th)</option>
               <option value="Diploma">Diploma</option>
-              <option value="Bachelor">Bachelor's Degree</option>
-              <option value="Master">Master's Degree</option>
+              <option value="Bachelor">Bachelor&apos;s Degree</option>
+              <option value="Master">Master&apos;s Degree</option>
               <option value="PhD">PhD</option>
               <option value="Other">Other</option>
             </select>
@@ -429,7 +429,7 @@ export function AdmissionForm({ onClose }: { onClose?: () => void }) {
             >
               <option value="">Select option</option>
               <option value="Yes - Need info">Yes - I need more information</option>
-              <option value="Maybe - Interested">Maybe - I'm interested to know options</option>
+              <option value="Maybe - Interested">Maybe - I&apos;m interested to know options</option>
               <option value="No - Will pay directly">No - I will pay directly</option>
             </select>
           </div>
@@ -446,10 +446,10 @@ export function AdmissionForm({ onClose }: { onClose?: () => void }) {
           </div>
           <div className="dark:bg-green-900/20 light:bg-green-50 p-4 rounded-lg border dark:border-green-700/50 light:border-green-200">
             <p className="text-sm font-semibold dark:text-green-300 light:text-green-700 mb-2">
-              📋 Review & Submit
+              Review & Submit
             </p>
             <p className="text-xs dark:text-green-400 light:text-green-600">
-              After clicking submit, you'll be redirected to WhatsApp where our admission team will:
+              After clicking submit, you&apos;ll be redirected to WhatsApp where our admission team will:
             </p>
             <ul className="text-xs dark:text-green-400 light:text-green-600 mt-2 space-y-1 ml-4">
               <li>• Confirm your course enrollment</li>

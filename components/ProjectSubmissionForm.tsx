@@ -478,10 +478,10 @@ export function ProjectSubmissionForm({ onClose }: { onClose?: () => void }) {
           </div>
           <div className="dark:bg-blue-900/20 light:bg-blue-50 p-4 rounded-lg border dark:border-blue-700/50 light:border-blue-200">
             <p className="text-sm font-semibold dark:text-blue-300 light:text-blue-700 mb-2">
-              📋 What happens next?
+              What happens next?
             </p>
             <ul className="text-xs dark:text-blue-400 light:text-blue-600 space-y-1">
-              <li>✓ We'll review your requirements within 24 hours</li>
+              <li>✓ We&apos;ll review your requirements within 24 hours</li>
               <li>✓ Schedule a free consultation call</li>
               <li>✓ Provide detailed proposal with timeline & cost</li>
               <li>✓ Assign dedicated project manager</li>

@@ -32,7 +32,7 @@ export const Footer = () => {
                 <Link href="/pricing" className="dark:text-gray-400 light:text-gray-600 hover:text-primary-400 transition">Pricing</Link>
               </li>
               <li>
-                <a href="/#faq" className="dark:text-gray-400 light:text-gray-600 hover:text-primary-400 transition">FAQ</a>
+                <Link href="/#faq" className="dark:text-gray-400 light:text-gray-600 hover:text-primary-400 transition">FAQ</Link>
               </li>
             </ul>
           </div>
@@ -41,10 +41,10 @@ export const Footer = () => {
           <div>
             <h4 className="font-semibold dark:text-white light:text-gray-900 mb-4">Featured Courses</h4>
             <ul className="space-y-2 text-sm">
-              <li><a href="/courses#course-1" className="dark:text-gray-400 light:text-gray-600 hover:text-primary-400 transition">Full-Stack Web Dev</a></li>
-              <li><a href="/courses#course-2" className="dark:text-gray-400 light:text-gray-600 hover:text-primary-400 transition">DevSecOps</a></li>
-              <li><a href="/courses#course-3" className="dark:text-gray-400 light:text-gray-600 hover:text-primary-400 transition">Cybersecurity</a></li>
-              <li><a href="/courses#course-6" className="dark:text-gray-400 light:text-gray-600 hover:text-primary-400 transition">AI & ML</a></li>
+              <li><Link href="/courses#course-1" className="dark:text-gray-400 light:text-gray-600 hover:text-primary-400 transition">Full-Stack Web Dev</Link></li>
+              <li><Link href="/courses#course-2" className="dark:text-gray-400 light:text-gray-600 hover:text-primary-400 transition">DevSecOps</Link></li>
+              <li><Link href="/courses#course-3" className="dark:text-gray-400 light:text-gray-600 hover:text-primary-400 transition">Cybersecurity</Link></li>
+              <li><Link href="/courses#course-6" className="dark:text-gray-400 light:text-gray-600 hover:text-primary-400 transition">AI & ML</Link></li>
             </ul>
           </div>
 
@@ -53,13 +53,13 @@ export const Footer = () => {
             <h4 className="font-semibold dark:text-white light:text-gray-900 mb-4">Contact</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="tel:+918101979855" className="dark:text-gray-400 light:text-gray-600 hover:text-primary-400 transition">📞 +91 8101 979855</a>
+                <a href="tel:+918101979855" className="dark:text-gray-400 light:text-gray-600 hover:text-primary-400 transition">+91 8101 979855</a>
               </li>
               <li>
-                <a href="https://wa.me/918101979855" className="dark:text-gray-400 light:text-gray-600 hover:text-primary-400 transition">💬 WhatsApp</a>
+                <a href="https://wa.me/918101979855" className="dark:text-gray-400 light:text-gray-600 hover:text-primary-400 transition">WhatsApp</a>
               </li>
               <li>
-                <a href="mailto:sales@devsecit.com" className="dark:text-gray-400 light:text-gray-600 hover:text-primary-400 transition">📧 sales@devsecit.com</a>
+                <a href="mailto:sales@devsecit.com" className="dark:text-gray-400 light:text-gray-600 hover:text-primary-400 transition">sales@devsecit.com</a>
               </li>
             </ul>
           </div>
