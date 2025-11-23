@@ -1,5 +1,6 @@
 
 import type { NextPage } from 'next';
+import Link from 'next/link';
 import { useState, useLayoutEffect } from 'react';
 import SEOHead from '../components/SEOHead';
 import { Header } from '../components/Header';
