@@ -106,19 +106,10 @@ const Home: NextPage = () => {
         {mobileMenuOpen && (
           <div className="md:hidden bg-dark-800 dark:bg-dark-800 light:bg-gray-50 border-t border-dark-700 dark:border-dark-700 light:border-gray-200 transition-colors duration-300">
             <div className="px-4 py-4 space-y-3">
+              <Link href="/courses" onClick={() => setMobileMenuOpen(false)} className="block text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors py-2">Courses</Link>
               <Link href="/about" onClick={() => setMobileMenuOpen(false)} className="block text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors py-2">About</Link>
-              <a href="#services" onClick={() => setMobileMenuOpen(false)} className="block text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors py-2">Services</a>
-              <Link href="/pricing" onClick={() => setMobileMenuOpen(false)} className="block text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors py-2">Pricing</Link>
-              <Link href="/portfolio" onClick={() => setMobileMenuOpen(false)} className="block text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors py-2">Portfolio</Link>
-              <Link href="/virtual-cto" onClick={() => setMobileMenuOpen(false)} className="block text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors py-2">Virtual CTO</Link>
-              <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="block text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors py-2">Contact</a>
-              <a 
-                href="#contact" 
-                onClick={() => setMobileMenuOpen(false)}
-                className="block w-full text-center bg-gradient-to-r from-primary-500 to-blue-600 px-6 py-3 rounded-lg font-semibold text-white mt-4"
-              >
-                Get Started
-              </a>
+              <a href="#faq" onClick={() => setMobileMenuOpen(false)} className="block text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors py-2">FAQ</a>
+              <a href="https://wa.me/918101979855?text=Hi%20DEV%20SEC%20IT,%20I'm%20interested%20in%20enrolling%20in%20a%20course" onClick={() => setMobileMenuOpen(false)} className="block text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors py-2">Enroll</a>
             </div>
           </div>
         )}
