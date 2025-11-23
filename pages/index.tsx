@@ -1,11 +1,11 @@
 
 import type { NextPage } from 'next';
-import Link from 'next/link';
 import { useState, useLayoutEffect } from 'react';
 import SEOHead from '../components/SEOHead';
+import { Header } from '../components/Header';
+import { Footer } from '../components/Footer';
 import { APISlider } from '../components/APISlider';
 import { APIOrderModal } from '../components/APIOrderModal';
-import { ThemeToggle } from '../components/ThemeToggle';
 import { APIService, allAPICategories, topCommonAPIs } from '../lib/apiServices';
 import { FAQ } from '../components/FAQ';
 import { Testimonials } from '../components/Testimonials';
@@ -66,55 +66,7 @@ const Home: NextPage = () => {
         schemas={schemas}
       />
 
-      <nav className="fixed top-0 w-full z-50 bg-dark-900/95 dark:bg-dark-900/95 light:bg-white/95 backdrop-blur-lg border-b border-dark-700 dark:border-dark-700 light:border-gray-200 transition-colors duration-300">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center">
-              <h1 className="text-2xl font-display font-bold text-gradient">DevSecIT</h1>
-            </div>
-            <div className="hidden md:flex space-x-8">
-              <Link href="/courses" className="text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors">Courses</Link>
-              <Link href="/about" className="text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors">About</Link>
-              <a href="#faq" className="text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors">FAQ</a>
-              <a href="https://wa.me/918101979855?text=Hi%20DEV%20SEC%20IT,%20I'm%20interested%20in%20enrolling%20in%20a%20course" className="text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors">Enroll</a>
-            </div>
-            <div className="flex items-center gap-4">
-              <ThemeToggle />
-              <Link
-                href="/courses"
-                className="hidden sm:inline-block dark:text-primary-400 light:text-primary-600 dark:hover:text-primary-300 light:hover:text-primary-700 font-semibold transition-colors text-sm"
-              >
-                View Courses
-              </Link>
-              <a 
-                href="#contact" 
-                className="hidden sm:inline-block bg-gradient-to-r from-primary-500 to-blue-600 px-6 py-2 rounded-lg font-semibold hover:shadow-lg hover:shadow-primary-500/50 transition-all text-white"
-              >
-                Get Started
-              </a>
-              <button
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="md:hidden text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 p-2"
-                aria-label="Toggle menu"
-              >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-        {mobileMenuOpen && (
-          <div className="md:hidden bg-dark-800 dark:bg-dark-800 light:bg-gray-50 border-t border-dark-700 dark:border-dark-700 light:border-gray-200 transition-colors duration-300">
-            <div className="px-4 py-4 space-y-3">
-              <Link href="/courses" onClick={() => setMobileMenuOpen(false)} className="block text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors py-2">Courses</Link>
-              <Link href="/about" onClick={() => setMobileMenuOpen(false)} className="block text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors py-2">About</Link>
-              <a href="#faq" onClick={() => setMobileMenuOpen(false)} className="block text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors py-2">FAQ</a>
-              <a href="https://wa.me/918101979855?text=Hi%20DEV%20SEC%20IT,%20I'm%20interested%20in%20enrolling%20in%20a%20course" onClick={() => setMobileMenuOpen(false)} className="block text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors py-2">Enroll</a>
-            </div>
-          </div>
-        )}
-      </nav>
+      <Header activePage="home" />
 
       <section className="relative pt-32 pb-20 overflow-hidden dark:bg-dark-900 light:bg-white transition-colors duration-300">
         <div className="absolute inset-0 dark:bg-gradient-to-br dark:from-primary-900/20 dark:via-dark-900 dark:to-blue-900/20 light:bg-gradient-to-br light:from-primary-50 light:via-white light:to-blue-50"></div>
