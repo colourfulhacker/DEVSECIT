@@ -12,7 +12,7 @@ export const ThemeToggle = () => {
   if (!isMounted) {
     return (
       <button
-        className="relative inline-flex items-center justify-center w-10 h-10 rounded-lg transition-all duration-300 focus-visible:ring-2 bg-dark-800 hover:bg-dark-700 text-yellow-400 focus-visible:ring-primary-500"
+        className="relative inline-flex items-center justify-center w-10 h-10 rounded-lg transition-all duration-300 focus-visible:ring-2 dark:bg-dark-800 light:bg-gray-100 dark:hover:bg-dark-700 light:hover:bg-gray-200 text-yellow-400 dark:text-yellow-400 light:text-gray-800 dark:focus-visible:ring-primary-500 light:focus-visible:ring-primary-400"
         aria-label="Theme toggle"
         disabled
       >
@@ -28,8 +28,8 @@ export const ThemeToggle = () => {
       onClick={toggleTheme}
       className={`relative inline-flex items-center justify-center w-10 h-10 rounded-lg transition-all duration-300 focus-visible:ring-2 ${
         isDark
-          ? 'bg-dark-800 hover:bg-dark-700 text-yellow-400 focus-visible:ring-primary-500'
-          : 'bg-gray-100 hover:bg-gray-200 text-gray-800 focus-visible:ring-primary-400'
+          ? 'dark:bg-dark-800 light:bg-gray-100 dark:hover:bg-dark-700 light:hover:bg-gray-200 text-yellow-400 dark:text-yellow-400 light:text-gray-800 dark:focus-visible:ring-primary-500 light:focus-visible:ring-primary-400'
+          : 'dark:bg-dark-800 light:bg-gray-100 dark:hover:bg-dark-700 light:hover:bg-gray-200 dark:text-yellow-400 light:text-gray-800 dark:focus-visible:ring-primary-500 light:focus-visible:ring-primary-400'
       }`}
       aria-label={isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
       title={isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
