@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useLayoutEffect } from 'react';
 
 interface Fact {
   title: string;
@@ -86,9 +86,14 @@ const facts: Fact[] = [
 export const FactsSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [autoPlay, setAutoPlay] = useState(true);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useLayoutEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   useEffect(() => {
-    if (!autoPlay) return;
+    if (!autoPlay || !isMounted) return;
 
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % facts.length);
