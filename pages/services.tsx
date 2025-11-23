@@ -1,8 +1,8 @@
 import type { NextPage } from 'next';
-import Link from 'next/link';
-import { useState, useEffect } from 'react';
 import Head from 'next/head';
-import { ThemeToggle } from '../components/ThemeToggle';
+import { useState, useEffect } from 'react';
+import { Header } from '../components/Header';
+import { Footer } from '../components/Footer';
 
 const IT_SERVICES = [
   { id: 'web-dev', name: 'Web Application Development', icon: '🌐', category: 'Development' },
@@ -30,45 +30,23 @@ const IT_SERVICES = [
 ];
 
 const INDUSTRIES = [
-  'E-commerce',
-  'Healthcare',
-  'Finance',
-  'Education',
-  'Real Estate',
-  'Manufacturing',
-  'Retail',
-  'Logistics',
-  'Hospitality',
-  'Travel & Tourism',
-  'Media & Entertainment',
-  'Telecommunications',
-  'Energy',
-  'Agriculture',
-  'Government',
-  'Non-Profit'
+  'E-commerce', 'Healthcare', 'Finance', 'Education', 'Real Estate', 'Manufacturing',
+  'Retail', 'Logistics', 'Hospitality', 'Travel & Tourism', 'Media & Entertainment',
+  'Telecommunications', 'Energy', 'Agriculture', 'Government', 'Non-Profit'
 ];
 
-const ServicesForm: NextPage = () => {
+const ServicesPage: NextPage = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    industry: '',
-    budget: '',
-    timeline: '',
-    description: ''
+    name: '', email: '', company: '', industry: '', budget: '', timeline: '', description: ''
   });
-
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
-    
     try {
       const savedEmail = localStorage.getItem('clientEmail');
       const savedName = localStorage.getItem('clientName');
       const savedCompany = localStorage.getItem('clientCompany');
-
       if (savedEmail || savedName || savedCompany) {
         setFormData(prev => ({
           ...prev,
@@ -92,7 +70,6 @@ const ServicesForm: NextPage = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-
     if (typeof window !== 'undefined') {
       try {
         localStorage.setItem('clientEmail', formData.email);
@@ -102,30 +79,11 @@ const ServicesForm: NextPage = () => {
         console.error('localStorage save failed:', e);
       }
     }
-
     const selectedServiceNames = selectedServices
       .map(id => IT_SERVICES.find(s => s.id === id)?.name)
       .filter(Boolean)
       .join(', ');
-
-    const mailBody = `
-NAME: ${formData.name}
-EMAIL: ${formData.email}
-COMPANY: ${formData.company}
-INDUSTRY: ${formData.industry}
-BUDGET RANGE: ${formData.budget}
-TIMELINE: ${formData.timeline}
-
-REQUIRED IT SERVICES:
-${selectedServiceNames}
-
-PROJECT DESCRIPTION:
-${formData.description}
-
----
-This requirement was submitted via the IT Services Requirements Form on DevSecIT website.
-`.trim();
-
+    const mailBody = `NAME: ${formData.name}\nEMAIL: ${formData.email}\nCOMPANY: ${formData.company}\nINDUSTRY: ${formData.industry}\nBUDGET RANGE: ${formData.budget}\nTIMELINE: ${formData.timeline}\n\nREQUIRED IT SERVICES:\n${selectedServiceNames}\n\nPROJECT DESCRIPTION:\n${formData.description}\n\n---\nThis requirement was submitted via the IT Services page on DevSecIT website.`.trim();
     const mailtoLink = `mailto:sales@devsecit.com?subject=IT Services Requirement from ${formData.name}&body=${encodeURIComponent(mailBody)}`;
     window.location.href = mailtoLink;
   };
@@ -137,188 +95,250 @@ This requirement was submitted via the IT Services Requirements Form on DevSecIT
   }, {} as Record<string, typeof IT_SERVICES>);
 
   return (
-    <>
+    <div suppressHydrationWarning className="min-h-screen dark:bg-dark-900 light:bg-white transition-colors">
       <Head>
-        <title>IT Services Requirements Form - DevSecIT</title>
-        <meta name="description" content="Detailed IT services requirements form to collect your project details and service needs." />
+        <title>Services - DEV SEC IT | Professional IT Solutions</title>
+        <meta name="description" content="Comprehensive IT services including custom software development, DevOps, cloud solutions, AI/ML, cybersecurity, and more." />
       </Head>
 
-      <nav className="fixed top-0 w-full z-50 bg-dark-900/95 dark:bg-dark-900/95 light:bg-white/95 backdrop-blur-lg border-b border-dark-700 dark:border-dark-700 light:border-gray-200 transition-colors duration-300">
+      <Header activePage="services" />
+
+      {/* Hero Section */}
+      <section className="pt-32 pb-20 px-4 text-center dark:bg-gradient-to-b dark:from-dark-800 dark:to-dark-900 light:bg-gradient-to-b light:from-gray-50 light:to-white">
+        <div className="max-w-4xl mx-auto">
+          <h1 className="text-5xl md:text-6xl font-display font-bold mb-6 dark:text-white light:text-gray-900">
+            Comprehensive <span className="text-gradient">IT Services</span>
+          </h1>
+          <p className="text-xl md:text-2xl dark:text-gray-300 light:text-gray-600 mb-8">
+            End-to-end technology solutions tailored to your unique requirements
+          </p>
+        </div>
+      </section>
+
+      {/* Main Services (from homepage) */}
+      <section id="services" className="py-20 dark:bg-dark-800/50 light:bg-gray-50 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <Link href="/" className="text-2xl font-display font-bold text-gradient">DevSecIT</Link>
-            <div className="flex items-center gap-4">
-              <ThemeToggle />
-              <Link href="/" className="text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-primary-400 transition-colors">Back to Home</Link>
-            </div>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 dark:text-white light:text-gray-900">
+              Our <span className="text-gradient">Core Services</span>
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                icon: '🚀',
+                title: 'Custom Software Development',
+                description: 'Bespoke applications for individuals, startups, and enterprises. Full-stack development with modern frameworks and scalable architecture.',
+                features: ['Web & Mobile Apps', 'SaaS Platforms', 'Enterprise Solutions', 'Legacy Modernization']
+              },
+              {
+                icon: '🔒',
+                title: 'Cybersecurity Integration',
+                description: 'Security-first development approach. Protect your digital assets with enterprise-grade security measures built into every layer.',
+                features: ['Secure-by-Design', 'Penetration Testing', 'Compliance (GDPR, SOC 2)', 'Security Audits']
+              },
+              {
+                icon: '🤖',
+                title: 'AI & Automation',
+                description: 'Harness the power of artificial intelligence and machine learning to automate processes and gain competitive advantages.',
+                features: ['Machine Learning', 'Process Automation', 'Intelligent Analytics', 'AI Integration']
+              },
+              {
+                icon: '⚡',
+                title: 'Custom API Development',
+                description: 'Build any API you need, no matter how specialized. 7-day MVP delivery for rapid prototyping and market validation.',
+                features: ['RESTful APIs', 'GraphQL', 'Microservices', 'Real-time APIs']
+              },
+              {
+                icon: '🎯',
+                title: 'Full Project Outsourcing',
+                description: 'Hand over your entire project to our expert team. From planning to deployment, we handle everything while you focus on your business.',
+                features: ['End-to-End Delivery', 'Agile Development', 'DevOps & CI/CD', 'Maintenance & Support']
+              },
+              {
+                icon: '💡',
+                title: 'Digital Transformation',
+                description: 'Modernize your business with cutting-edge technology. Cloud migration, digital solutions, and strategic IT consulting.',
+                features: ['Cloud Solutions', 'System Integration', 'IT Strategy', 'Performance Optimization']
+              }
+            ].map((service, i) => (
+              <div key={i} className="dark:bg-dark-900 light:bg-white p-8 rounded-2xl dark:border dark:border-dark-700 light:border light:border-gray-200 hover:dark:border-primary-500/50 transition-all">
+                <div className="text-5xl mb-4">{service.icon}</div>
+                <h3 className="text-2xl font-bold mb-3 dark:text-white light:text-gray-900">{service.title}</h3>
+                <p className="dark:text-gray-400 light:text-gray-600 mb-4">{service.description}</p>
+                <ul className="space-y-2">
+                  {service.features.map((feature, j) => (
+                    <li key={j} className="flex items-center dark:text-gray-300 light:text-gray-700">
+                      <span className="text-primary-400 mr-2">✓</span>{feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
-      </nav>
+      </section>
 
-      <div className="min-h-screen pt-24 pb-20 dark:bg-dark-900 light:bg-white transition-colors duration-300">
+      {/* Technology Stack (from homepage) */}
+      <section id="techstack" className="py-20 dark:bg-dark-900 light:bg-white transition-colors">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 dark:text-white light:text-gray-900">
+              Our <span className="text-gradient">Technology Stack</span>
+            </h2>
+          </div>
+          <div className="grid gap-8">
+            {[
+              { title: 'Frontend Development', techs: [{ name: 'React', icon: '⚛️' }, { name: 'Next.js', icon: '▲' }, { name: 'Vue.js', icon: '💚' }, { name: 'Angular', icon: '🅰️' }, { name: 'TypeScript', icon: '📘' }, { name: 'Tailwind CSS', icon: '🎨' }] },
+              { title: 'Backend Development', techs: [{ name: 'Node.js', icon: '🟢' }, { name: 'Python', icon: '🐍' }, { name: 'Go', icon: '🔷' }, { name: 'Rust', icon: '⚙️' }, { name: 'Java', icon: '☕' }, { name: 'PHP', icon: '🐘' }] },
+              { title: 'Database & Storage', techs: [{ name: 'PostgreSQL', icon: '🐘' }, { name: 'MongoDB', icon: '🍃' }, { name: 'Redis', icon: '🔴' }, { name: 'MySQL', icon: '🐬' }, { name: 'Firebase', icon: '🔥' }, { name: 'DynamoDB', icon: '⚡' }] },
+              { title: 'Cloud & DevOps', techs: [{ name: 'AWS', icon: '☁️' }, { name: 'Azure', icon: '🌐' }, { name: 'GCP', icon: '🔵' }, { name: 'Docker', icon: '🐳' }, { name: 'Kubernetes', icon: '⚓' }, { name: 'CI/CD', icon: '🔄' }] },
+              { title: 'Mobile Development', techs: [{ name: 'React Native', icon: '📱' }, { name: 'Flutter', icon: '🦋' }, { name: 'Swift', icon: '🍎' }, { name: 'Kotlin', icon: '🤖' }, { name: 'Ionic', icon: '⚡' }, { name: 'Xamarin', icon: '🔷' }] },
+              { title: 'AI & Machine Learning', techs: [{ name: 'TensorFlow', icon: '🧠' }, { name: 'PyTorch', icon: '🔥' }, { name: 'OpenAI', icon: '🤖' }, { name: 'Scikit-learn', icon: '📊' }, { name: 'Hugging Face', icon: '🤗' }, { name: 'LangChain', icon: '🔗' }] }
+            ].map((category, idx) => (
+              <div key={idx} className="dark:bg-dark-800 light:bg-gray-50 p-8 rounded-2xl border dark:border-dark-700 light:border-gray-200">
+                <h3 className="text-2xl font-bold mb-6 text-primary-400">{category.title}</h3>
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                  {category.techs.map((tech, i) => (
+                    <div key={i} className="dark:bg-dark-900 light:bg-white p-4 rounded-lg text-center hover:dark:border-primary-500/50 border dark:border-dark-700 light:border-gray-200 transition-all">
+                      <div className="text-3xl mb-2">{tech.icon}</div>
+                      <div className="text-sm dark:text-gray-300 light:text-gray-700">{tech.name}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Capabilities Section (from homepage) */}
+      <section id="capabilities" className="py-20 dark:bg-dark-800/50 light:bg-gray-50 transition-colors">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 dark:text-white light:text-gray-900">
+              Elite <span className="text-gradient">Capabilities</span>
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { metric: '500+', highlight: 'Projects Delivered', description: 'Successful projects delivered to clients worldwide' },
+              { metric: '99.9%', highlight: 'Uptime SLA', description: 'Reliable infrastructure ensuring maximum availability' },
+              { metric: '7 Days', highlight: 'API MVP Delivery', description: 'Rapid prototyping and market validation' }
+            ].map((cap, i) => (
+              <div key={i} className="dark:bg-dark-900 light:bg-white p-8 rounded-2xl dark:border dark:border-dark-700 light:border light:border-gray-200">
+                <div className="text-5xl font-bold text-gradient mb-2">{cap.metric}</div>
+                <div className="text-primary-400 font-semibold mb-4">{cap.highlight}</div>
+                <p className="dark:text-gray-400 light:text-gray-600">{cap.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* IT Services Selection Form */}
+      <section className="py-20 dark:bg-dark-900 light:bg-white transition-colors">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h1 className="text-5xl font-display font-bold mb-4 dark:text-white light:text-gray-900 transition-colors duration-300">
-              IT Services <span className="text-gradient">Requirements Form</span>
-            </h1>
-            <p className="text-xl dark:text-gray-400 light:text-gray-600 max-w-3xl mx-auto transition-colors duration-300">
-              Tell us about your project and select the services you need. Your information will be automatically prefilled on future submissions.
+            <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 dark:text-white light:text-gray-900">
+              Select Your <span className="text-gradient">Required Services</span>
+            </h2>
+            <p className="text-xl dark:text-gray-400 light:text-gray-600">
+              Choose the services you need and submit your requirements
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} className="dark:bg-dark-800 light:bg-gray-50 p-8 md:p-12 rounded-2xl dark:border dark:border-dark-700 light:border light:border-gray-200 transition-colors duration-300">
-            {/* Contact Information */}
+          <form onSubmit={handleSubmit} className="dark:bg-dark-800 light:bg-gray-50 p-8 md:p-12 rounded-2xl dark:border dark:border-dark-700 light:border light:border-gray-200 transition-colors">
+            {/* Contact Info */}
             <div className="mb-8">
-              <h2 className="text-2xl font-bold mb-6 dark:text-white light:text-gray-900 transition-colors duration-300">Contact Information</h2>
+              <h3 className="text-2xl font-bold mb-6 dark:text-white light:text-gray-900">Contact Information</h3>
               <div className="grid md:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <label className="block dark:text-gray-300 light:text-gray-700 mb-2 font-semibold transition-colors duration-300">Full Name *</label>
+                {[
+                  { label: 'Full Name', key: 'name' },
+                  { label: 'Email Address', key: 'email' },
+                  { label: 'Company Name', key: 'company' },
+                  { label: 'Industry', key: 'industry' }
+                ].map(({ label, key }) => (
                   <input
-                    type="text"
+                    key={key}
+                    type={key === 'email' ? 'email' : 'text'}
+                    placeholder={label}
                     required
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3 dark:bg-dark-900 light:bg-white dark:border dark:border-dark-700 light:border light:border-gray-300 rounded-lg dark:focus:border-primary-500 light:focus:border-primary-400 focus:outline-none dark:text-gray-100 light:text-gray-900 transition-colors duration-300"
-                    placeholder="John Doe"
+                    value={formData[key as keyof typeof formData]}
+                    onChange={(e) => setFormData({ ...formData, [key]: e.target.value })}
+                    className="dark:bg-dark-900 light:bg-white dark:text-white light:text-gray-900 dark:border-dark-700 light:border-gray-200 border px-4 py-3 rounded-lg focus:ring-2 focus:ring-primary-500 outline-none"
                   />
-                </div>
-                <div>
-                  <label className="block dark:text-gray-300 light:text-gray-700 mb-2 font-semibold transition-colors duration-300">Email *</label>
-                  <input
-                    type="email"
-                    required
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3 dark:bg-dark-900 light:bg-white dark:border dark:border-dark-700 light:border light:border-gray-300 rounded-lg dark:focus:border-primary-500 light:focus:border-primary-400 focus:outline-none dark:text-gray-100 light:text-gray-900 transition-colors duration-300"
-                    placeholder="john@company.com"
-                  />
-                </div>
+                ))}
               </div>
               <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block dark:text-gray-300 light:text-gray-700 mb-2 font-semibold transition-colors duration-300">Company Name *</label>
-                  <input
-                    type="text"
-                    required
-                    value={formData.company}
-                    onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                    className="w-full px-4 py-3 dark:bg-dark-900 light:bg-white dark:border dark:border-dark-700 light:border light:border-gray-300 rounded-lg dark:focus:border-primary-500 light:focus:border-primary-400 focus:outline-none dark:text-gray-100 light:text-gray-900 transition-colors duration-300"
-                    placeholder="Your Company"
-                  />
-                </div>
-                <div>
-                  <label className="block dark:text-gray-300 light:text-gray-700 mb-2 font-semibold transition-colors duration-300">Industry *</label>
+                {[
+                  { label: 'Budget Range', key: 'budget', options: ['₹1L-5L', '₹5L-10L', '₹10L-25L', '₹25L+'] },
+                  { label: 'Timeline', key: 'timeline', options: ['Urgent (1-2 weeks)', '1-2 months', '2-3 months', '3+ months'] }
+                ].map(({ label, key, options }) => (
                   <select
-                    required
-                    value={formData.industry}
-                    onChange={(e) => setFormData({ ...formData, industry: e.target.value })}
-                    className="w-full px-4 py-3 dark:bg-dark-900 light:bg-white dark:border dark:border-dark-700 light:border light:border-gray-300 rounded-lg dark:focus:border-primary-500 light:focus:border-primary-400 focus:outline-none dark:text-gray-100 light:text-gray-900 transition-colors duration-300"
+                    key={key}
+                    value={formData[key as keyof typeof formData]}
+                    onChange={(e) => setFormData({ ...formData, [key]: e.target.value })}
+                    className="dark:bg-dark-900 light:bg-white dark:text-white light:text-gray-900 dark:border-dark-700 light:border-gray-200 border px-4 py-3 rounded-lg focus:ring-2 focus:ring-primary-500 outline-none"
                   >
-                    <option value="">Select Industry</option>
-                    {INDUSTRIES.map(industry => (
-                      <option key={industry} value={industry}>{industry}</option>
-                    ))}
+                    <option value="">{label}</option>
+                    {options.map(opt => <option key={opt} value={opt}>{opt}</option>)}
                   </select>
-                </div>
-              </div>
-            </div>
-
-            {/* Project Details */}
-            <div className="mb-8">
-              <h2 className="text-2xl font-bold mb-6 dark:text-white light:text-gray-900 transition-colors duration-300">Project Details</h2>
-              <div className="grid md:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <label className="block dark:text-gray-300 light:text-gray-700 mb-2 font-semibold transition-colors duration-300">Budget Range *</label>
-                  <select
-                    required
-                    value={formData.budget}
-                    onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                    className="w-full px-4 py-3 dark:bg-dark-900 light:bg-white dark:border dark:border-dark-700 light:border light:border-gray-300 rounded-lg dark:focus:border-primary-500 light:focus:border-primary-400 focus:outline-none dark:text-gray-100 light:text-gray-900 transition-colors duration-300"
-                  >
-                    <option value="">Select Budget</option>
-                    <option value="Under $10K">Under $10K</option>
-                    <option value="$10K - $50K">$10K - $50K</option>
-                    <option value="$50K - $100K">$50K - $100K</option>
-                    <option value="$100K - $500K">$100K - $500K</option>
-                    <option value="$500K+">$500K+</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="block dark:text-gray-300 light:text-gray-700 mb-2 font-semibold transition-colors duration-300">Timeline *</label>
-                  <select
-                    required
-                    value={formData.timeline}
-                    onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
-                    className="w-full px-4 py-3 dark:bg-dark-900 light:bg-white dark:border dark:border-dark-700 light:border light:border-gray-300 rounded-lg dark:focus:border-primary-500 light:focus:border-primary-400 focus:outline-none dark:text-gray-100 light:text-gray-900 transition-colors duration-300"
-                  >
-                    <option value="">Select Timeline</option>
-                    <option value="ASAP (1-2 weeks)">ASAP (1-2 weeks)</option>
-                    <option value="1-3 months">1-3 months</option>
-                    <option value="3-6 months">3-6 months</option>
-                    <option value="6+ months">6+ months</option>
-                  </select>
-                </div>
-              </div>
-              <div>
-                <label className="block dark:text-gray-300 light:text-gray-700 mb-2 font-semibold transition-colors duration-300">Project Description *</label>
-                <textarea
-                  required
-                  value={formData.description}
-                  onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                  rows={4}
-                  className="w-full px-4 py-3 dark:bg-dark-900 light:bg-white dark:border dark:border-dark-700 light:border light:border-gray-300 rounded-lg dark:focus:border-primary-500 light:focus:border-primary-400 focus:outline-none dark:text-gray-100 light:text-gray-900 resize-none transition-colors duration-300"
-                  placeholder="Describe your project, goals, challenges, and any specific requirements..."
-                />
+                ))}
               </div>
             </div>
 
             {/* Services Selection */}
             <div className="mb-8">
-              <h2 className="text-2xl font-bold mb-6 dark:text-white light:text-gray-900 transition-colors duration-300">
-                Required IT Services (Select all that apply) *
-              </h2>
-              {Object.entries(servicesByCategory).map(([category, services]) => (
-                <div key={category} className="mb-8">
-                  <h3 className="text-lg font-semibold mb-4 text-primary-400 transition-colors duration-300">{category}</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {services.map(service => (
-                      <label key={service.id} className="flex items-center p-4 dark:bg-dark-900 light:bg-white rounded-lg dark:border dark:border-dark-700 light:border light:border-gray-200 cursor-pointer hover:dark:border-primary-500/50 hover:light:border-primary-400 transition-all duration-300">
-                        <input
-                          type="checkbox"
-                          checked={selectedServices.includes(service.id)}
-                          onChange={() => handleServiceToggle(service.id)}
-                          className="w-4 h-4 text-primary-500 rounded dark:focus:ring-2 light:focus:ring-2 dark:focus:ring-primary-500 light:focus:ring-primary-400 cursor-pointer"
-                        />
-                        <span className="ml-3 text-2xl">{service.icon}</span>
-                        <span className="ml-3 dark:text-gray-300 light:text-gray-700 transition-colors duration-300">{service.name}</span>
-                      </label>
-                    ))}
+              <h3 className="text-2xl font-bold mb-6 dark:text-white light:text-gray-900">Select Services by Category</h3>
+              <div className="space-y-6">
+                {Object.entries(servicesByCategory).map(([category, services]) => (
+                  <div key={category}>
+                    <h4 className="font-semibold dark:text-primary-400 light:text-primary-600 mb-3">{category}</h4>
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+                      {services.map(service => (
+                        <label key={service.id} className="flex items-center dark:bg-dark-900 light:bg-white p-3 rounded-lg dark:border dark:border-dark-700 light:border light:border-gray-200 cursor-pointer hover:dark:border-primary-500/50">
+                          <input
+                            type="checkbox"
+                            checked={selectedServices.includes(service.id)}
+                            onChange={() => handleServiceToggle(service.id)}
+                            className="w-4 h-4 text-primary-500 rounded focus:ring-2 focus:ring-primary-500"
+                          />
+                          <span className="ml-3 dark:text-gray-300 light:text-gray-700 text-sm">{service.name}</span>
+                        </label>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
 
-            {/* Submit Button */}
-            <div className="flex gap-4">
-              <button
-                type="submit"
-                disabled={selectedServices.length === 0}
-                className="flex-1 px-8 py-4 bg-gradient-to-r from-primary-500 to-blue-600 rounded-lg font-bold text-lg hover:shadow-2xl hover:shadow-primary-500/50 transition-all transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed text-white"
-              >
-                📧 Send Requirements
-              </button>
-              <Link
-                href="/"
-                className="px-8 py-4 dark:border-2 dark:border-primary-500/50 light:border-2 light:border-primary-400 rounded-lg font-bold text-lg dark:text-gray-100 light:text-gray-900 dark:hover:bg-primary-500/10 light:hover:bg-primary-50 transition-all text-center"
-              >
-                Cancel
-              </Link>
+            {/* Description */}
+            <div className="mb-8">
+              <label className="block text-lg font-semibold dark:text-white light:text-gray-900 mb-3">Project Description</label>
+              <textarea
+                placeholder="Tell us about your project, goals, and any specific requirements..."
+                required
+                rows={5}
+                value={formData.description}
+                onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+                className="w-full dark:bg-dark-900 light:bg-white dark:text-white light:text-gray-900 dark:border-dark-700 light:border-gray-200 border px-4 py-3 rounded-lg focus:ring-2 focus:ring-primary-500 outline-none"
+              />
             </div>
+
+            <button
+              type="submit"
+              className="w-full bg-gradient-to-r from-primary-500 to-blue-600 text-white font-bold py-3 rounded-lg hover:shadow-lg hover:shadow-primary-500/50 transition-all"
+            >
+              Submit Requirements
+            </button>
           </form>
         </div>
-      </div>
-    </>
+      </section>
+
+      <Footer />
+    </div>
   );
 };
 
-export default ServicesForm;
+export default ServicesPage;
