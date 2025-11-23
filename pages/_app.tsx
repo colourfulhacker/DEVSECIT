@@ -6,13 +6,11 @@ import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 
 const FloatingCTA = dynamic(() => import('../components/FloatingCTA').then(mod => ({ default: mod.FloatingCTA })), {
-  ssr: false,
-  loading: () => null
+  ssr: false
 })
 
 const HostingPromoPopup = dynamic(() => import('../components/HostingPromoPopup').then(mod => ({ default: mod.HostingPromoPopup })), {
-  ssr: false,
-  loading: () => null
+  ssr: false
 })
 
 function MyApp({ Component, pageProps }: AppProps) {

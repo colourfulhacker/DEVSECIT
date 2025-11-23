@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { createContext, useContext, useState, useEffect, ReactNode, useLayoutEffect } from 'react';
 
 interface ThemeContextType {
   isDark: boolean;
@@ -14,24 +14,25 @@ const ThemeContext = createContext<ThemeContextType>(defaultTheme);
 
 export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [isDark, setIsDark] = useState(true);
-  const [isMounted, setIsMounted] = useState(false);
+  const [isClient, setIsClient] = useState(false);
 
-  useEffect(() => {
-    setIsMounted(true);
-    const currentTheme = document.documentElement.getAttribute('data-theme') || 
-                        localStorage.getItem('theme') || 
-                        'dark';
-    const isDarkMode = currentTheme === 'dark';
-    setIsDark(isDarkMode);
-    document.documentElement.setAttribute('data-theme', currentTheme);
+  useLayoutEffect(() => {
+    setIsClient(true);
   }, []);
 
   useEffect(() => {
-    if (!isMounted) return;
+    if (!isClient) return;
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+    const isDarkMode = currentTheme === 'dark';
+    setIsDark(isDarkMode);
+  }, [isClient]);
+
+  useEffect(() => {
+    if (!isClient) return;
     const themeValue = isDark ? 'dark' : 'light';
     localStorage.setItem('theme', themeValue);
     document.documentElement.setAttribute('data-theme', themeValue);
-  }, [isDark, isMounted]);
+  }, [isDark, isClient]);
 
   const toggleTheme = () => {
     setIsDark(prev => !prev);
@@ -45,5 +46,6 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) =
 };
 
 export const useTheme = () => {
-  return useContext(ThemeContext);
+  const context = useContext(ThemeContext);
+  return context || defaultTheme;
 };
