@@ -4,7 +4,6 @@ import { useState, useEffect, useLayoutEffect } from 'react';
 interface Fact {
   title: string;
   description: string;
-  icon: string;
   category: 'Security' | 'Development' | 'API' | 'DevOps' | 'Best Practice';
 }
 
@@ -12,73 +11,61 @@ const facts: Fact[] = [
   {
     title: '91% of Data Breaches',
     description: 'Result from non-malicious human error. Proper training and secure coding practices are your first defense against cyber threats.',
-    icon: '🔐',
     category: 'Security'
   },
   {
     title: 'APIs Power Modern Apps',
     description: 'Over 85% of enterprise workloads now depend on APIs. Well-designed APIs are critical for scalability and integration.',
-    icon: '⚡',
     category: 'API'
   },
   {
     title: 'Cost of Data Breach',
     description: 'Average global cost is $4.45 million in 2023. Prevention through security-first development is 10x cheaper than remediation.',
-    icon: '💰',
     category: 'Security'
   },
   {
     title: 'Secure Code Saves Time',
     description: 'Finding bugs after deployment costs 5-10x more than finding them during development. Security audits during development save money and time.',
-    icon: '⏱️',
     category: 'Best Practice'
   },
   {
     title: 'DevOps Reduces Deployment Time',
     description: 'Companies using CI/CD pipelines deploy 30x more frequently with 200x faster lead time. Automation improves reliability and speed.',
-    icon: '🚀',
     category: 'DevOps'
   },
   {
     title: 'API Security Critical',
     description: '95% of breaches involve APIs. Rate limiting, OAuth 2.0, and API versioning are essential for protecting your integrations.',
-    icon: '🛡️',
     category: 'API'
   },
   {
     title: 'Code Review Best Practice',
     description: 'Peer code reviews catch 80% more bugs than manual testing alone. They improve code quality and knowledge sharing across teams.',
-    icon: '👥',
     category: 'Best Practice'
   },
   {
     title: 'Microservices Advantage',
     description: 'Companies using microservices can update services independently. They scale faster, deploy quicker, and reduce system downtime.',
-    icon: '🏗️',
     category: 'Development'
   },
   {
     title: 'Cloud Security',
-    description: 'Shared responsibility model means both provider and customer must implement security. Understanding your provider\'s SLA is critical.',
-    icon: '☁️',
+    description: 'Shared responsibility model means both provider and customer must implement security. Understanding your provider&apos;s SLA is critical.',
     category: 'Security'
   },
   {
     title: 'Testing Matters',
     description: '1 hour of QA testing prevents 10 hours of production bug fixing. Automated testing catches 40% more issues than manual testing.',
-    icon: '✅',
     category: 'Best Practice'
   },
   {
     title: 'API Versioning',
     description: 'Proper API versioning prevents breaking changes for existing clients. V1, V2 endpoints allow smooth transitions and backward compatibility.',
-    icon: '📦',
     category: 'API'
   },
   {
     title: 'Encryption Non-Negotiable',
-    description: 'HTTPS alone isn\'t enough. Encrypt data at rest, in transit, and implement end-to-end encryption for sensitive information.',
-    icon: '🔒',
+    description: 'HTTPS alone isn&apos;t enough. Encrypt data at rest, in transit, and implement end-to-end encryption for sensitive information.',
     category: 'Security'
   }
 ];
@@ -145,8 +132,7 @@ export const FactsSlider = () => {
           <div className="dark:bg-dark-800/50 light:bg-gray-50 rounded-xl md:rounded-2xl border dark:border-dark-700 light:border-gray-200 p-4 sm:p-6 md:p-12 min-h-80 sm:min-h-96 flex flex-col justify-between transition-colors duration-300">
             {/* Fact Content */}
             <div className="space-y-4 md:space-y-6">
-              <div className="flex items-start justify-between gap-3 md:gap-6">
-                <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl flex-shrink-0">{currentFact.icon}</div>
+              <div className="flex items-start justify-end gap-3 md:gap-6">
                 <div className={`px-2 sm:px-3 py-1 rounded-full border text-xs sm:text-sm font-semibold whitespace-nowrap ${categoryColors[currentFact.category]} transition-colors duration-300`}>
                   {currentFact.category}
                 </div>

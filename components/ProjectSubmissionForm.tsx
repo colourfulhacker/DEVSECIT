@@ -113,7 +113,7 @@ export function ProjectSubmissionForm({ onClose }: { onClose?: () => void }) {
   const handleSubmit = () => {
     if (!validateStep(step)) return;
 
-    const whatsappMessage = `💼 *PROJECT SUBMISSION*\n\n` +
+    const whatsappMessage = `*PROJECT SUBMISSION*\n\n` +
       `*Company Information:*\n` +
       `Company: ${formData.companyInfo.companyName}\n` +
       `Industry: ${formData.companyInfo.industry}\n` +

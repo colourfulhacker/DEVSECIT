@@ -220,7 +220,7 @@ const CourseDetail: NextPage<CourseDetailProps> = ({ course }) => {
                             <ul className="space-y-1">
                               {module.handson.map((project, j) => (
                                 <li key={j} className="flex items-start gap-2 dark:text-gray-400 light:text-gray-600">
-                                  <span className="text-green-400">🛠️</span>{project}
+                                  <span className="text-green-400">•</span>{project}
                                 </li>
                               ))}
                             </ul>
@@ -249,7 +249,6 @@ const CourseDetail: NextPage<CourseDetailProps> = ({ course }) => {
                         <div className="grid md:grid-cols-2 gap-4">
                           {course.projects.map((project, i) => (
                             <div key={i} className="dark:bg-dark-800 light:bg-gray-50 p-4 rounded-lg border dark:border-dark-700 light:border-gray-200">
-                              <span className="text-2xl mb-2 block">🚀</span>
                               <p className="font-semibold dark:text-white light:text-gray-900">{project}</p>
                             </div>
                           ))}
@@ -268,7 +267,7 @@ const CourseDetail: NextPage<CourseDetailProps> = ({ course }) => {
                         <div className="grid md:grid-cols-2 gap-4">
                           {course.careerSupport.map((support, i) => (
                             <div key={i} className="flex items-start gap-3 dark:bg-dark-800 light:bg-gray-50 p-4 rounded-lg border dark:border-dark-700 light:border-gray-200">
-                              <span className="text-xl text-blue-400">💼</span>
+                              <span className="text-xl text-blue-400">•</span>
                               <p className="dark:text-gray-300 light:text-gray-700">{support}</p>
                             </div>
                           ))}

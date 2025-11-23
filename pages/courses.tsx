@@ -108,7 +108,7 @@ const Courses: NextPage = () => {
                   
                   <div className="space-y-2 mb-4">
                     <div className="text-2xl font-bold text-primary-400">{course.price}</div>
-                    <div className="text-sm dark:text-gray-400 light:text-gray-600">⏱️ {course.duration}</div>
+                    <div className="text-sm dark:text-gray-400 light:text-gray-600">{course.duration}</div>
                     <div className="text-xs dark:text-gray-500 light:text-gray-500">{course.modules.length} Modules • {course.projects.length} Projects</div>
                   </div>
 
@@ -156,13 +156,13 @@ const Courses: NextPage = () => {
                   onClick={() => setShowAdmissionForm(true)}
                   className="px-8 py-3 bg-gradient-to-r from-primary-500 to-blue-600 rounded-lg font-semibold text-white hover:shadow-lg transition"
                 >
-                  📋 Apply for Admission
+                  Apply for Admission
                 </button>
                 <a href="tel:+918101979855" className="px-8 py-3 dark:bg-dark-700 light:bg-gray-200 rounded-lg font-semibold dark:text-white light:text-gray-900 hover:shadow-lg transition">
-                  📞 Call +91 8101 979855
+                  Call +91 8101 979855
                 </a>
                 <a href="https://wa.me/918101979855" className="px-8 py-3 dark:bg-dark-700 light:bg-gray-200 rounded-lg font-semibold dark:text-white light:text-gray-900 hover:shadow-lg transition">
-                  💬 WhatsApp Us
+                  WhatsApp Us
                 </a>
               </div>
             </div>
