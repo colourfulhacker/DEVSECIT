@@ -83,9 +83,9 @@ const ServicesPage: NextPage = () => {
       .map(id => IT_SERVICES.find(s => s.id === id)?.name)
       .filter(Boolean)
       .join(', ');
-    const mailBody = `NAME: ${formData.name}\nEMAIL: ${formData.email}\nCOMPANY: ${formData.company}\nINDUSTRY: ${formData.industry}\nBUDGET RANGE: ${formData.budget}\nTIMELINE: ${formData.timeline}\n\nREQUIRED IT SERVICES:\n${selectedServiceNames}\n\nPROJECT DESCRIPTION:\n${formData.description}\n\n---\nThis requirement was submitted via the IT Services page on DevSecIT website.`.trim();
-    const mailtoLink = `mailto:sales@devsecit.com?subject=IT Services Requirement from ${formData.name}&body=${encodeURIComponent(mailBody)}`;
-    window.location.href = mailtoLink;
+    const whatsappMessage = `Hi DevSecIT! 👋\n\n*IT Services Requirement*\n\n*Contact Info:*\nName: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.company}\n\n*Project Details:*\nIndustry: ${formData.industry}\nBudget: ${formData.budget}\nTimeline: ${formData.timeline}\n\n*Required Services:*\n${selectedServiceNames}\n\n*Project Description:*\n${formData.description}`;
+    const whatsappLink = `https://wa.me/918101979855?text=${encodeURIComponent(whatsappMessage)}`;
+    window.location.href = whatsappLink;
   };
 
   const servicesByCategory = IT_SERVICES.reduce((acc, service) => {

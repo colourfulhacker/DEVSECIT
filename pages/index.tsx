@@ -36,15 +36,14 @@ const Home: NextPage = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Send form data to sales email via mailto
-    const mailtoLink = `mailto:sales@devsecit.com?subject=New Project Inquiry from ${formData.name}&body=${encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.company}\n\nProject Details:\n${formData.message}`
-    )}`;
-    window.location.href = mailtoLink;
+    // Send form data to WhatsApp for faster, more reliable communication
+    const whatsappMessage = `Hi DevSecIT! 👋\n\n*Project Inquiry*\n\nName: ${formData.name}\nEmail: ${formData.email}\n${formData.company ? `Company: ${formData.company}\n` : ''}Project Details:\n${formData.message}`;
+    const whatsappLink = `https://wa.me/918101979855?text=${encodeURIComponent(whatsappMessage)}`;
+    window.location.href = whatsappLink;
     setFormData({ name: '', email: '', company: '', message: '' });
   };
 
-  const whatsappLink = `https://wa.me/918101979855?text=Hi DevSecIT, I&apos;m interested in discussing a project. Let&apos;s connect!`;
+  const whatsappLink = `https://wa.me/918101979855?text=Hi DevSecIT, I'm interested in discussing a project. Let's connect!`;
 
   // SEO Keywords - Professional IT Training focused
   const seoKeywords = "professional IT courses, web development course, cybersecurity training, DevOps certification, cloud computing courses, AI machine learning training, full-stack development course, mobile app development, data engineering, IT training India";
@@ -868,41 +867,39 @@ const Home: NextPage = () => {
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
               <button
                 type="submit"
-                className="flex-1 px-4 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-primary-500 to-blue-600 rounded-lg font-bold text-sm sm:text-base md:text-lg hover:shadow-2xl hover:shadow-primary-500/50 transition-all transform hover:scale-105"
+                className="flex-1 px-4 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-green-500 to-green-600 rounded-lg font-bold text-sm sm:text-base md:text-lg hover:shadow-2xl hover:shadow-green-500/50 transition-all transform hover:scale-105"
               >
-                📧 Send via Email
+                💬 Send via WhatsApp (Recommended)
               </button>
               <a
-                href={whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 px-4 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-green-500 to-green-600 rounded-lg font-bold text-sm sm:text-base md:text-lg hover:shadow-2xl hover:shadow-green-500/50 transition-all transform hover:scale-105 text-center"
+                href={`mailto:sales@devsecit.com?subject=Project Inquiry from ${formData.name}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.company || 'N/A'}\n\nProject Details:\n${formData.message}`)}`}
+                className="flex-1 px-4 sm:px-8 py-3 sm:py-4 bg-dark-800 border-2 border-primary-500/50 rounded-lg font-bold text-sm sm:text-base md:text-lg hover:bg-dark-700 transition-all text-center"
               >
-                💬 WhatsApp Chat
+                📧 Email Backup
               </a>
             </div>
           </form>
 
           <div className="mt-8 md:mt-12 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 text-center">
+            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="bg-dark-900 p-3 md:p-6 rounded-lg md:rounded-xl border-2 border-green-500/50 hover:border-green-500 transition-all">
+              <div className="text-2xl md:text-3xl mb-1 md:mb-2">💬</div>
+              <div className="font-semibold text-gray-300 text-xs md:text-sm">WhatsApp (Primary)</div>
+              <div className="text-green-400 hover:text-green-300 text-xs">+91 8101 979855</div>
+            </a>
             <a href="mailto:sales@devsecit.com" className="bg-dark-900 p-3 md:p-6 rounded-lg md:rounded-xl border border-dark-700 hover:border-primary-500/50 transition-all">
               <div className="text-2xl md:text-3xl mb-1 md:mb-2">📧</div>
-              <div className="font-semibold text-gray-300 text-xs md:text-sm">Sales</div>
+              <div className="font-semibold text-gray-300 text-xs md:text-sm">Email</div>
               <div className="text-primary-400 hover:text-primary-300 text-xs">sales@devsecit.com</div>
             </a>
-            <a href="mailto:info@devsecit.com" className="bg-dark-900 p-3 md:p-6 rounded-lg md:rounded-xl border border-dark-700 hover:border-primary-500/50 transition-all">
-              <div className="text-2xl md:text-3xl mb-1 md:mb-2">ℹ️</div>
-              <div className="font-semibold text-gray-300 text-xs md:text-sm">Info</div>
-              <div className="text-primary-400 hover:text-primary-300 text-xs">info@devsecit.com</div>
-            </a>
-            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="bg-dark-900 p-3 md:p-6 rounded-lg md:rounded-xl border border-dark-700 hover:border-green-500/50 transition-all">
-              <div className="text-2xl md:text-3xl mb-1 md:mb-2">💬</div>
-              <div className="font-semibold text-gray-300 text-xs md:text-sm">WhatsApp</div>
-              <div className="text-green-400 hover:text-green-300 text-xs">+91 8101 979855</div>
+            <a href="tel:+918101979855" className="bg-dark-900 p-3 md:p-6 rounded-lg md:rounded-xl border border-dark-700 hover:border-blue-500/50 transition-all">
+              <div className="text-2xl md:text-3xl mb-1 md:mb-2">☎️</div>
+              <div className="font-semibold text-gray-300 text-xs md:text-sm">Phone</div>
+              <div className="text-blue-400 hover:text-blue-300 text-xs">+91 8101 979855</div>
             </a>
             <div className="bg-dark-900 p-3 md:p-6 rounded-lg md:rounded-xl border border-dark-700">
               <div className="text-2xl md:text-3xl mb-1 md:mb-2">⚡</div>
               <div className="font-semibold text-gray-300 text-xs md:text-sm">Response</div>
-              <div className="text-primary-400 text-xs">Within 4 hours</div>
+              <div className="text-green-400 text-xs">Within 2 hours (WhatsApp)</div>
             </div>
           </div>
         </div>
